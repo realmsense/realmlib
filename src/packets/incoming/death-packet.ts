@@ -37,6 +37,10 @@ export class DeathPacket implements Packet {
    * This is a derived property, and is the result of `zombieId !== -1`.
    */
   isZombie: boolean;
+  /**
+   * Unknown exalt stat type
+   */
+  unknown: number
   //#endregion
 
   constructor() {
@@ -45,6 +49,7 @@ export class DeathPacket implements Packet {
     this.killedBy = '';
     this.zombieId = 0;
     this.zombieType = 0;
+    this.unknown = 0;
     this.isZombie = false;
   }
 
@@ -54,6 +59,7 @@ export class DeathPacket implements Packet {
     this.killedBy = reader.readString();
     this.zombieType = reader.readInt32();
     this.zombieId = reader.readInt32();
+    this.unknown = reader.readInt32();
     this.isZombie = this.zombieId !== -1;
   }
 

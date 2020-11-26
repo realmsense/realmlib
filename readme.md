@@ -1,9 +1,6 @@
-# realmlib/net
+# realmlib-unity
 
-[![Build Status](https://travis-ci.org/thomas-crane/realmlib-net.svg?branch=master)](https://travis-ci.org/thomas-crane/realmlib-net)
-[![CodeFactor](https://www.codefactor.io/repository/github/thomas-crane/realmlib-net/badge/master)](https://www.codefactor.io/repository/github/thomas-crane/realmlib-net/overview/master)
-
-A networking library for Realm of the Mad God.
+A networking library for Realm of the Mad God Unity.
 
 ## Contents
 
@@ -13,9 +10,21 @@ A networking library for Realm of the Mad God.
 
 ## Install
 
+Make sure you have [Nodejs 12+](https://nodejs.org/en/download/) installed then download the project:
+
 ```bash
-npm install @realmlib/net
+git clone https://git.extacy.cc/Extacy/realmlib.git
+cd realmlib
 ```
+
+Install the TypeScript compiler then compile the source:
+
+```bash
+npm install -g typescript
+tsc
+```
+
+Your compiled code will be in the `lib` folder ready to use
 
 ## Use
 

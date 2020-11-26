@@ -8,10 +8,6 @@ export class QuestFetchAskPacket implements Packet {
 
   readonly type = PacketType.QUEST_FETCH_ASK;
 
-  //#region packet-specific members
-
-  //#endregion
-
   write(): void {
     //
   }
