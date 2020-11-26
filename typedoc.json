@@ -1,5 +1,5 @@
 {
-  "name": "@realmlib/net",
+  "name": "realmlib",
   "mode": "file",
   "exclude": [
     "**/*+(index).ts"

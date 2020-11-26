@@ -35,7 +35,7 @@ The realmlib networking module cannot be used on its own. It is designed to be u
 
 ### Using the `PacketIO` class
 
-The `PacketIO` class provides an event based way of sending and receiving RotMG packets. It is very likely that a project which depends upon @realmlib/net will make use of the `PacketIO` class.
+The `PacketIO` class provides an event based way of sending and receiving RotMG packets. It is very likely that a project which depends upon realmlib will make use of the `PacketIO` class.
 
 When a new `PacketIO` instance is constructed, it expects an object with 3 optional properties.
 
@@ -54,7 +54,7 @@ If a `socket` is provided, the `PacketIO` instance will be immediately attached 
 The default values which are used for the `rc4` property are set up for a clientless application. However, they are configurable to allow the `PacketIO` class to be used for other applications. For example, when building a MITM proxy, the `PacketIO` instance which listens to traffic coming from the server should use the **incoming** key for both the incoming and outgoing key configurations. The `PacketIO` instance which is listening to traffic coming from the client should use the **outgoing** key for both the incoming and outgoing key configurations.
 
 ```typescript
-import { PacketIO, INCOMING_KEY, OUTGOING_KEY } from '@realmlib/net';
+import { PacketIO, INCOMING_KEY, OUTGOING_KEY } from 'realmlib';
 
 const serverIO = new PacketIO({
   rc4: {
@@ -76,7 +76,7 @@ The `packetMap` property is the most important one, as it allows the `PacketIO` 
 The `packetMap` object is expected to **bidirectional**. That is, if the map contains the property
 
 ```typescript
-import { PacketMap, PacketType } from '@realmlib/net';
+import { PacketMap, PacketType } from 'realmlib';
 
 const packetMap: PacketMap = {
   FAILURE: 0,
