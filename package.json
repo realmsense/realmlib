@@ -9,8 +9,7 @@
     "compile": "tsc -p .",
     "lint": "tslint -p .",
     "test": "mocha -r ts-node/register test/*.spec.ts",
-    "docs": "typedoc --options ./typedoc.json",
-    "index": "tsai --path src --overwrite"
+    "docs": "typedoc --options ./typedoc.json"
   },
   "files": [
     "lib/",
@@ -39,7 +38,6 @@
     "chai": "^4.2.0",
     "mocha": "^7.2.0",
     "ts-node": "^7.0.1",
-    "tsai": "^2.1.0",
     "tslint": "^5.20.1",
     "typedoc": "^0.15.8",
     "typescript": "^3.9.7"
