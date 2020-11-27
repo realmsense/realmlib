@@ -1,4 +1,18 @@
+# WebStorm workspace configuration
 .idea/
+
+# Node modules
 node_modules/
+
+# Build result
 lib/
 *.tsbuildinfo
+
+# User prefs
+.vscode/
+
+# Mac files
+.DS_Store
+
+# npm pack files
+*.tgz
