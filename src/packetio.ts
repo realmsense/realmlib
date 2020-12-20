@@ -233,7 +233,10 @@ export class PacketIO extends EventEmitter {
       const id = this.reader.buffer.readInt8(4);
       const type = this.packetMap[id];
       if (!type) {
-        throw new Error(`No packet type for the id ${id}`);
+        this.emit('error', new Error(
+          `Unkown packet id ${id} received from server!\n\tBuffer size: ${this.reader.length}\n\tBytes: ${this.reader.readBytes(this.reader.length).toString()}`
+          ));
+        return undefined;
       }
       if (this.listenerCount(type) !== 0) {
         const packet = createPacket(type);
