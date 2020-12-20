@@ -17,11 +17,16 @@ export class StatData implements DataPacket {
    * The string value of this stat, if this is a string stat.
    */
   stringStatValue: string;
+  /**
+   * Unknown
+   */
+  unknownByte: number;
 
   constructor() {
     this.statType = 0;
     this.statValue = 0;
     this.stringStatValue = '';
+    this.unknownByte = 0;
   }
 
   read(reader: Reader): void {
@@ -31,6 +36,7 @@ export class StatData implements DataPacket {
     } else {
       this.statValue = compressedRead(reader);
     }
+    this.unknownByte = reader.readByte();
   }
 
   write(writer: Writer): void {
@@ -40,6 +46,7 @@ export class StatData implements DataPacket {
     } else {
       writer.writeInt32(this.statValue);
     }
+    writer.writeByte(this.unknownByte);
   }
 
   isStringStat(): boolean {
