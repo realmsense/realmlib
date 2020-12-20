@@ -10,6 +10,14 @@ import { Writer } from "../../writer";
 export class VaultUpdatePacket implements Packet {
   readonly type = PacketType.VAULT_UPDATE;
 
+  unknownBool: boolean;
+
+  vaultItemCount: number;
+
+  giftItemCount: number;
+
+  potionItemCount: number;
+
   vaultContents: number[];
 
   giftContents: number[];
@@ -25,6 +33,10 @@ export class VaultUpdatePacket implements Packet {
   nextPotionMax: number;
 
   constructor() {
+    this.unknownBool = false;
+    this.vaultItemCount = 0;
+    this.giftItemCount = 0;
+    this.potionItemCount = 0;
     this.vaultContents = [];
     this.giftContents = [];
     this.potionContents = [];
@@ -35,11 +47,10 @@ export class VaultUpdatePacket implements Packet {
   }
 
   read(reader: Reader): void {
-    /* read the lengths of the chests into the buffer */
-    compressedRead(reader);
-    compressedRead(reader);
-    compressedRead(reader);
-    compressedRead(reader);
+    this.unknownBool = reader.readBoolean();
+    this.vaultItemCount = compressedRead(reader);
+    this.giftItemCount = compressedRead(reader);
+    this.potionItemCount = compressedRead(reader);
 
     let counter = 0;
     let itemCount = compressedRead(reader);
@@ -61,7 +72,7 @@ export class VaultUpdatePacket implements Packet {
       this.potionContents.push(compressedRead(reader));
       counter++;
     }
-    
+
     this.vaultUpgradeCost = reader.readShort();
     this.potionUpgradeCost = reader.readShort();
     this.currentPotionMax = reader.readShort();
@@ -69,6 +80,10 @@ export class VaultUpdatePacket implements Packet {
   }
 
   write(writer: Writer): void {
+    writer.writeBoolean(true);
+    writer.writeInt32(this.vaultItemCount);
+    writer.writeInt32(this.giftItemCount);
+    writer.writeInt32(this.potionItemCount);
     writer.writeInt32(this.vaultContents.length);
     for (const item of this.vaultContents) {
       writer.writeInt32(item);
