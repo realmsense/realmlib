@@ -40,5 +40,4 @@ export * from './teleport-packet';
 export * from './updateack-packet';
 export * from './use-item-packet';
 export * from './use-portal-packet';
-export * from './arena/index';
 export * from './pets/index';

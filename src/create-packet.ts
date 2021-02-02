@@ -19,8 +19,6 @@ export function createPacket(type: PacketType): Packet {
   switch (type) {
     case PacketType.FAILURE:
       return new IncomingPackets.FailurePacket();
-    case PacketType.ACCEPT_ARENA_DEATH:
-      return new OutgoingPackets.AcceptArenaDeathPacket();
     case PacketType.LOAD:
       return new OutgoingPackets.LoadPacket();
     case PacketType.QUEST_REDEEM_RESPONSE:
@@ -49,8 +47,6 @@ export function createPacket(type: PacketType): Packet {
       return new OutgoingPackets.CancelTradePacket();
     case PacketType.OTHERHIT:
       return new OutgoingPackets.OtherHitPacket();
-    case PacketType.IMMINENT_ARENA_WAVE:
-      return new IncomingPackets.ImminentArenaWavePacket();
     case PacketType.GLOBAL_NOTIFICATION:
       return new IncomingPackets.GlobalNotificationPacket();
     case PacketType.TRADECHANGED:
@@ -129,8 +125,6 @@ export function createPacket(type: PacketType): Packet {
       return new IncomingPackets.MapInfoPacket();
     case PacketType.INVDROP:
       return new OutgoingPackets.InvDropPacket();
-    case PacketType.ARENA_DEATH:
-      return new IncomingPackets.ArenaDeathPacket();
     case PacketType.ALLYSHOOT:
       return new IncomingPackets.AllyShootPacket();
     case PacketType.SERVERPLAYERSHOOT:
@@ -151,8 +145,6 @@ export function createPacket(type: PacketType): Packet {
       return new OutgoingPackets.CreatePacket();
     case PacketType.GUILDINVITE:
       return new OutgoingPackets.GuildInvitePacket();
-    case PacketType.ENTER_ARENA:
-      return new OutgoingPackets.EnterArenaPacket();
     case PacketType.PING:
       return new IncomingPackets.PingPacket();
     case PacketType.EDITACCOUNTLIST:
