@@ -3,6 +3,10 @@
  */
 export enum FailureCode {
   /**
+   * Received when the client attempts to connect using a blocked IP address.
+   */
+  IPBlocked = 0,
+  /**
    * Received when the `buildVersion` sent in the `HelloPacket` is not the current one.
    */
   IncorrectVersion = 4,
