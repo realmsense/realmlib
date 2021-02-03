@@ -1,5 +1,5 @@
+import { PacketMap } from '../../../models/packet-map';
 import { Packet } from '../../../packet';
-import { PacketType } from '../../../packet-type';
 import { Reader } from '../../../reader';
 import { Writer } from '../../../writer';
 
@@ -8,7 +8,7 @@ import { Writer } from '../../../writer';
  */
 export class EvolvedPetMessage implements Packet {
 
-  readonly type = PacketType.EVOLVE_PET;
+  readonly id = PacketMap.EVOLVE_PET
   propagate = true;
 
   //#region packet-specific members

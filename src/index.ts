@@ -1,6 +1,4 @@
 export * from './create-packet';
-export * from './packet-map';
-export * from './packet-type';
 export * from './packet';
 export * from './packetio';
 export * from './reader';

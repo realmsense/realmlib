@@ -1,5 +1,5 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -8,7 +8,7 @@ import { Writer } from '../../writer';
  */
 export class CreateSuccessPacket implements Packet {
 
-  readonly type = PacketType.CREATE_SUCCESS;
+  readonly id = PacketMap.CREATE_SUCCESS
 
   //#region packet-specific members
   /**

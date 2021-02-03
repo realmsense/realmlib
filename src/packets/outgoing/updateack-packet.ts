@@ -1,12 +1,12 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 
 /**
  * Sent to acknowledge an `UpdatePacket`.
  */
 export class UpdateAckPacket implements Packet {
 
-  readonly type = PacketType.UPDATEACK;
+  readonly id = PacketMap.UPDATEACK
 
   //#region packet-specific members
 

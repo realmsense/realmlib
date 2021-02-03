@@ -1,5 +1,5 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -9,7 +9,7 @@ import { Writer } from '../../writer';
  */
 export class HelloPacket implements Packet {
 
-  readonly type = PacketType.HELLO;
+  readonly id = PacketMap.HELLO
 
   //#region packet-specific members
   /**

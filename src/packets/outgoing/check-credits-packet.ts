@@ -1,12 +1,12 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 
 /**
  * > Unknown.
  */
 export class CheckCreditsPacket implements Packet {
 
-  readonly type = PacketType.CHECKCREDITS;
+  readonly id = PacketMap.CHECKCREDITS
 
   //#region packet-specific members
 

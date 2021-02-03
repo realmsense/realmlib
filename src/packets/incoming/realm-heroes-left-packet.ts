@@ -1,5 +1,5 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -8,7 +8,7 @@ import { Writer } from '../../writer';
  */
 export class RealmHeroesLeftPacket implements Packet {
 
-  readonly type = PacketType.REALM_HERO_LEFT_MSG;
+  readonly id = PacketMap.REALM_HERO_LEFT_MSG
 
   //#region packet-specific members
   /**

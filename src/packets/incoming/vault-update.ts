@@ -1,35 +1,26 @@
 import { Packet } from "../../packet";
-import { PacketType } from "../../packet-type";
 import { Reader } from "../../reader";
 import { read as compressedRead } from "../../data/compressed-int";
 import { Writer } from "../../writer";
+import { PacketMap } from "../../models/packet-map";
 
 /**
  * Received for information when the player enters the new vault
  */
 export class VaultUpdatePacket implements Packet {
-  readonly type = PacketType.VAULT_UPDATE;
+
+  readonly id = PacketMap.VAULT_UPDATE
 
   unknownBool: boolean;
-
   vaultItemCount: number;
-
   giftItemCount: number;
-
   potionItemCount: number;
-
   vaultContents: number[];
-
   giftContents: number[];
-
   potionContents: number[];
-
   vaultUpgradeCost: number;
-
   potionUpgradeCost: number;
-
   currentPotionMax: number;
-
   nextPotionMax: number;
 
   constructor() {

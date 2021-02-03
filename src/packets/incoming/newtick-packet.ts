@@ -1,6 +1,6 @@
 import { ObjectStatusData } from '../../data/object-status-data';
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -9,7 +9,7 @@ import { Writer } from '../../writer';
  */
 export class NewTickPacket implements Packet {
 
-  readonly type = PacketType.NEWTICK;
+  readonly id = PacketMap.NEWTICK
 
   //#region packet-specific members
   /**

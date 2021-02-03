@@ -1,6 +1,6 @@
 import { QuestData } from '../../data/quest-data';
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -9,7 +9,7 @@ import { Writer } from '../../writer';
  */
 export class QuestFetchResponsePacket implements Packet {
 
-  readonly type = PacketType.QUEST_FETCH_RESPONSE;
+  readonly id = PacketMap.QUEST_FETCH_RESPONSE
 
   //#region packet-specific members
   /**

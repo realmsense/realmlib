@@ -1,5 +1,5 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -9,7 +9,7 @@ import { Writer } from '../../writer';
  */
 export class RequestTradePacket implements Packet {
 
-  readonly type = PacketType.REQUESTTRADE;
+  readonly id = PacketMap.REQUESTTRADE
 
   //#region packet-specific members
   /**

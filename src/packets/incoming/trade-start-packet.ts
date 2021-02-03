@@ -1,6 +1,6 @@
 import { TradeItem } from '../../data/trade-item';
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -9,7 +9,7 @@ import { Writer } from '../../writer';
  */
 export class TradeStartPacket implements Packet {
 
-  readonly type = PacketType.TRADESTART;
+  readonly id = PacketMap.TRADESTART
 
   //#region packet-specific members
   /**

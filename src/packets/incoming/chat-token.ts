@@ -1,10 +1,11 @@
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
+import { PacketMap } from '../../models/packet-map';
 
 export class ChatToken implements Packet {
-    readonly type = PacketType.CHATTOKEN;
+    
+    readonly id = PacketMap.CHATTOKEN
 
     token_: string;
     host_: string;

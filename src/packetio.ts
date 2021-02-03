@@ -2,7 +2,7 @@ import { EventEmitter } from 'events';
 import { Socket } from 'net';
 import { INCOMING_KEY, OUTGOING_KEY, RC4 } from './crypto';
 import { Packet } from './packet';
-import { PacketMap } from './packet-map';
+import { PacketMap } from './models/packet-map';
 import { createPacket } from './create-packet';
 import { Reader } from './reader';
 import { Writer } from './writer';
@@ -35,11 +35,6 @@ export class PacketIO extends EventEmitter {
   socket: Socket | undefined;
 
   /**
-   * A packet map object which can be used to resolve incoming and outgoing packet types.
-   */
-  packetMap: PacketMap;
-
-  /**
    * The last packet which was received.
    */
   get lastIncomingPacket(): Packet | undefined {
@@ -70,7 +65,7 @@ export class PacketIO extends EventEmitter {
    * Creates a new `PacketIO` instance.
    * @param opts The options to use for this instance.
    */
-  constructor(opts: { socket?: Socket, rc4?: RC4Config, packetMap?: PacketMap } = { rc4: DEFAULT_RC4, packetMap: {} }) {
+  constructor(opts: { socket?: Socket, rc4?: RC4Config } = { rc4: DEFAULT_RC4 }) {
     super();
     if (!opts.rc4) {
       opts.rc4 = DEFAULT_RC4;
@@ -80,7 +75,6 @@ export class PacketIO extends EventEmitter {
     this.outgoingQueue = [];
     this.sendRC4 = new RC4(opts.rc4.outgoingKey);
     this.receiveRC4 = new RC4(opts.rc4.incomingKey);
-    this.packetMap = opts.packetMap || {};
 
     this.eventHandlers = new Map([
       ['data', this.onData.bind(this)],
@@ -133,10 +127,9 @@ export class PacketIO extends EventEmitter {
       this.emit('error', new Error('Not attached to a socket.'));
       return;
     }
-    const type = this.packetMap[packet.type];
+    const type = PacketMap[packet.id];
     if (type === undefined) {
-      this.emit('error', new Error(`Mapper is missing an id for the packet type ${packet.type}`));
-      return;
+      this.emit('error', new Error(`PacketMap is missing a type for the packet ID "${packet.id}"`));
     }
 
     if (this.outgoingQueue.length === 0) {
@@ -155,9 +148,8 @@ export class PacketIO extends EventEmitter {
     const packet = this.outgoingQueue.shift()!;
     this._lastOutgoingPacket = packet;
     this.writer.index = 5;
-    const type = this.packetMap[packet?.type];
     packet.write(this.writer);
-    this.writer.writeHeader(type);
+    this.writer.writeHeader(packet.id);
     this.sendRC4.cipher(this.writer.buffer.slice(5, this.writer.index));
     if (this.socket && !this.socket.write(this.writer.buffer.slice(0, this.writer.index))) {
       this.socket.once('drain', () => {
@@ -180,9 +172,10 @@ export class PacketIO extends EventEmitter {
    * @param packet The packet to emit.
    */
   emitPacket(packet: Packet): void {
-    if (packet && typeof packet.type === 'string') {
+    const type = PacketMap[packet.id];
+    if (packet && type) {
       this._lastIncomingPacket = packet;
-      this.emit(packet.type, packet);
+      this.emit(type, packet);
     } else {
       throw new TypeError(`Parameter "packet" must be a Packet, not ${typeof packet}`);
     }
@@ -231,7 +224,7 @@ export class PacketIO extends EventEmitter {
     this.receiveRC4.cipher(this.reader.buffer.slice(5, this.reader.length));
     try {
       const id = this.reader.buffer.readInt8(4);
-      const type = this.packetMap[id];
+      const type = PacketMap[id];
       if (!type) {
         this.emit('error', new Error(
           `Unkown packet id ${id} received from server!\n\tBuffer size: ${this.reader.length}\n\tBytes: ${this.reader.readBytes(this.reader.length).toString()}`

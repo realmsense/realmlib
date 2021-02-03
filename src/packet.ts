@@ -1,4 +1,4 @@
-import { PacketType } from './packet-type';
+import { PacketMap } from './models/packet-map';
 import { Reader } from './reader';
 import { Writer } from './writer';
 
@@ -20,9 +20,9 @@ export interface DataPacket {
 
 export interface Packet extends DataPacket {
   /**
-   * The type of packet.
+   * The ID of packet.
    */
-  type: PacketType;
+  id: PacketMap;
   /**
    * @deprecated This behaviour should be implemented by applications
    * that use this library, not by this library itself.

@@ -1,8 +1,8 @@
 import { GroundTileData } from '../../data/ground-tile-data';
 import { read as compressedRead } from '../../data/compressed-int';
 import { ObjectData } from '../../data/object-data';
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -14,7 +14,7 @@ import { Writer } from '../../writer';
  */
 export class UpdatePacket implements Packet {
 
-  readonly type = PacketType.UPDATE;
+  readonly id = PacketMap.UPDATE
 
   //#region packet-specific members
   /**

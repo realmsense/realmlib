@@ -1,5 +1,5 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -9,7 +9,7 @@ import { Writer } from '../../writer';
  */
 export class AccountListPacket implements Packet {
 
-  readonly type = PacketType.ACCOUNTLIST;
+  readonly id = PacketMap.ACCOUNTLIST
 
   //#region packet-specific members
   /**
