@@ -46,5 +46,4 @@ export * from './trade-start-packet';
 export * from './update-packet';
 export * from './vault-update';
 export * from './verify-email-packet';
-export * from './arena/index';
 export * from './pets/index';

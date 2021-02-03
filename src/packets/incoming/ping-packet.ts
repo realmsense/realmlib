@@ -1,5 +1,5 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -8,7 +8,7 @@ import { Writer } from '../../writer';
  */
 export class PingPacket implements Packet {
 
-  readonly type = PacketType.PING;
+  readonly id = PacketMap.PING
 
   //#region packet-specific members
   /**

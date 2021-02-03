@@ -1,6 +1,6 @@
 import { SlotObjectData } from '../../data/slot-object-data';
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -9,7 +9,7 @@ import { Writer } from '../../writer';
  */
 export class InvDropPacket implements Packet {
 
-  readonly type = PacketType.INVDROP;
+  readonly id = PacketMap.INVDROP
 
   //#region packet-specific members
   /**

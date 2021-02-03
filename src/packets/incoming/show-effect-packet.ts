@@ -1,6 +1,6 @@
 import { WorldPosData } from '../../data/world-pos-data';
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 import { read as compressedRead } from '../../data/compressed-int';
@@ -10,7 +10,7 @@ import { read as compressedRead } from '../../data/compressed-int';
  */
 export class ShowEffectPacket implements Packet {
 
-  readonly type = PacketType.SHOWEFFECT;
+  readonly id = PacketMap.SHOWEFFECT
 
   //#region packet-specific members
   /**

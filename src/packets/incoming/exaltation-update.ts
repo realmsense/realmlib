@@ -1,5 +1,5 @@
+import { PacketMap } from "../../models/packet-map";
 import { Packet } from "../../packet";
-import { PacketType } from "../../packet-type";
 import { Reader } from "../../reader";
 import { Writer } from "../../writer";
 
@@ -7,24 +7,17 @@ import { Writer } from "../../writer";
  * Received when the players exaltation stats update
  */
 export class ExaltationUpdatePacket implements Packet {
-  readonly type = PacketType.EXALTATION_UPDATE;
+  
+  readonly id = PacketMap.EXALTATION_UPDATE
 
   objType: number;
-
   attackProgress: number;
-
   defenseProgress: number;
-
   speedProgress: number;
-
   dexterityProgress: number;
-
   vitalityProgress: number;
-
   wisdomProgress: number;
-
   healthProgress: number;
-
   manaProgress: number;
 
   constructor() {

@@ -1,6 +1,6 @@
 import { WorldPosData } from '../../data/world-pos-data';
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -9,7 +9,7 @@ import { Writer } from '../../writer';
  */
 export class GroundDamagePacket implements Packet {
 
-  readonly type = PacketType.GROUNDDAMAGE;
+  readonly id = PacketMap.GROUNDDAMAGE
 
   //#region packet-specific members
   /**

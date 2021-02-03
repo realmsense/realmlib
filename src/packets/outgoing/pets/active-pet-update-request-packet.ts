@@ -1,6 +1,6 @@
 import { ActivePetUpdateType } from '../../../models/active-pet-update-type';
+import { PacketMap } from '../../../models/packet-map';
 import { Packet } from '../../../packet';
-import { PacketType } from '../../../packet-type';
 import { Reader } from '../../../reader';
 import { Writer } from '../../../writer';
 
@@ -9,7 +9,7 @@ import { Writer } from '../../../writer';
  */
 export class ActivePetUpdateRequestPacket implements Packet {
 
-  readonly type = PacketType.ACTIVE_PET_UPDATE_REQUEST;
+  readonly id = PacketMap.ACTIVE_PET_UPDATE_REQUEST
   propagate = true;
 
   //#region packet-specific members

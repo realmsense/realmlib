@@ -1,5 +1,5 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -8,7 +8,7 @@ import { Writer } from '../../writer';
  */
 export class GuildRemovePacket implements Packet {
 
-  readonly type = PacketType.GUILDREMOVE;
+  readonly id = PacketMap.GUILDREMOVE
 
   //#region packet-specific members
   /**

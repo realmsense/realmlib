@@ -1,5 +1,5 @@
+import { PacketMap } from '../../models/packet-map';
 import { Packet } from '../../packet';
-import { PacketType } from '../../packet-type';
 import { Reader } from '../../reader';
 import { Writer } from '../../writer';
 
@@ -8,7 +8,7 @@ import { Writer } from '../../writer';
  */
 export class ClaimDailyRewardResponse implements Packet {
 
-  readonly type = PacketType.LOGIN_REWARD_MSG;
+  readonly id = PacketMap.LOGIN_REWARD_MSG
 
   //#region packet-specific members
   /**

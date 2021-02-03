@@ -1,7 +1,7 @@
 import { SlotObjectData } from '../../../data';
+import { PacketMap } from '../../../models/packet-map';
 import { PetUpgradePaymentType } from '../../../models/pet-upgrade-payment-type';
 import { Packet } from '../../../packet';
-import { PacketType } from '../../../packet-type';
 import { Reader } from '../../../reader';
 import { Writer } from '../../../writer';
 
@@ -10,7 +10,7 @@ import { Writer } from '../../../writer';
  */
 export class PetUpgradeRequestPacket implements Packet {
 
-  readonly type = PacketType.PETUPGRADEREQUEST;
+  readonly id = PacketMap.PETUPGRADEREQUEST
   propagate = true;
 
   //#region packet-specific members
