@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AcceptArenaDeathPacket | realmlib</title>
+	<title>ExaltationUpdatePacket | realmlib</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="acceptarenadeathpacket.html">AcceptArenaDeathPacket</a>
+					<a href="exaltationupdatepacket.html">ExaltationUpdatePacket</a>
 				</li>
 			</ul>
-			<h1>Class AcceptArenaDeathPacket</h1>
+			<h1>Class ExaltationUpdatePacket</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Sent to accept a death in the arena.</p>
+						<p>Received when the players exaltation stats update</p>
 					</div>
 				</div>
 			</section>
@@ -75,7 +75,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AcceptArenaDeathPacket</span>
+						<span class="target">ExaltationUpdatePacket</span>
 					</li>
 				</ul>
 			</section>
@@ -90,43 +90,156 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="exaltationupdatepacket.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="acceptarenadeathpacket.html#propagate" class="tsd-kind-icon">propagate</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="acceptarenadeathpacket.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#attackprogress" class="tsd-kind-icon">attack<wbr>Progress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#defenseprogress" class="tsd-kind-icon">defense<wbr>Progress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#dexterityprogress" class="tsd-kind-icon">dexterity<wbr>Progress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#healthprogress" class="tsd-kind-icon">health<wbr>Progress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#manaprogress" class="tsd-kind-icon">mana<wbr>Progress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#objtype" class="tsd-kind-icon">obj<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#speedprogress" class="tsd-kind-icon">speed<wbr>Progress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#vitalityprogress" class="tsd-kind-icon">vitality<wbr>Progress</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="exaltationupdatepacket.html#wisdomprogress" class="tsd-kind-icon">wisdom<wbr>Progress</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="acceptarenadeathpacket.html#read" class="tsd-kind-icon">read</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="acceptarenadeathpacket.html#write" class="tsd-kind-icon">write</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="exaltationupdatepacket.html#read" class="tsd-kind-icon">read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="exaltationupdatepacket.html#write" class="tsd-kind-icon">write</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Exaltation<wbr>Update<wbr>Packet<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="exaltationupdatepacket.html" class="tsd-signature-type">ExaltationUpdatePacket</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/packets/incoming/exaltation-update.ts:21</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="exaltationupdatepacket.html" class="tsd-signature-type">ExaltationUpdatePacket</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="propagate" class="tsd-anchor"></a>
-					<h3>propagate</h3>
-					<div class="tsd-signature tsd-kind-icon">propagate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<a name="attackprogress" class="tsd-anchor"></a>
+					<h3>attack<wbr>Progress</h3>
+					<div class="tsd-signature tsd-kind-icon">attack<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#propagate">propagate</a></p>
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/arena/accept-arena-death.ts#L12">packets/outgoing/arena/accept-arena-death.ts:12</a></li>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:14</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/packettype.html" class="tsd-signature-type">PacketType</a><span class="tsd-signature-symbol"> =&nbsp;PacketType.ACCEPT_ARENA_DEATH</span></div>
+					<a name="defenseprogress" class="tsd-anchor"></a>
+					<h3>defense<wbr>Progress</h3>
+					<div class="tsd-signature tsd-kind-icon">defense<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#type">type</a></p>
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/arena/accept-arena-death.ts#L11">packets/outgoing/arena/accept-arena-death.ts:11</a></li>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:15</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="dexterityprogress" class="tsd-anchor"></a>
+					<h3>dexterity<wbr>Progress</h3>
+					<div class="tsd-signature tsd-kind-icon">dexterity<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:17</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="healthprogress" class="tsd-anchor"></a>
+					<h3>health<wbr>Progress</h3>
+					<div class="tsd-signature tsd-kind-icon">health<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:20</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <a href="../enums/packetmap.html#exaltation_update" class="tsd-signature-type">EXALTATION_UPDATE</a><span class="tsd-signature-symbol"> =&nbsp;PacketMap.EXALTATION_UPDATE</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#id">id</a></p>
+						<ul>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:11</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="manaprogress" class="tsd-anchor"></a>
+					<h3>mana<wbr>Progress</h3>
+					<div class="tsd-signature tsd-kind-icon">mana<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:21</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="objtype" class="tsd-anchor"></a>
+					<h3>obj<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">obj<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:13</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="speedprogress" class="tsd-anchor"></a>
+					<h3>speed<wbr>Progress</h3>
+					<div class="tsd-signature tsd-kind-icon">speed<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:16</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vitalityprogress" class="tsd-anchor"></a>
+					<h3>vitality<wbr>Progress</h3>
+					<div class="tsd-signature tsd-kind-icon">vitality<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:18</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="wisdomprogress" class="tsd-anchor"></a>
+					<h3>wisdom<wbr>Progress</h3>
+					<div class="tsd-signature tsd-kind-icon">wisdom<wbr>Progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/exaltation-update.ts:19</li>
 						</ul>
 					</aside>
 				</section>
@@ -144,7 +257,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/arena/accept-arena-death.ts#L22">packets/outgoing/arena/accept-arena-death.ts:22</a></li>
+									<li>Defined in src/packets/incoming/exaltation-update.ts:35</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -168,7 +281,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/arena/accept-arena-death.ts#L18">packets/outgoing/arena/accept-arena-death.ts:18</a></li>
+									<li>Defined in src/packets/incoming/exaltation-update.ts:47</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -196,19 +309,46 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="acceptarenadeathpacket.html" class="tsd-kind-icon">Accept<wbr>Arena<wbr>Death<wbr>Packet</a>
+						<a href="exaltationupdatepacket.html" class="tsd-kind-icon">Exaltation<wbr>Update<wbr>Packet</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="acceptarenadeathpacket.html#propagate" class="tsd-kind-icon">propagate</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="acceptarenadeathpacket.html#type" class="tsd-kind-icon">type</a>
+								<a href="exaltationupdatepacket.html#attackprogress" class="tsd-kind-icon">attack<wbr>Progress</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#defenseprogress" class="tsd-kind-icon">defense<wbr>Progress</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#dexterityprogress" class="tsd-kind-icon">dexterity<wbr>Progress</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#healthprogress" class="tsd-kind-icon">health<wbr>Progress</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#manaprogress" class="tsd-kind-icon">mana<wbr>Progress</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#objtype" class="tsd-kind-icon">obj<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#speedprogress" class="tsd-kind-icon">speed<wbr>Progress</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#vitalityprogress" class="tsd-kind-icon">vitality<wbr>Progress</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="exaltationupdatepacket.html#wisdomprogress" class="tsd-kind-icon">wisdom<wbr>Progress</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="acceptarenadeathpacket.html#read" class="tsd-kind-icon">read</a>
+								<a href="exaltationupdatepacket.html#read" class="tsd-kind-icon">read</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="acceptarenadeathpacket.html#write" class="tsd-kind-icon">write</a>
+								<a href="exaltationupdatepacket.html#write" class="tsd-kind-icon">write</a>
 							</li>
 						</ul>
 					</li>

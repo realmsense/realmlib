@@ -104,10 +104,9 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="updatepacket.html#drops" class="tsd-kind-icon">drops</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="updatepacket.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="updatepacket.html#newobjects" class="tsd-kind-icon">new<wbr>Objects</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="updatepacket.html#propagate" class="tsd-kind-icon">propagate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="updatepacket.html#tiles" class="tsd-kind-icon">tiles</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="updatepacket.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -132,7 +131,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/update-packet.ts#L31">packets/incoming/update-packet.ts:31</a></li>
+									<li>Defined in src/packets/incoming/update-packet.ts:31</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="updatepacket.html" class="tsd-signature-type">UpdatePacket</a></h4>
@@ -148,7 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">drops<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/update-packet.ts#L31">packets/incoming/update-packet.ts:31</a></li>
+							<li>Defined in src/packets/incoming/update-packet.ts:31</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -158,12 +157,23 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <a href="../enums/packetmap.html#update" class="tsd-signature-type">UPDATE</a><span class="tsd-signature-symbol"> =&nbsp;PacketMap.UPDATE</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#id">id</a></p>
+						<ul>
+							<li>Defined in src/packets/incoming/update-packet.ts:17</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="newobjects" class="tsd-anchor"></a>
 					<h3>new<wbr>Objects</h3>
 					<div class="tsd-signature tsd-kind-icon">new<wbr>Objects<span class="tsd-signature-symbol">:</span> <a href="objectdata.html" class="tsd-signature-type">ObjectData</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/update-packet.ts#L27">packets/incoming/update-packet.ts:27</a></li>
+							<li>Defined in src/packets/incoming/update-packet.ts:27</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -173,23 +183,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="propagate" class="tsd-anchor"></a>
-					<h3>propagate</h3>
-					<div class="tsd-signature tsd-kind-icon">propagate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#propagate">propagate</a></p>
-						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/update-packet.ts#L17">packets/incoming/update-packet.ts:17</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="tiles" class="tsd-anchor"></a>
 					<h3>tiles</h3>
 					<div class="tsd-signature tsd-kind-icon">tiles<span class="tsd-signature-symbol">:</span> <a href="groundtiledata.html" class="tsd-signature-type">GroundTileData</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/update-packet.ts#L23">packets/incoming/update-packet.ts:23</a></li>
+							<li>Defined in src/packets/incoming/update-packet.ts:23</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -197,17 +196,6 @@
 							<p>The new tiles which are visible.</p>
 						</div>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/packettype.html" class="tsd-signature-type">PacketType</a><span class="tsd-signature-symbol"> =&nbsp;PacketType.UPDATE</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#type">type</a></p>
-						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/update-packet.ts#L16">packets/incoming/update-packet.ts:16</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -223,7 +211,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/update-packet.ts#L40">packets/incoming/update-packet.ts:40</a></li>
+									<li>Defined in src/packets/incoming/update-packet.ts:40</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -247,7 +235,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/update-packet.ts#L64">packets/incoming/update-packet.ts:64</a></li>
+									<li>Defined in src/packets/incoming/update-packet.ts:64</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -284,16 +272,13 @@
 								<a href="updatepacket.html#drops" class="tsd-kind-icon">drops</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="updatepacket.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="updatepacket.html#newobjects" class="tsd-kind-icon">new<wbr>Objects</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="updatepacket.html#propagate" class="tsd-kind-icon">propagate</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="updatepacket.html#tiles" class="tsd-kind-icon">tiles</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="updatepacket.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="updatepacket.html#read" class="tsd-kind-icon">read</a>

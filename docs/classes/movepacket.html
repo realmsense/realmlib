@@ -68,7 +68,7 @@
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p>Sent to acknowledge a <code>NewTickPacket</code>, and to notify the
-						server of the client&#39;s current position and time.</p>
+						server of the client&quot;s current position and time.</p>
 					</div>
 				</div>
 			</section>
@@ -99,12 +99,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="movepacket.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="movepacket.html#newposition" class="tsd-kind-icon">new<wbr>Position</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="movepacket.html#propagate" class="tsd-kind-icon">propagate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="movepacket.html#records" class="tsd-kind-icon">records</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="movepacket.html#serverrealtimems" class="tsd-kind-icon">server<wbr>Real<wbr>TimeMS</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="movepacket.html#tickid" class="tsd-kind-icon">tick<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="movepacket.html#time" class="tsd-kind-icon">time</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="movepacket.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -129,7 +129,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/move-packet.ts#L35">packets/outgoing/move-packet.ts:35</a></li>
+									<li>Defined in src/packets/outgoing/move-packet.ts:38</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="movepacket.html" class="tsd-signature-type">MovePacket</a></h4>
@@ -140,12 +140,23 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <a href="../enums/packetmap.html#move" class="tsd-signature-type">MOVE</a><span class="tsd-signature-symbol"> =&nbsp;PacketMap.MOVE</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#id">id</a></p>
+						<ul>
+							<li>Defined in src/packets/outgoing/move-packet.ts:14</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="newposition" class="tsd-anchor"></a>
 					<h3>new<wbr>Position</h3>
 					<div class="tsd-signature tsd-kind-icon">new<wbr>Position<span class="tsd-signature-symbol">:</span> <a href="worldposdata.html" class="tsd-signature-type">WorldPosData</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/move-packet.ts#L29">packets/outgoing/move-packet.ts:29</a></li>
+							<li>Defined in src/packets/outgoing/move-packet.ts:32</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -155,23 +166,12 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="propagate" class="tsd-anchor"></a>
-					<h3>propagate</h3>
-					<div class="tsd-signature tsd-kind-icon">propagate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#propagate">propagate</a></p>
-						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/move-packet.ts#L15">packets/outgoing/move-packet.ts:15</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="records" class="tsd-anchor"></a>
 					<h3>records</h3>
 					<div class="tsd-signature tsd-kind-icon">records<span class="tsd-signature-symbol">:</span> <a href="moverecord.html" class="tsd-signature-type">MoveRecord</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/move-packet.ts#L35">packets/outgoing/move-packet.ts:35</a></li>
+							<li>Defined in src/packets/outgoing/move-packet.ts:38</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -182,12 +182,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="serverrealtimems" class="tsd-anchor"></a>
+					<h3>server<wbr>Real<wbr>TimeMS</h3>
+					<div class="tsd-signature tsd-kind-icon">server<wbr>Real<wbr>TimeMS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/outgoing/move-packet.ts:28</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The current serer time in ms.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="tickid" class="tsd-anchor"></a>
 					<h3>tick<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">tick<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/move-packet.ts#L21">packets/outgoing/move-packet.ts:21</a></li>
+							<li>Defined in src/packets/outgoing/move-packet.ts:20</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -202,7 +217,7 @@
 					<div class="tsd-signature tsd-kind-icon">time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/move-packet.ts#L25">packets/outgoing/move-packet.ts:25</a></li>
+							<li>Defined in src/packets/outgoing/move-packet.ts:24</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -210,17 +225,6 @@
 							<p>The current client time.</p>
 						</div>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/packettype.html" class="tsd-signature-type">PacketType</a><span class="tsd-signature-symbol"> =&nbsp;PacketType.MOVE</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#type">type</a></p>
-						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/move-packet.ts#L14">packets/outgoing/move-packet.ts:14</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -236,7 +240,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/move-packet.ts#L52">packets/outgoing/move-packet.ts:52</a></li>
+									<li>Defined in src/packets/outgoing/move-packet.ts:60</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -260,7 +264,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/move-packet.ts#L42">packets/outgoing/move-packet.ts:42</a></li>
+									<li>Defined in src/packets/outgoing/move-packet.ts:49</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -294,22 +298,22 @@
 								<a href="movepacket.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="movepacket.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="movepacket.html#newposition" class="tsd-kind-icon">new<wbr>Position</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="movepacket.html#propagate" class="tsd-kind-icon">propagate</a>
+								<a href="movepacket.html#records" class="tsd-kind-icon">records</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="movepacket.html#records" class="tsd-kind-icon">records</a>
+								<a href="movepacket.html#serverrealtimems" class="tsd-kind-icon">server<wbr>Real<wbr>TimeMS</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="movepacket.html#tickid" class="tsd-kind-icon">tick<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="movepacket.html#time" class="tsd-kind-icon">time</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="movepacket.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="movepacket.html#read" class="tsd-kind-icon">read</a>

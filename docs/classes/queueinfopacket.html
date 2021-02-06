@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ImminentArenaWavePacket | realmlib</title>
+	<title>QueueInfoPacket | realmlib</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="imminentarenawavepacket.html">ImminentArenaWavePacket</a>
+					<a href="queueinfopacket.html">QueueInfoPacket</a>
 				</li>
 			</ul>
-			<h1>Class ImminentArenaWavePacket</h1>
+			<h1>Class QueueInfoPacket</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Received when a new arena wave is about to begin.</p>
+						<p>Received when the client connects to a server with a queue.</p>
 					</div>
 				</div>
 			</section>
@@ -75,7 +75,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ImminentArenaWavePacket</span>
+						<span class="target">QueueInfoPacket</span>
 					</li>
 				</ul>
 			</section>
@@ -90,61 +90,91 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="queueinfopacket.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="imminentarenawavepacket.html#currentruntime" class="tsd-kind-icon">current<wbr>Runtime</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="imminentarenawavepacket.html#propagate" class="tsd-kind-icon">propagate</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="imminentarenawavepacket.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="queueinfopacket.html#currentposition" class="tsd-kind-icon">current<wbr>Position</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="queueinfopacket.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="queueinfopacket.html#maxposition" class="tsd-kind-icon">max<wbr>Position</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="imminentarenawavepacket.html#read" class="tsd-kind-icon">read</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="imminentarenawavepacket.html#write" class="tsd-kind-icon">write</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queueinfopacket.html#read" class="tsd-kind-icon">read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queueinfopacket.html#write" class="tsd-kind-icon">write</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Queue<wbr>Info<wbr>Packet<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="queueinfopacket.html" class="tsd-signature-type">QueueInfoPacket</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/packets/incoming/queue-info.ts:20</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="queueinfopacket.html" class="tsd-signature-type">QueueInfoPacket</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="currentruntime" class="tsd-anchor"></a>
-					<h3>current<wbr>Runtime</h3>
-					<div class="tsd-signature tsd-kind-icon">current<wbr>Runtime<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="currentposition" class="tsd-anchor"></a>
+					<h3>current<wbr>Position</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/arena/imminent-arena-wave.ts#L18">packets/incoming/arena/imminent-arena-wave.ts:18</a></li>
+							<li>Defined in src/packets/incoming/queue-info.ts:15</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The length of time the player has been in the arena for.</p>
+							<p>The current position of the client in the queue</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="propagate" class="tsd-anchor"></a>
-					<h3>propagate</h3>
-					<div class="tsd-signature tsd-kind-icon">propagate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <a href="../enums/packetmap.html#queue_info" class="tsd-signature-type">QUEUE_INFO</a><span class="tsd-signature-symbol"> =&nbsp;PacketMap.QUEUE_INFO</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#propagate">propagate</a></p>
+						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/arena/imminent-arena-wave.ts#L12">packets/incoming/arena/imminent-arena-wave.ts:12</a></li>
+							<li>Defined in src/packets/incoming/queue-info.ts:10</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/packettype.html" class="tsd-signature-type">PacketType</a><span class="tsd-signature-symbol"> =&nbsp;PacketType.IMMINENT_ARENA_WAVE</span></div>
+					<a name="maxposition" class="tsd-anchor"></a>
+					<h3>max<wbr>Position</h3>
+					<div class="tsd-signature tsd-kind-icon">max<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#type">type</a></p>
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/arena/imminent-arena-wave.ts#L11">packets/incoming/arena/imminent-arena-wave.ts:11</a></li>
+							<li>Defined in src/packets/incoming/queue-info.ts:20</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The maximum amount of clients allowed in the queue</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -160,7 +190,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/arena/imminent-arena-wave.ts#L21">packets/incoming/arena/imminent-arena-wave.ts:21</a></li>
+									<li>Defined in src/packets/incoming/queue-info.ts:28</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -184,7 +214,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/arena/imminent-arena-wave.ts#L25">packets/incoming/arena/imminent-arena-wave.ts:25</a></li>
+									<li>Defined in src/packets/incoming/queue-info.ts:33</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -212,22 +242,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="imminentarenawavepacket.html" class="tsd-kind-icon">Imminent<wbr>Arena<wbr>Wave<wbr>Packet</a>
+						<a href="queueinfopacket.html" class="tsd-kind-icon">Queue<wbr>Info<wbr>Packet</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="imminentarenawavepacket.html#currentruntime" class="tsd-kind-icon">current<wbr>Runtime</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="queueinfopacket.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="imminentarenawavepacket.html#propagate" class="tsd-kind-icon">propagate</a>
+								<a href="queueinfopacket.html#currentposition" class="tsd-kind-icon">current<wbr>Position</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="imminentarenawavepacket.html#type" class="tsd-kind-icon">type</a>
+								<a href="queueinfopacket.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="queueinfopacket.html#maxposition" class="tsd-kind-icon">max<wbr>Position</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="imminentarenawavepacket.html#read" class="tsd-kind-icon">read</a>
+								<a href="queueinfopacket.html#read" class="tsd-kind-icon">read</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="imminentarenawavepacket.html#write" class="tsd-kind-icon">write</a>
+								<a href="queueinfopacket.html#write" class="tsd-kind-icon">write</a>
 							</li>
 						</ul>
 					</li>

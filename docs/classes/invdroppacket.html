@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Sent to drop an item from the client&#39;s inventory.</p>
+						<p>Sent to drop an item from the client&quot;s inventory.</p>
 					</div>
 				</div>
 			</section>
@@ -90,11 +90,16 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="invdroppacket.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="invdroppacket.html#propagate" class="tsd-kind-icon">propagate</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="invdroppacket.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="invdroppacket.html#slotobject" class="tsd-kind-icon">slot<wbr>Object</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="invdroppacket.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -108,15 +113,35 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Inv<wbr>Drop<wbr>Packet<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="invdroppacket.html" class="tsd-signature-type">InvDropPacket</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/packets/outgoing/inv-drop-packet.ts:18</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="invdroppacket.html" class="tsd-signature-type">InvDropPacket</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="propagate" class="tsd-anchor"></a>
-					<h3>propagate</h3>
-					<div class="tsd-signature tsd-kind-icon">propagate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <a href="../enums/packetmap.html#invdrop" class="tsd-signature-type">INVDROP</a><span class="tsd-signature-symbol"> =&nbsp;PacketMap.INVDROP</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#propagate">propagate</a></p>
+						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/inv-drop-packet.ts#L13">packets/outgoing/inv-drop-packet.ts:13</a></li>
+							<li>Defined in src/packets/outgoing/inv-drop-packet.ts:12</li>
 						</ul>
 					</aside>
 				</section>
@@ -126,7 +151,7 @@
 					<div class="tsd-signature tsd-kind-icon">slot<wbr>Object<span class="tsd-signature-symbol">:</span> <a href="slotobjectdata.html" class="tsd-signature-type">SlotObjectData</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/inv-drop-packet.ts#L19">packets/outgoing/inv-drop-packet.ts:19</a></li>
+							<li>Defined in src/packets/outgoing/inv-drop-packet.ts:18</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -134,17 +159,6 @@
 							<p>The slot to drop the item from.</p>
 						</div>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/packettype.html" class="tsd-signature-type">PacketType</a><span class="tsd-signature-symbol"> =&nbsp;PacketType.INVDROP</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#type">type</a></p>
-						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/inv-drop-packet.ts#L12">packets/outgoing/inv-drop-packet.ts:12</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -160,7 +174,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/inv-drop-packet.ts#L26">packets/outgoing/inv-drop-packet.ts:26</a></li>
+									<li>Defined in src/packets/outgoing/inv-drop-packet.ts:29</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -184,7 +198,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/inv-drop-packet.ts#L22">packets/outgoing/inv-drop-packet.ts:22</a></li>
+									<li>Defined in src/packets/outgoing/inv-drop-packet.ts:25</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -214,14 +228,14 @@
 					<li class="current tsd-kind-class">
 						<a href="invdroppacket.html" class="tsd-kind-icon">Inv<wbr>Drop<wbr>Packet</a>
 						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="invdroppacket.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="invdroppacket.html#propagate" class="tsd-kind-icon">propagate</a>
+								<a href="invdroppacket.html#id" class="tsd-kind-icon">id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="invdroppacket.html#slotobject" class="tsd-kind-icon">slot<wbr>Object</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="invdroppacket.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="invdroppacket.html#read" class="tsd-kind-icon">read</a>

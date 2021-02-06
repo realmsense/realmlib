@@ -62,12 +62,10 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#realmlibnet" id="realmlibnet" style="color: inherit; text-decoration: none;">
-					<h1>realmlib/net</h1>
+				<a href="#realmlib" id="realmlib" style="color: inherit; text-decoration: none;">
+					<h1>realmlib</h1>
 				</a>
-				<p><a href="https://travis-ci.org/thomas-crane/realmlib-net"><img src="https://travis-ci.org/thomas-crane/realmlib-net.svg?branch=master" alt="Build Status"></a>
-				<a href="https://www.codefactor.io/repository/github/thomas-crane/realmlib-net/overview/master"><img src="https://www.codefactor.io/repository/github/thomas-crane/realmlib-net/badge/master" alt="CodeFactor"></a></p>
-				<p>A networking library for Realm of the Mad God.</p>
+				<p>A networking library for Realm of the Mad God Exalt.</p>
 				<a href="#contents" id="contents" style="color: inherit; text-decoration: none;">
 					<h2>Contents</h2>
 				</a>
@@ -81,16 +79,22 @@
 				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 					<h2>Install</h2>
 				</a>
-				<pre><code class="language-bash">npm install realmlib</code></pre>
+				<p>Make sure you have <a href="https://nodejs.org/en/download/">Nodejs 12+</a> installed then download the project:</p>
+				<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://git.extacy.cc/Extacy/realmlib.git
+<span class="hljs-built_in">cd</span> realmlib</code></pre>
+				<p>Install the TypeScript compiler then compile the source:</p>
+				<pre><code class="language-bash">npm install -g typescript
+tsc -p .</code></pre>
+				<p>Your compiled code will be in the <code>lib</code> folder ready to use</p>
 				<a href="#use" id="use" style="color: inherit; text-decoration: none;">
 					<h2>Use</h2>
 				</a>
 				<p>The realmlib networking module cannot be used on its own. It is designed to be used as a building block for larger RotMG projects which require an implementation of the RotMG networking protocol. Such project may include</p>
 				<ul>
 					<li>MITM proxies (such as KRelay or JRelay).</li>
-					<li>Clientless applications (such as nrelay).</li>
+					<li>Clientless applications (such as <a href="https://git.extacy.cc/Extacy/nrelay">nrelay</a>).</li>
 				</ul>
-				<a href="#using-the-codepacketiocode-class" id="using-the-codepacketiocode-class" style="color: inherit; text-decoration: none;">
+				<a href="#using-the-packetio-class" id="using-the-packetio-class" style="color: inherit; text-decoration: none;">
 					<h3>Using the <code>PacketIO</code> class</h3>
 				</a>
 				<p>The <code>PacketIO</code> class provides an event based way of sending and receiving RotMG packets. It is very likely that a project which depends upon realmlib will make use of the <code>PacketIO</code> class.</p>
@@ -98,13 +102,11 @@
 				<ul>
 					<li><code>socket</code> - An instance of <a href="https://nodejs.org/api/net.html#net_class_net_socket"><code>net.Socket</code></a></li>
 					<li><code>rc4</code> - An object which contains an incoming RC4 key and an outgoing RC4 key.</li>
-					<li><code>packetMap</code> - An object which maps packet types to their IDs.</li>
 				</ul>
 				<p>By default,</p>
 				<ul>
 					<li><code>socket</code> will be initialised to <code>undefined</code>.</li>
 					<li><code>rc4</code> will be initialised to an object containing the current RotMG incoming and outgoing RC4 keys.</li>
-					<li><code>packetMap</code> will be initialised to an empty object literal (<code>{}</code>).</li>
 				</ul>
 				<p>If a <code>socket</code> is provided, the <code>PacketIO</code> instance will be immediately attached to that socket. A <code>PacketIO</code> instance can always be attached to a socket after constructed via the <code>attach()</code> method, so providing a socket to the constructor is not necessary.</p>
 				<p>The default values which are used for the <code>rc4</code> property are set up for a clientless application. However, they are configurable to allow the <code>PacketIO</code> class to be used for other applications. For example, when building a MITM proxy, the <code>PacketIO</code> instance which listens to traffic coming from the server should use the <strong>incoming</strong> key for both the incoming and outgoing key configurations. The <code>PacketIO</code> instance which is listening to traffic coming from the client should use the <strong>outgoing</strong> key for both the incoming and outgoing key configurations.</p>
@@ -123,19 +125,6 @@
     outgoingKey: OUTGOING_KEY,
   }
 })</code></pre>
-				<p>The <code>packetMap</code> property is the most important one, as it allows the <code>PacketIO</code> instance to resolve packet ids to their types. This is necessary in order to create the right instances of packets when they are received, and to use the right id when sending packets.</p>
-				<p>The <code>packetMap</code> object is expected to <strong>bidirectional</strong>. That is, if the map contains the property</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { PacketMap, PacketType } <span class="hljs-keyword">from</span> <span class="hljs-string">'realmlib'</span>;
-
-<span class="hljs-keyword">const</span> packetMap: PacketMap = {
-  FAILURE: <span class="hljs-number">0</span>,
-};</code></pre>
-				<p>it should also contain the reverse of that property.</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> packetMap: PacketMap = {
-  FAILURE: <span class="hljs-number">0</span>,
-  <span class="hljs-number">0</span>: PacketType.FAILURE,
-};</code></pre>
-				<p>Ideally, the <code>packetMap</code> should contain an entry for each property present in the <a href="src/packet-type.ts"><code>PacketType</code> enum</a>. This will ensure that the <code>PacketIO</code> instance knows how to create any type of packet which it may receive. If some of the packet types are missing, the <code>PacketIO</code> will be unable to send those packets, and will not be able to create an instance of the packet when one is received.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -155,7 +144,7 @@
 						<a href="enums/failurecode.html" class="tsd-kind-icon">Failure<wbr>Code</a>
 					</li>
 					<li class=" tsd-kind-enum">
-						<a href="enums/packettype.html" class="tsd-kind-icon">Packet<wbr>Type</a>
+						<a href="enums/packetmap.html" class="tsd-kind-icon">Packet<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/petupgradepaymenttype.html" class="tsd-kind-icon">Pet<wbr>Upgrade<wbr>Payment<wbr>Type</a>
@@ -168,9 +157,6 @@
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/traderesult.html" class="tsd-kind-icon">Trade<wbr>Result</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/acceptarenadeathpacket.html" class="tsd-kind-icon">Accept<wbr>Arena<wbr>Death<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/accepttradepacket.html" class="tsd-kind-icon">Accept<wbr>Trade<wbr>Packet</a>
@@ -194,9 +180,6 @@
 						<a href="classes/aoepacket.html" class="tsd-kind-icon">Aoe<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/arenadeathpacket.html" class="tsd-kind-icon">Arena<wbr>Death<wbr>Packet</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/buypacket.html" class="tsd-kind-icon">Buy<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -213,6 +196,12 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/changetradepacket.html" class="tsd-kind-icon">Change<wbr>Trade<wbr>Packet</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/chathellopacket.html" class="tsd-kind-icon">Chat<wbr>Hello<wbr>Packet</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/chattoken.html" class="tsd-kind-icon">Chat<wbr>Token</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/checkcreditspacket.html" class="tsd-kind-icon">Check<wbr>Credits<wbr>Packet</a>
@@ -257,13 +246,13 @@
 						<a href="classes/enemyshootpacket.html" class="tsd-kind-icon">Enemy<wbr>Shoot<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/enterarenapacket.html" class="tsd-kind-icon">Enter<wbr>Arena<wbr>Packet</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/escapepacket.html" class="tsd-kind-icon">Escape<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/evolvedpetmessage.html" class="tsd-kind-icon">Evolved<wbr>Pet<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/exaltationupdatepacket.html" class="tsd-kind-icon">Exaltation<wbr>Update<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/failurepacket.html" class="tsd-kind-icon">Failure<wbr>Packet</a>
@@ -305,9 +294,6 @@
 						<a href="classes/hellopacket.html" class="tsd-kind-icon">Hello<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/imminentarenawavepacket.html" class="tsd-kind-icon">Imminent<wbr>Arena<wbr>Wave<wbr>Packet</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="classes/invdroppacket.html" class="tsd-kind-icon">Inv<wbr>Drop<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -345,6 +331,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/newabilitymessage.html" class="tsd-kind-icon">New<wbr>Ability<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/newcharacterinfopacket.html" class="tsd-kind-icon">New<wbr>Character<wbr>Info<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/newtickpacket.html" class="tsd-kind-icon">New<wbr>Tick<wbr>Packet</a>
@@ -407,10 +396,10 @@
 						<a href="classes/questobjectidpacket.html" class="tsd-kind-icon">Quest<wbr>Object<wbr>IdPacket</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/questredeempacket.html" class="tsd-kind-icon">Quest<wbr>Redeem<wbr>Packet</a>
+						<a href="classes/questredeemresponsepacket.html" class="tsd-kind-icon">Quest<wbr>Redeem<wbr>Response<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="classes/questredeemresponsepacket.html" class="tsd-kind-icon">Quest<wbr>Redeem<wbr>Response<wbr>Packet</a>
+						<a href="classes/queueinfopacket.html" class="tsd-kind-icon">Queue<wbr>Info<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/rc4.html" class="tsd-kind-icon">RC4</a>
@@ -497,6 +486,9 @@
 						<a href="classes/useportalpacket.html" class="tsd-kind-icon">Use<wbr>Portal<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/vaultupdatepacket.html" class="tsd-kind-icon">Vault<wbr>Update<wbr>Packet</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/verifyemailpacket.html" class="tsd-kind-icon">Verify<wbr>Email<wbr>Packet</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -510,9 +502,6 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/packet.html" class="tsd-kind-icon">Packet</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/packetmap.html" class="tsd-kind-icon">Packet<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/point.html" class="tsd-kind-icon">Point</a>
@@ -529,8 +518,14 @@
 					<li class=" tsd-kind-function">
 						<a href="globals.html#createpacket" class="tsd-kind-icon">create<wbr>Packet</a>
 					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#read" class="tsd-kind-icon">read</a>
+					</li>
 					<li class=" tsd-kind-object-literal tsd-is-not-exported">
 						<a href="globals.html#default_rc4" class="tsd-kind-icon">DEFAULT_<wbr>RC4</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#packettype" class="tsd-kind-icon">Packet<wbr>Type</a>
 					</li>
 				</ul>
 			</nav>

@@ -80,9 +80,12 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="failurecode.html#badkey" class="tsd-kind-icon">Bad<wbr>Key</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="failurecode.html#emailverificationneeded" class="tsd-kind-icon">Email<wbr>Verification<wbr>Needed</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="failurecode.html#ipblocked" class="tsd-kind-icon">IPBlocked</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="failurecode.html#incorrectversion" class="tsd-kind-icon">Incorrect<wbr>Version</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="failurecode.html#invalidteleporttarget" class="tsd-kind-icon">Invalid<wbr>Teleport<wbr>Target</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="failurecode.html#serverqueuefull" class="tsd-kind-icon">Server<wbr>Queue<wbr>Full</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="failurecode.html#teleportrealmblock" class="tsd-kind-icon">Teleport<wbr>Realm<wbr>Block</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="failurecode.html#wrongserverentered" class="tsd-kind-icon">Wrong<wbr>Server<wbr>Entered</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,7 +99,7 @@
 					<div class="tsd-signature tsd-kind-icon">Bad<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;5</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/models/failure-code.ts#L12">models/failure-code.ts:12</a></li>
+							<li>Defined in src/models/failure-code.ts:16</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -111,7 +114,7 @@
 					<div class="tsd-signature tsd-kind-icon">Email<wbr>Verification<wbr>Needed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;7</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/models/failure-code.ts#L20">models/failure-code.ts:20</a></li>
+							<li>Defined in src/models/failure-code.ts:24</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -121,12 +124,27 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="ipblocked" class="tsd-anchor"></a>
+					<h3>IPBlocked</h3>
+					<div class="tsd-signature tsd-kind-icon">IPBlocked<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/models/failure-code.ts:8</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Received when the client attempts to connect using a blocked IP address.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="incorrectversion" class="tsd-anchor"></a>
 					<h3>Incorrect<wbr>Version</h3>
 					<div class="tsd-signature tsd-kind-icon">Incorrect<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;4</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/models/failure-code.ts#L8">models/failure-code.ts:8</a></li>
+							<li>Defined in src/models/failure-code.ts:12</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -141,7 +159,7 @@
 					<div class="tsd-signature tsd-kind-icon">Invalid<wbr>Teleport<wbr>Target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;6</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/models/failure-code.ts#L16">models/failure-code.ts:16</a></li>
+							<li>Defined in src/models/failure-code.ts:20</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -151,19 +169,47 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="serverqueuefull" class="tsd-anchor"></a>
+					<h3>Server<wbr>Queue<wbr>Full</h3>
+					<div class="tsd-signature tsd-kind-icon">Server<wbr>Queue<wbr>Full<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;15</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/models/failure-code.ts:36</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Received when the server the client enters has a queue</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="teleportrealmblock" class="tsd-anchor"></a>
 					<h3>Teleport<wbr>Realm<wbr>Block</h3>
 					<div class="tsd-signature tsd-kind-icon">Teleport<wbr>Realm<wbr>Block<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;9</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/models/failure-code.ts#L24">models/failure-code.ts:24</a></li>
+							<li>Defined in src/models/failure-code.ts:28</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<blockquote>
-								<p>Unknown.</p>
-							</blockquote>
+							<p>Received when teleporting when the client has the non-guild cooldown</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="wrongserverentered" class="tsd-anchor"></a>
+					<h3>Wrong<wbr>Server<wbr>Entered</h3>
+					<div class="tsd-signature tsd-kind-icon">Wrong<wbr>Server<wbr>Entered<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;10</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/models/failure-code.ts:32</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Received when the client enters the wrong server</p>
 						</div>
 					</div>
 				</section>
@@ -191,13 +237,22 @@
 								<a href="failurecode.html#emailverificationneeded" class="tsd-kind-icon">Email<wbr>Verification<wbr>Needed</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="failurecode.html#ipblocked" class="tsd-kind-icon">IPBlocked</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="failurecode.html#incorrectversion" class="tsd-kind-icon">Incorrect<wbr>Version</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="failurecode.html#invalidteleporttarget" class="tsd-kind-icon">Invalid<wbr>Teleport<wbr>Target</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="failurecode.html#serverqueuefull" class="tsd-kind-icon">Server<wbr>Queue<wbr>Full</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="failurecode.html#teleportrealmblock" class="tsd-kind-icon">Teleport<wbr>Realm<wbr>Block</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="failurecode.html#wrongserverentered" class="tsd-kind-icon">Wrong<wbr>Server<wbr>Entered</a>
 							</li>
 						</ul>
 					</li>

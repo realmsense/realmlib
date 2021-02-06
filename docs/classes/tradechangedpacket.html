@@ -98,9 +98,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tradechangedpacket.html#id" class="tsd-kind-icon">id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tradechangedpacket.html#offer" class="tsd-kind-icon">offer</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tradechangedpacket.html#propagate" class="tsd-kind-icon">propagate</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="tradechangedpacket.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -125,7 +124,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/trade-changed.ts#L21">packets/incoming/trade-changed.ts:21</a></li>
+									<li>Defined in src/packets/incoming/trade-changed.ts:20</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="tradechangedpacket.html" class="tsd-signature-type">TradeChangedPacket</a></h4>
@@ -136,43 +135,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <a href="../enums/packetmap.html#tradechanged" class="tsd-signature-type">TRADECHANGED</a><span class="tsd-signature-symbol"> =&nbsp;PacketMap.TRADECHANGED</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#id">id</a></p>
+						<ul>
+							<li>Defined in src/packets/incoming/trade-changed.ts:11</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="offer" class="tsd-anchor"></a>
 					<h3>offer</h3>
 					<div class="tsd-signature tsd-kind-icon">offer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/trade-changed.ts#L21">packets/incoming/trade-changed.ts:21</a></li>
+							<li>Defined in src/packets/incoming/trade-changed.ts:20</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A description of which items in the trade partner&#39;s inventory are selected.
+							<p>A description of which items in the trade partner&quot;s inventory are selected.
 							Items 0-3 are the hotbar items, and 4-12 are the 8 inventory slots.</p>
 						</div>
 						<p>If a value is <code>true</code>, then the item is selected.</p>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="propagate" class="tsd-anchor"></a>
-					<h3>propagate</h3>
-					<div class="tsd-signature tsd-kind-icon">propagate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#propagate">propagate</a></p>
-						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/trade-changed.ts#L12">packets/incoming/trade-changed.ts:12</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/packettype.html" class="tsd-signature-type">PacketType</a><span class="tsd-signature-symbol"> =&nbsp;PacketType.TRADECHANGED</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#type">type</a></p>
-						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/trade-changed.ts#L11">packets/incoming/trade-changed.ts:11</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -188,7 +176,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/trade-changed.ts#L28">packets/incoming/trade-changed.ts:28</a></li>
+									<li>Defined in src/packets/incoming/trade-changed.ts:27</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -212,7 +200,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/trade-changed.ts#L36">packets/incoming/trade-changed.ts:36</a></li>
+									<li>Defined in src/packets/incoming/trade-changed.ts:35</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -246,13 +234,10 @@
 								<a href="tradechangedpacket.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="tradechangedpacket.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="tradechangedpacket.html#offer" class="tsd-kind-icon">offer</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="tradechangedpacket.html#propagate" class="tsd-kind-icon">propagate</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="tradechangedpacket.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="tradechangedpacket.html#read" class="tsd-kind-icon">read</a>

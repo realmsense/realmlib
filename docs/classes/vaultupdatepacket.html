@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>EnterArenaPacket | realmlib</title>
+	<title>VaultUpdatePacket | realmlib</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="enterarenapacket.html">EnterArenaPacket</a>
+					<a href="vaultupdatepacket.html">VaultUpdatePacket</a>
 				</li>
 			</ul>
-			<h1>Class EnterArenaPacket</h1>
+			<h1>Class VaultUpdatePacket</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Sent to enter the arena.</p>
+						<p>Received for information when the player enters the new vault</p>
 					</div>
 				</div>
 			</section>
@@ -75,7 +75,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">EnterArenaPacket</span>
+						<span class="target">VaultUpdatePacket</span>
 					</li>
 				</ul>
 			</section>
@@ -90,61 +90,178 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="vaultupdatepacket.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="enterarenapacket.html#currency" class="tsd-kind-icon">currency</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="enterarenapacket.html#propagate" class="tsd-kind-icon">propagate</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="enterarenapacket.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#currentpotionmax" class="tsd-kind-icon">current<wbr>Potion<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#giftcontents" class="tsd-kind-icon">gift<wbr>Contents</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#giftitemcount" class="tsd-kind-icon">gift<wbr>Item<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#nextpotionmax" class="tsd-kind-icon">next<wbr>Potion<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#potioncontents" class="tsd-kind-icon">potion<wbr>Contents</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#potionitemcount" class="tsd-kind-icon">potion<wbr>Item<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#potionupgradecost" class="tsd-kind-icon">potion<wbr>Upgrade<wbr>Cost</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#unknownbool" class="tsd-kind-icon">unknown<wbr>Bool</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#vaultcontents" class="tsd-kind-icon">vault<wbr>Contents</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#vaultitemcount" class="tsd-kind-icon">vault<wbr>Item<wbr>Count</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="vaultupdatepacket.html#vaultupgradecost" class="tsd-kind-icon">vault<wbr>Upgrade<wbr>Cost</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="enterarenapacket.html#read" class="tsd-kind-icon">read</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="enterarenapacket.html#write" class="tsd-kind-icon">write</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="vaultupdatepacket.html#read" class="tsd-kind-icon">read</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="vaultupdatepacket.html#write" class="tsd-kind-icon">write</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Vault<wbr>Update<wbr>Packet<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="vaultupdatepacket.html" class="tsd-signature-type">VaultUpdatePacket</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in src/packets/incoming/vault-update.ts:24</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="vaultupdatepacket.html" class="tsd-signature-type">VaultUpdatePacket</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="currency" class="tsd-anchor"></a>
-					<h3>currency</h3>
-					<div class="tsd-signature tsd-kind-icon">currency<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="currentpotionmax" class="tsd-anchor"></a>
+					<h3>current<wbr>Potion<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Potion<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/arena/enter-arena-packet.ts#L18">packets/outgoing/arena/enter-arena-packet.ts:18</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<blockquote>
-								<p>Unknown.</p>
-							</blockquote>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="propagate" class="tsd-anchor"></a>
-					<h3>propagate</h3>
-					<div class="tsd-signature tsd-kind-icon">propagate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#propagate">propagate</a></p>
-						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/arena/enter-arena-packet.ts#L12">packets/outgoing/arena/enter-arena-packet.ts:12</a></li>
+							<li>Defined in src/packets/incoming/vault-update.ts:23</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/packettype.html" class="tsd-signature-type">PacketType</a><span class="tsd-signature-symbol"> =&nbsp;PacketType.ENTER_ARENA</span></div>
+					<a name="giftcontents" class="tsd-anchor"></a>
+					<h3>gift<wbr>Contents</h3>
+					<div class="tsd-signature tsd-kind-icon">gift<wbr>Contents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#type">type</a></p>
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/arena/enter-arena-packet.ts#L11">packets/outgoing/arena/enter-arena-packet.ts:11</a></li>
+							<li>Defined in src/packets/incoming/vault-update.ts:19</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="giftitemcount" class="tsd-anchor"></a>
+					<h3>gift<wbr>Item<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">gift<wbr>Item<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:16</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <a href="../enums/packetmap.html#vault_update" class="tsd-signature-type">VAULT_UPDATE</a><span class="tsd-signature-symbol"> =&nbsp;PacketMap.VAULT_UPDATE</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#id">id</a></p>
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:12</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="nextpotionmax" class="tsd-anchor"></a>
+					<h3>next<wbr>Potion<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">next<wbr>Potion<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:24</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="potioncontents" class="tsd-anchor"></a>
+					<h3>potion<wbr>Contents</h3>
+					<div class="tsd-signature tsd-kind-icon">potion<wbr>Contents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:20</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="potionitemcount" class="tsd-anchor"></a>
+					<h3>potion<wbr>Item<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">potion<wbr>Item<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:17</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="potionupgradecost" class="tsd-anchor"></a>
+					<h3>potion<wbr>Upgrade<wbr>Cost</h3>
+					<div class="tsd-signature tsd-kind-icon">potion<wbr>Upgrade<wbr>Cost<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:22</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="unknownbool" class="tsd-anchor"></a>
+					<h3>unknown<wbr>Bool</h3>
+					<div class="tsd-signature tsd-kind-icon">unknown<wbr>Bool<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:14</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vaultcontents" class="tsd-anchor"></a>
+					<h3>vault<wbr>Contents</h3>
+					<div class="tsd-signature tsd-kind-icon">vault<wbr>Contents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:18</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vaultitemcount" class="tsd-anchor"></a>
+					<h3>vault<wbr>Item<wbr>Count</h3>
+					<div class="tsd-signature tsd-kind-icon">vault<wbr>Item<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:15</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="vaultupgradecost" class="tsd-anchor"></a>
+					<h3>vault<wbr>Upgrade<wbr>Cost</h3>
+					<div class="tsd-signature tsd-kind-icon">vault<wbr>Upgrade<wbr>Cost<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/vault-update.ts:21</li>
 						</ul>
 					</aside>
 				</section>
@@ -162,7 +279,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/arena/enter-arena-packet.ts#L25">packets/outgoing/arena/enter-arena-packet.ts:25</a></li>
+									<li>Defined in src/packets/incoming/vault-update.ts:40</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -186,7 +303,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/outgoing/arena/enter-arena-packet.ts#L21">packets/outgoing/arena/enter-arena-packet.ts:21</a></li>
+									<li>Defined in src/packets/incoming/vault-update.ts:73</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -214,22 +331,52 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="enterarenapacket.html" class="tsd-kind-icon">Enter<wbr>Arena<wbr>Packet</a>
+						<a href="vaultupdatepacket.html" class="tsd-kind-icon">Vault<wbr>Update<wbr>Packet</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="enterarenapacket.html#currency" class="tsd-kind-icon">currency</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="enterarenapacket.html#propagate" class="tsd-kind-icon">propagate</a>
+								<a href="vaultupdatepacket.html#currentpotionmax" class="tsd-kind-icon">current<wbr>Potion<wbr>Max</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="enterarenapacket.html#type" class="tsd-kind-icon">type</a>
+								<a href="vaultupdatepacket.html#giftcontents" class="tsd-kind-icon">gift<wbr>Contents</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#giftitemcount" class="tsd-kind-icon">gift<wbr>Item<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#nextpotionmax" class="tsd-kind-icon">next<wbr>Potion<wbr>Max</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#potioncontents" class="tsd-kind-icon">potion<wbr>Contents</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#potionitemcount" class="tsd-kind-icon">potion<wbr>Item<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#potionupgradecost" class="tsd-kind-icon">potion<wbr>Upgrade<wbr>Cost</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#unknownbool" class="tsd-kind-icon">unknown<wbr>Bool</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#vaultcontents" class="tsd-kind-icon">vault<wbr>Contents</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#vaultitemcount" class="tsd-kind-icon">vault<wbr>Item<wbr>Count</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="vaultupdatepacket.html#vaultupgradecost" class="tsd-kind-icon">vault<wbr>Upgrade<wbr>Cost</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="enterarenapacket.html#read" class="tsd-kind-icon">read</a>
+								<a href="vaultupdatepacket.html#read" class="tsd-kind-icon">read</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="enterarenapacket.html#write" class="tsd-kind-icon">write</a>
+								<a href="vaultupdatepacket.html#write" class="tsd-kind-icon">write</a>
 							</li>
 						</ul>
 					</li>

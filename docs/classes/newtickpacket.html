@@ -98,11 +98,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="newtickpacket.html#propagate" class="tsd-kind-icon">propagate</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="newtickpacket.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="newtickpacket.html#serverlasttimerttms" class="tsd-kind-icon">server<wbr>Last<wbr>TimeRTTMS</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="newtickpacket.html#serverrealtimems" class="tsd-kind-icon">server<wbr>Real<wbr>TimeMS</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="newtickpacket.html#statuses" class="tsd-kind-icon">statuses</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="newtickpacket.html#tickid" class="tsd-kind-icon">tick<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="newtickpacket.html#ticktime" class="tsd-kind-icon">tick<wbr>Time</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="newtickpacket.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -127,7 +128,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/newtick-packet.ts#L33">packets/incoming/newtick-packet.ts:33</a></li>
+									<li>Defined in src/packets/incoming/newtick-packet.ts:40</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="newtickpacket.html" class="tsd-signature-type">NewTickPacket</a></h4>
@@ -138,15 +139,45 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="propagate" class="tsd-anchor"></a>
-					<h3>propagate</h3>
-					<div class="tsd-signature tsd-kind-icon">propagate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+					<a name="id" class="tsd-anchor"></a>
+					<h3>id</h3>
+					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <a href="../enums/packetmap.html#newtick" class="tsd-signature-type">NEWTICK</a><span class="tsd-signature-symbol"> =&nbsp;PacketMap.NEWTICK</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#propagate">propagate</a></p>
+						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/newtick-packet.ts#L13">packets/incoming/newtick-packet.ts:13</a></li>
+							<li>Defined in src/packets/incoming/newtick-packet.ts:12</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="serverlasttimerttms" class="tsd-anchor"></a>
+					<h3>server<wbr>Last<wbr>TimeRTTMS</h3>
+					<div class="tsd-signature tsd-kind-icon">server<wbr>Last<wbr>TimeRTTMS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/newtick-packet.ts:33</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Last server realtime in ms</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="serverrealtimems" class="tsd-anchor"></a>
+					<h3>server<wbr>Real<wbr>TimeMS</h3>
+					<div class="tsd-signature tsd-kind-icon">server<wbr>Real<wbr>TimeMS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/packets/incoming/newtick-packet.ts:29</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Server realtime in ms</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="statuses" class="tsd-anchor"></a>
@@ -154,7 +185,7 @@
 					<div class="tsd-signature tsd-kind-icon">statuses<span class="tsd-signature-symbol">:</span> <a href="objectstatusdata.html" class="tsd-signature-type">ObjectStatusData</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/newtick-packet.ts#L33">packets/incoming/newtick-packet.ts:33</a></li>
+							<li>Defined in src/packets/incoming/newtick-packet.ts:40</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -171,7 +202,7 @@
 					<div class="tsd-signature tsd-kind-icon">tick<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/newtick-packet.ts#L19">packets/incoming/newtick-packet.ts:19</a></li>
+							<li>Defined in src/packets/incoming/newtick-packet.ts:18</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -186,7 +217,7 @@
 					<div class="tsd-signature tsd-kind-icon">tick<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/newtick-packet.ts#L26">packets/incoming/newtick-packet.ts:26</a></li>
+							<li>Defined in src/packets/incoming/newtick-packet.ts:25</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -196,17 +227,6 @@
 						<p>This is not always accurate, so it is better to calculate it manually
 						if millisecond-level accuracy is required.</p>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/packettype.html" class="tsd-signature-type">PacketType</a><span class="tsd-signature-symbol"> =&nbsp;PacketType.NEWTICK</span></div>
-					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#type">type</a></p>
-						<ul>
-							<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/newtick-packet.ts#L12">packets/incoming/newtick-packet.ts:12</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -222,7 +242,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#read">read</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/newtick-packet.ts#L40">packets/incoming/newtick-packet.ts:40</a></li>
+									<li>Defined in src/packets/incoming/newtick-packet.ts:51</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -246,7 +266,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/packet.html">Packet</a>.<a href="../interfaces/packet.html#write">write</a></p>
 								<ul>
-									<li>Defined in <a href="https://git.extacy.cc/Extacy/realmlib/blob/2412329/src/packets/incoming/newtick-packet.ts#L52">packets/incoming/newtick-packet.ts:52</a></li>
+									<li>Defined in src/packets/incoming/newtick-packet.ts:65</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -280,7 +300,13 @@
 								<a href="newtickpacket.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="newtickpacket.html#propagate" class="tsd-kind-icon">propagate</a>
+								<a href="newtickpacket.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="newtickpacket.html#serverlasttimerttms" class="tsd-kind-icon">server<wbr>Last<wbr>TimeRTTMS</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="newtickpacket.html#serverrealtimems" class="tsd-kind-icon">server<wbr>Real<wbr>TimeMS</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="newtickpacket.html#statuses" class="tsd-kind-icon">statuses</a>
@@ -290,9 +316,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="newtickpacket.html#ticktime" class="tsd-kind-icon">tick<wbr>Time</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="newtickpacket.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="newtickpacket.html#read" class="tsd-kind-icon">read</a>
