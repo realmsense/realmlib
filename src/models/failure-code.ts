@@ -27,11 +27,11 @@ export enum FailureCode {
    */
   TeleportRealmBlock = 9,
   /**
-    * Received when the client enters the wrong server
-    */
+   * Received when the client enters the wrong server
+   */
   WrongServerEntered = 10,
   /**
-    * Received when the server the client enters has a queue
-    */
+   * Received when the server the client enters has a queue
+   */
   ServerQueueFull = 15
 }

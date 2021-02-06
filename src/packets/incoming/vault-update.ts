@@ -9,7 +9,7 @@ import { PacketMap } from "../../models/packet-map";
  */
 export class VaultUpdatePacket implements Packet {
 
-  readonly id = PacketMap.VAULT_UPDATE
+  readonly id = PacketMap.VAULT_UPDATE;
 
   unknownBool: boolean;
   vaultItemCount: number;
@@ -44,20 +44,20 @@ export class VaultUpdatePacket implements Packet {
     this.potionItemCount = compressedRead(reader);
 
     let counter = 0;
-    let itemCount = compressedRead(reader);
+    const itemCount = compressedRead(reader);
     while (counter < itemCount) {
       this.vaultContents.push(compressedRead(reader));
       counter++;
     }
 
-    let giftItemCount = compressedRead(reader);
+    const giftItemCount = compressedRead(reader);
     counter = 0;
     while (counter < giftItemCount) {
       this.giftContents.push(compressedRead(reader));
       counter++;
     }
 
-    let potionCount = compressedRead(reader);
+    const potionCount = compressedRead(reader);
     counter = 0;
     while (counter < potionCount) {
       this.potionContents.push(compressedRead(reader));

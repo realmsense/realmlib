@@ -10,15 +10,15 @@ import * as OutgoingPackets from "./packets/outgoing";
  * @throws {Error} if the packet cannot be created.
  */
 export function createPacket(type: string): Packet {
-  
+
   if (typeof type !== "string") {
     throw new TypeError(`Parameter "type" must be a string, not ${typeof type}`);
   }
 
-  if (PacketType[type] == undefined) {
+  if (PacketType[type] === undefined) {
     throw new Error(`Parameter "type" must be a valid packet type, not "${type}"`);
   }
-  
+
   switch (type) {
     case PacketType.FAILURE:
       return new IncomingPackets.FailurePacket();

@@ -10,7 +10,7 @@ import { read as compressedRead } from "../../data/compressed-int";
  */
 export class ShowEffectPacket implements Packet {
 
-  readonly id = PacketMap.SHOWEFFECT
+  readonly id = PacketMap.SHOWEFFECT;
 
   //#region packet-specific members
   /**
@@ -50,38 +50,38 @@ export class ShowEffectPacket implements Packet {
 
   read(reader: Reader): void {
     this.effectType = reader.readUnsignedByte();
-    let loc2 = reader.readUnsignedByte();
+    const loc2 = reader.readUnsignedByte();
     if (loc2 & 64) {
       this.targetObjectId = compressedRead(reader);
     } else {
       this.targetObjectId = 0;
     }
-    if(loc2 & 2){
+    if (loc2 & 2) {
       this.pos1.x = reader.readFloat();
     } else {
       this.pos1.x = 0;
     }
-    if(loc2 & 4) {
+    if (loc2 & 4) {
             this.pos1.y = reader.readFloat();
     } else {
       this.pos1.y = 0;
     }
-    if(loc2 & 8){
+    if (loc2 & 8) {
       this.pos2.x = reader.readFloat();
     } else {
       this.pos2.x = 0;
     }
-    if(loc2 & 16) {
+    if (loc2 & 16) {
       this.pos2.y = reader.readFloat();
     } else {
       this.pos2.y = 0;
     }
-    if(loc2 & 1) {
+    if (loc2 & 1) {
       this.color = reader.readInt32();
     } else {
       this.color = 4294967295;
     }
-    if(loc2 & 32) {
+    if (loc2 & 32) {
       this.duration = reader.readFloat();
     } else {
       this.duration = 1;
