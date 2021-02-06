@@ -1,6 +1,6 @@
-# realmlib-unity
+# realmlib
 
-A networking library for Realm of the Mad God Unity.
+A networking library for Realm of the Mad God Exalt.
 
 ## Contents
 
@@ -21,7 +21,7 @@ Install the TypeScript compiler then compile the source:
 
 ```bash
 npm install -g typescript
-tsc
+tsc -p .
 ```
 
 Your compiled code will be in the `lib` folder ready to use
@@ -31,7 +31,7 @@ Your compiled code will be in the `lib` folder ready to use
 The realmlib networking module cannot be used on its own. It is designed to be used as a building block for larger RotMG projects which require an implementation of the RotMG networking protocol. Such project may include
 
 + MITM proxies (such as KRelay or JRelay).
-+ Clientless applications (such as nrelay).
++ Clientless applications (such as [nrelay](https://git.extacy.cc/Extacy/nrelay)).
 
 ### Using the `PacketIO` class
 
@@ -41,13 +41,11 @@ When a new `PacketIO` instance is constructed, it expects an object with 3 optio
 
 + `socket` - An instance of [`net.Socket`](https://nodejs.org/api/net.html#net_class_net_socket)
 + `rc4` - An object which contains an incoming RC4 key and an outgoing RC4 key.
-+ `packetMap` - An object which maps packet types to their IDs.
 
 By default,
 
 + `socket` will be initialised to `undefined`.
 + `rc4` will be initialised to an object containing the current RotMG incoming and outgoing RC4 keys.
-+ `packetMap` will be initialised to an empty object literal (`{}`).
 
 If a `socket` is provided, the `PacketIO` instance will be immediately attached to that socket. A `PacketIO` instance can always be attached to a socket after constructed via the `attach()` method, so providing a socket to the constructor is not necessary.
 
@@ -70,26 +68,3 @@ const clientIO = new PacketIO({
   }
 })
 ```
-
-The `packetMap` property is the most important one, as it allows the `PacketIO` instance to resolve packet ids to their types. This is necessary in order to create the right instances of packets when they are received, and to use the right id when sending packets.
-
-The `packetMap` object is expected to **bidirectional**. That is, if the map contains the property
-
-```typescript
-import { PacketMap, PacketType } from 'realmlib';
-
-const packetMap: PacketMap = {
-  FAILURE: 0,
-};
-```
-
-it should also contain the reverse of that property.
-
-```typescript
-const packetMap: PacketMap = {
-  FAILURE: 0,
-  0: PacketType.FAILURE,
-};
-```
-
-Ideally, the `packetMap` should contain an entry for each property present in the [`PacketType` enum](src/packet-type.ts). This will ensure that the `PacketIO` instance knows how to create any type of packet which it may receive. If some of the packet types are missing, the `PacketIO` will be unable to send those packets, and will not be able to create an instance of the packet when one is received.
