@@ -6,3 +6,4 @@ export * from './point';
 export * from './stat-type';
 export * from './trade-result';
 export * from "./packet-map";
+export * from "./packet-type";
