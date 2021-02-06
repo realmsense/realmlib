@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Sent to prompt the server to accept the connection of an account
@@ -87,24 +87,24 @@ export class HelloPacket implements Packet {
   //#endregion
 
   constructor() {
-    this.buildVersion = '';
+    this.buildVersion = "";
     this.gameId = 0;
-    this.guid = '';
+    this.guid = "";
     this.random1 = 0;
-    this.password = '';
+    this.password = "";
     this.random2 = 0;
-    this.secret = '';
+    this.secret = "";
     this.keyTime = 0;
     this.key = [];
-    this.mapJSON = '';
-    this.entryTag = '';
-    this.gameNet = '';
-    this.gameNetUserId = '';
-    this.playPlatform = '';
-    this.platformToken = '';
-    this.userToken = '';
-    this.trailer = '';
-    this.previousConnectionGuid = '';
+    this.mapJSON = "";
+    this.entryTag = "";
+    this.gameNet = "";
+    this.gameNetUserId = "";
+    this.playPlatform = "";
+    this.platformToken = "";
+    this.userToken = "";
+    this.trailer = "";
+    this.previousConnectionGuid = "";
   }
 
   write(writer: Writer): void {

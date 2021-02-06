@@ -1,8 +1,8 @@
-import { WorldPosData } from '../../data/world-pos-data';
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { WorldPosData } from "../../data/world-pos-data";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Sent when the player shoots a projectile.
@@ -63,7 +63,7 @@ export class PlayerShootPacket implements Packet {
     writer.writeShort(this.containerType);
     this.startingPos.write(writer);
     writer.writeFloat(this.angle);
-    // NB(thomas-crane): the client uses AS3's `int` function which is
+    // NB(thomas-crane): the client uses AS3"s `int` function which is
     // equivalent to `Math.floor` in JS.
     writer.writeShort(Math.floor(this.speedMult * 1000));
     writer.writeShort(Math.floor(this.lifeMult * 1000));

@@ -1,8 +1,8 @@
-import { WorldPosData } from '../../data/world-pos-data';
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { WorldPosData } from "../../data/world-pos-data";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when an entity has moved to a new position.

@@ -1,8 +1,8 @@
-import { Writer } from '../writer';
-import { Reader } from '../reader';
-import { DataPacket } from '../packet';
-import { read as compressedRead } from './compressed-int';
-import { StatType } from '../models/stat-type';
+import { Writer } from "../writer";
+import { Reader } from "../reader";
+import { DataPacket } from "../packet";
+import { read as compressedRead } from "./compressed-int";
+import { StatType } from "../models/stat-type";
 
 export class StatData implements DataPacket {
   /**
@@ -25,7 +25,7 @@ export class StatData implements DataPacket {
   constructor() {
     this.statType = 0;
     this.statValue = 0;
-    this.stringStatValue = '';
+    this.stringStatValue = "";
     this.unknownByte = 0;
   }
 

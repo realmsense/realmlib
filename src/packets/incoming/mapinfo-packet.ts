@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received in response to the `HelloPacket`.
@@ -36,7 +36,7 @@ export class MapInfoPacket implements Packet {
    */
   difficulty: number;
   /**
-   * The seed value for the client's PRNG.
+   * The seed value for the client"s PRNG.
    */
   fp: number;
   /**
@@ -77,16 +77,16 @@ export class MapInfoPacket implements Packet {
   constructor() {
     this.width = 0;
     this.height = 0;
-    this.name = '';
-    this.displayName = '';
-    this.realmName = '';
+    this.name = "";
+    this.displayName = "";
+    this.realmName = "";
     this.difficulty = 0;
     this.fp = 0;
     this.background = 0;
     this.allowPlayerTeleport = false;
     this.showDisplays = false;
     this.maxPlayers = 0;
-    this.connectionGuid = '';
+    this.connectionGuid = "";
     this.clientXML = [];
     this.extraXML = [];
     this.gameOpenedTime = 0;

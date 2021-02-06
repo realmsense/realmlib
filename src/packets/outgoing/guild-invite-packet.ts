@@ -1,10 +1,10 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
- * Sent to invite a player to the client's current guild.
+ * Sent to invite a player to the client"s current guild.
  */
 export class GuildInvitePacket implements Packet {
 
@@ -18,7 +18,7 @@ export class GuildInvitePacket implements Packet {
   //#endregion
 
   constructor() {
-    this.name = '';
+    this.name = "";
   }
 
   write(writer: Writer): void {

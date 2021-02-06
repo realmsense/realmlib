@@ -1,8 +1,8 @@
-import { WorldPosData } from '../../data/world-pos-data';
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { WorldPosData } from "../../data/world-pos-data";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when an AoE grenade has hit the ground.
@@ -38,7 +38,7 @@ export class AoePacket implements Packet {
    */
   origType: number;
   /**
-   * The color of the grenade's explosion particles.
+   * The color of the grenade"s explosion particles.
    * > The encoding of the color is unknown.
    */
   color: number;

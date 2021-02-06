@@ -146,7 +146,7 @@ export class Reader {
   readString(): string {
     const strlen = this.readShort();
     this.index += strlen;
-    return this.buffer.slice(this.index - strlen, this.index).toString('utf8');
+    return this.buffer.slice(this.index - strlen, this.index).toString("utf8");
   }
 
   /**
@@ -155,7 +155,7 @@ export class Reader {
   readStringUTF32(): string {
     const strlen = this.readInt32();
     this.index += strlen;
-    return this.buffer.slice(this.index - strlen, this.index).toString('utf8');
+    return this.buffer.slice(this.index - strlen, this.index).toString("utf8");
   }
 
   /**

@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * A packet which contains a file.
@@ -16,15 +16,15 @@ export class FilePacket implements Packet {
    */
   fileName: string;
   /**
-   * The bytes of the file. Don't ask me why this is a string,
-   * that's just how it is in the source code of the game.
+   * The bytes of the file. Don"t ask me why this is a string,
+   * that"s just how it is in the source code of the game.
    */
   file: string;
   //#endregion
 
   constructor() {
-    this.fileName = '';
-    this.file = '';
+    this.fileName = "";
+    this.file = "";
   }
 
   read(reader: Reader): void {

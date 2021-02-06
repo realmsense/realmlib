@@ -1,6 +1,6 @@
-import { Writer } from '../writer';
-import { Reader } from '../reader';
-import { DataPacket } from '../packet';
+import { Writer } from "../writer";
+import { Reader } from "../reader";
+import { DataPacket } from "../packet";
 
 export class GroundTileData implements DataPacket {
 

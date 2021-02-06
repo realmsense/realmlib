@@ -1,7 +1,7 @@
-import { Writer } from '../writer';
-import { Reader } from '../reader';
-import { DataPacket } from '../packet';
-import { ObjectStatusData } from './object-status-data';
+import { Writer } from "../writer";
+import { Reader } from "../reader";
+import { DataPacket } from "../packet";
+import { ObjectStatusData } from "./object-status-data";
 
 export class ObjectData implements DataPacket {
   /**

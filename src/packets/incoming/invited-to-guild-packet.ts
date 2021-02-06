@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when the player is invited to a guild.
@@ -22,8 +22,8 @@ export class InvitedToGuildPacket implements Packet {
   //#endregion
 
   constructor() {
-    this.name = '';
-    this.guildName = '';
+    this.name = "";
+    this.guildName = "";
   }
 
   read(reader: Reader): void {

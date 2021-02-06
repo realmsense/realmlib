@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when a global notification is sent out to all players.
@@ -23,7 +23,7 @@ export class GlobalNotificationPacket implements Packet {
 
   constructor() {
     this.notificationType = 0;
-    this.text = '';
+    this.text = "";
   }
 
   read(reader: Reader): void {

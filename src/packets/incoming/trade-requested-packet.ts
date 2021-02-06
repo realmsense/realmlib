@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when a trade is requested.
@@ -18,7 +18,7 @@ export class TradeRequestedPacket implements Packet {
   //#endregion
 
   constructor() {
-    this.name = '';
+    this.name = "";
   }
 
   read(reader: Reader): void {

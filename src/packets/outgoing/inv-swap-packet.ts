@@ -1,9 +1,9 @@
-import { SlotObjectData } from '../../data/slot-object-data';
-import { WorldPosData } from '../../data/world-pos-data';
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { SlotObjectData } from "../../data/slot-object-data";
+import { WorldPosData } from "../../data/world-pos-data";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Sent to swap the items of two slots.

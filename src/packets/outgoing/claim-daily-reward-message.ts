@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Sent to claim rewards from the login calendar.
@@ -22,8 +22,8 @@ export class ClaimDailyRewardMessage implements Packet {
   //#endregion
 
   constructor() {
-    this.claimKey = '';
-    this.claimType = '';
+    this.claimKey = "";
+    this.claimType = "";
   }
 
   write(writer: Writer): void {

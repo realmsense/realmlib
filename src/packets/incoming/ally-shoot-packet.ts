@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when another player shoots a projectile.
@@ -29,7 +29,7 @@ export class AllyShootPacket implements Packet {
   angle: number;
 
   /**
-   * Whether or not the shot is affected by the 'Inspired' buff (presumably).
+   * Whether or not the shot is affected by the "Inspired" buff (presumably).
    */
   bard: boolean;
   //#endregion

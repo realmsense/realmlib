@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Sent to create a new guild.
@@ -18,7 +18,7 @@ export class CreateGuildPacket implements Packet {
   //#endregion
 
   constructor() {
-    this.name = '';
+    this.name = "";
   }
 
   write(writer: Writer): void {

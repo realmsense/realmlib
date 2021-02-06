@@ -1,7 +1,7 @@
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
-import { Packet } from '../../packet';
-import { PacketMap } from '../../models/packet-map';
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
+import { Packet } from "../../packet";
+import { PacketMap } from "../../models/packet-map";
 
 export class ChatToken implements Packet {
     

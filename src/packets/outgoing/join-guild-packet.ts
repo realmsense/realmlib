@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Sent to accept a pending guild invite.
@@ -18,7 +18,7 @@ export class JoinGuildPacket implements Packet {
   //#endregion
 
   constructor() {
-    this.guildName = '';
+    this.guildName = "";
   }
 
   write(writer: Writer): void {

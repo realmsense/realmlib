@@ -1,4 +1,4 @@
-import { Reader } from '../reader';
+import { Reader } from "../reader";
 
 /* tslint:disable:no-bitwise */
 export function read(reader: Reader): number {

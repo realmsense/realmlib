@@ -1,8 +1,8 @@
-import { TradeItem } from '../../data/trade-item';
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { TradeItem } from "../../data/trade-item";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when a new active trade has been initiated.
@@ -13,16 +13,16 @@ export class TradeStartPacket implements Packet {
 
   //#region packet-specific members
   /**
-   * A description of the player's inventory. Items 0-3 are the hotbar items,
+   * A description of the player"s inventory. Items 0-3 are the hotbar items,
    * and 4-12 are the 8 inventory slots.
    */
   clientItems: TradeItem[];
   /**
-   * The trade partner's name.
+   * The trade partner"s name.
    */
   partnerName: string;
   /**
-   * A description of the trade partner's inventory. Items 0-3 are the
+   * A description of the trade partner"s inventory. Items 0-3 are the
    * hotbar items, and 4-12 are the 8 inventory slots.
    */
   partnerItems: TradeItem[];
@@ -30,7 +30,7 @@ export class TradeStartPacket implements Packet {
 
   constructor() {
     this.clientItems = [];
-    this.partnerName = '';
+    this.partnerName = "";
     this.partnerItems = [];
   }
 

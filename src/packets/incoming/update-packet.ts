@@ -1,10 +1,10 @@
-import { GroundTileData } from '../../data/ground-tile-data';
-import { read as compressedRead } from '../../data/compressed-int';
-import { ObjectData } from '../../data/object-data';
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { GroundTileData } from "../../data/ground-tile-data";
+import { read as compressedRead } from "../../data/compressed-int";
+import { ObjectData } from "../../data/object-data";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when an update even occurs. Some events include

@@ -1,11 +1,11 @@
-import { EventEmitter } from 'events';
-import { Socket } from 'net';
-import { INCOMING_KEY, OUTGOING_KEY, RC4 } from './crypto';
-import { Packet } from './packet';
-import { PacketMap } from './models/packet-map';
-import { createPacket } from './create-packet';
-import { Reader } from './reader';
-import { Writer } from './writer';
+import { EventEmitter } from "events";
+import { Socket } from "net";
+import { INCOMING_KEY, OUTGOING_KEY, RC4 } from "./crypto";
+import { Packet } from "./packet";
+import { PacketMap } from "./models/packet-map";
+import { createPacket } from "./create-packet";
+import { Reader } from "./reader";
+import { Writer } from "./writer";
 
 /**
  * The configuration for the RC4 ciphers used by this PacketIO.
@@ -77,8 +77,8 @@ export class PacketIO extends EventEmitter {
     this.receiveRC4 = new RC4(opts.rc4.incomingKey);
 
     this.eventHandlers = new Map([
-      ['data', this.onData.bind(this)],
-      ['connect', this.resetState.bind(this)]
+      ["data", this.onData.bind(this)],
+      ["connect", this.resetState.bind(this)]
     ]);
 
     if (opts.socket) {
@@ -124,12 +124,12 @@ export class PacketIO extends EventEmitter {
    */
   send(packet: Packet) {
     if (!this.socket || this.socket.destroyed) {
-      this.emit('error', new Error('Not attached to a socket.'));
+      this.emit("error", new Error("Not attached to a socket."));
       return;
     }
     const type = PacketMap[packet.id];
     if (type === undefined) {
-      this.emit('error', new Error(`PacketMap is missing a type for the packet ID "${packet.id}"`));
+      this.emit("error", new Error(`PacketMap is missing a type for the packet ID "${packet.id}"`));
     }
 
     if (this.outgoingQueue.length === 0) {
@@ -152,7 +152,7 @@ export class PacketIO extends EventEmitter {
     this.writer.writeHeader(packet.id);
     this.sendRC4.cipher(this.writer.buffer.slice(5, this.writer.index));
     if (this.socket && !this.socket.write(this.writer.buffer.slice(0, this.writer.index))) {
-      this.socket.once('drain', () => {
+      this.socket.once("drain", () => {
         if (this.outgoingQueue.length > 0) {
           this.drainQueue();
         }
@@ -226,7 +226,7 @@ export class PacketIO extends EventEmitter {
       const id = this.reader.buffer.readInt8(4);
       const type = PacketMap[id];
       if (!type) {
-        this.emit('error', new Error(
+        this.emit("error", new Error(
           `Unkown packet id ${id} received from server!\n\tBuffer size: ${this.reader.length}\n\tBytes: ${this.reader.readBytes(this.reader.length).toString()}`
           ));
         return undefined;
@@ -238,7 +238,7 @@ export class PacketIO extends EventEmitter {
         return packet;
       }
     } catch (error) {
-      this.emit('error', error);
+      this.emit("error", error);
     }
   }
 

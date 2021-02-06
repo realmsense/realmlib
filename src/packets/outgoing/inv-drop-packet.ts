@@ -1,11 +1,11 @@
-import { SlotObjectData } from '../../data/slot-object-data';
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { SlotObjectData } from "../../data/slot-object-data";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
- * Sent to drop an item from the client's inventory.
+ * Sent to drop an item from the client"s inventory.
  */
 export class InvDropPacket implements Packet {
 

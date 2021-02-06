@@ -1,8 +1,8 @@
-import { SlotObjectData } from '../../../data';
-import { PacketMap } from '../../../models/packet-map';
-import { Packet } from '../../../packet';
-import { Reader } from '../../../reader';
-import { Writer } from '../../../writer';
+import { SlotObjectData } from "../../../data";
+import { PacketMap } from "../../../models/packet-map";
+import { Packet } from "../../../packet";
+import { Reader } from "../../../reader";
+import { Writer } from "../../../writer";
 
 /**
  * Sent to make an update to the pet currently following the player.

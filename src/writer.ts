@@ -26,7 +26,7 @@ export class Writer {
   }
 
   /**
-   * Writes a packet header to the first 5 bytes of this writer's buffer.
+   * Writes a packet header to the first 5 bytes of this writer"s buffer.
    * @param id The id to write to the header.
    */
   writeHeader(id: number): void {
@@ -111,7 +111,7 @@ export class Writer {
    * @param value The value to write.
    */
   writeBoolean(value: boolean): void {
-    if (typeof value !== 'boolean') {
+    if (typeof value !== "boolean") {
       value = false;
     }
     const byteValue = value ? 1 : 0;
@@ -151,13 +151,13 @@ export class Writer {
    * @param value The value to write.
    */
   writeString(value: string): void {
-    if (typeof value !== 'string') {
+    if (typeof value !== "string") {
       this.writeShort(0);
       return;
     }
     this.writeShort(value.length);
     this.checkCapacity(value.length);
-    this.index += this.buffer.write(value, this.index, value.length, 'utf8');
+    this.index += this.buffer.write(value, this.index, value.length, "utf8");
   }
 
   /**
@@ -165,13 +165,13 @@ export class Writer {
    * @param value The value to write.
    */
   writeStringUTF32(value: string): void {
-    if (typeof value !== 'string') {
+    if (typeof value !== "string") {
       this.writeInt32(0);
       return;
     }
     this.writeInt32(value.length);
     this.checkCapacity(value.length);
-    this.index += this.buffer.write(value, this.index, value.length, 'utf8');
+    this.index += this.buffer.write(value, this.index, value.length, "utf8");
   }
 
   /**

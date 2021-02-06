@@ -14,8 +14,8 @@ export class RC4 {
    * @param key The key to use in the Keystream.
    */
   constructor(key: Buffer | string) {
-    if (typeof key === 'string') {
-      this.key = Buffer.from(key, 'hex');
+    if (typeof key === "string") {
+      this.key = Buffer.from(key, "hex");
     } else if (Buffer.isBuffer(key)) {
       this.key = key;
     } else {
@@ -69,14 +69,14 @@ export class RC4 {
  * This key is a Hex String, so should be converted to
  * a Buffer for use.
  * @example
- * const key = Buffer.from(OUTGOING_KEY, 'hex');
+ * const key = Buffer.from(OUTGOING_KEY, "hex");
  */
-export const OUTGOING_KEY = '5a4d2016bc16dc64883194ffd9';
+export const OUTGOING_KEY = "5a4d2016bc16dc64883194ffd9";
 /**
  * The RC4 Private Key to decrypt incoming packet data.
  * This key is a Hex String, so should be converted to
  * a Buffer for use.
  * @example
- * const key = Buffer.from(INCOMING_KEY, 'hex');
+ * const key = Buffer.from(INCOMING_KEY, "hex");
  */
-export const INCOMING_KEY = 'c91d9eec420160730d825604e0';
+export const INCOMING_KEY = "c91d9eec420160730d825604e0";

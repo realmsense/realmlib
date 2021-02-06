@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when a chat message is sent by another player or NPC.
@@ -51,13 +51,13 @@ export class TextPacket implements Packet {
   //#endregion
 
   constructor() {
-    this.name = '';
+    this.name = "";
     this.objectId = 0;
     this.numStars = 0;
     this.bubbleTime = 0;
-    this.recipient = '';
-    this.text = '';
-    this.cleanText = '';
+    this.recipient = "";
+    this.text = "";
+    this.cleanText = "";
     this.isSupporter = false;
     this.starBackground = 0;
   }

@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received in response to a `ChooseNamePacket`.
@@ -23,7 +23,7 @@ export class NameResultPacket implements Packet {
 
   constructor() {
     this.success = false;
-    this.errorText = '';
+    this.errorText = "";
   }
 
   read(reader: Reader): void {

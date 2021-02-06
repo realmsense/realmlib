@@ -1,6 +1,6 @@
-import { DataPacket } from '../packet';
-import { Reader } from '../reader';
-import { Writer } from '../writer';
+import { DataPacket } from "../packet";
+import { Reader } from "../reader";
+import { Writer } from "../writer";
 
 /**
  * Information about a quest, such as a daily quest.
@@ -48,10 +48,10 @@ export class QuestData implements DataPacket {
   category: number;
 
   constructor() {
-    this.id = '';
-    this.name = '';
-    this.description = '';
-    this.expiration = '';
+    this.id = "";
+    this.name = "";
+    this.description = "";
+    this.expiration = "";
     this.requirements = [];
     this.rewards = [];
     this.completed = false;

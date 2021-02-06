@@ -1,10 +1,10 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
- * Sent to change the guild rank of a member in the player's guild.
+ * Sent to change the guild rank of a member in the player"s guild.
  */
 export class ChangeGuildRankPacket implements Packet {
 
@@ -22,7 +22,7 @@ export class ChangeGuildRankPacket implements Packet {
   //#endregion
 
   constructor() {
-    this.name = '';
+    this.name = "";
     this.guildRank = 0;
   }
 

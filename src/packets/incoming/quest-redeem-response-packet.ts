@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * > Unknown.
@@ -23,7 +23,7 @@ export class QuestRedeemResponsePacket implements Packet {
 
   constructor() {
     this.ok = false;
-    this.message = '';
+    this.message = "";
   }
 
   read(reader: Reader): void {

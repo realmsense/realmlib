@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when a notification is received by the player.
@@ -27,7 +27,7 @@ export class NotificationPacket implements Packet {
 
   constructor() {
     this.objectId = 0;
-    this.message = '';
+    this.message = "";
     this.color = 0;
   }
 

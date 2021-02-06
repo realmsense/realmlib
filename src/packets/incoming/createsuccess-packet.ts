@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received in response to a `CreatePacket`.
@@ -12,11 +12,11 @@ export class CreateSuccessPacket implements Packet {
 
   //#region packet-specific members
   /**
-   * The object id of the player's character.
+   * The object id of the player"s character.
    */
   objectId: number;
   /**
-   * The character id of the player's character.
+   * The character id of the player"s character.
    */
   charId: number;
   //#endregion

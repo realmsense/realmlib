@@ -1,5 +1,5 @@
 /**
- * A list of the stat types which are used to describe an entity's attributes.
+ * A list of the stat types which are used to describe an entity"s attributes.
  */
 export enum StatType {
   MAX_HP_STAT = 0,

@@ -1,7 +1,7 @@
-import { PacketMap } from '../../../models/packet-map';
-import { Packet } from '../../../packet';
-import { Reader } from '../../../reader';
-import { Writer } from '../../../writer';
+import { PacketMap } from "../../../models/packet-map";
+import { Packet } from "../../../packet";
+import { Reader } from "../../../reader";
+import { Writer } from "../../../writer";
 
 /**
  * Received to give the player information about a newly hatched pet.
@@ -23,7 +23,7 @@ export class HatchPetMessage implements Packet {
   //#endregion
 
   constructor() {
-    this.petName = '';
+    this.petName = "";
     this.petSkin = 0;
   }
 

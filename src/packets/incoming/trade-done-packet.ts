@@ -1,8 +1,8 @@
-import { TradeResult } from '../../models/trade-result';
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { TradeResult } from "../../models/trade-result";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when the active trade has completed, regardless of whether
@@ -25,7 +25,7 @@ export class TradeDonePacket implements Packet {
 
   constructor() {
     this.code = 0;
-    this.description = '';
+    this.description = "";
   }
 
   read(reader: Reader): void {

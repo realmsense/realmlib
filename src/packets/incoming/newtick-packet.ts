@@ -1,8 +1,8 @@
-import { ObjectStatusData } from '../../data/object-status-data';
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { ObjectStatusData } from "../../data/object-status-data";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received to notify the player of a new game tick.

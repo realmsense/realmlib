@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Sent when the client sends a chat message.
@@ -16,7 +16,7 @@ export class PlayerTextPacket implements Packet {
   text: string;
 
   constructor() {
-    this.text = '';
+    this.text = "";
   }
 
   write(writer: Writer): void {

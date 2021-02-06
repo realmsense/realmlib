@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when a player has died.
@@ -44,9 +44,9 @@ export class DeathPacket implements Packet {
   //#endregion
 
   constructor() {
-    this.accountId = '';
+    this.accountId = "";
     this.charId = 0;
-    this.killedBy = '';
+    this.killedBy = "";
     this.zombieId = 0;
     this.zombieType = 0;
     this.unknown = 0;

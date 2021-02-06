@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received to instruct the client to connect to a new host.
@@ -42,9 +42,9 @@ export class ReconnectPacket implements Packet {
   //#endregion
 
   constructor() {
-    this.name = '';
-    this.host = '';
-    this.stats = '';
+    this.name = "";
+    this.host = "";
+    this.stats = "";
     this.port = 0;
     this.gameId = 0;
     this.keyTime = 0;

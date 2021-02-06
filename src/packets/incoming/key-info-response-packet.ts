@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * > Unknown.
@@ -26,9 +26,9 @@ export class KeyInfoResponsePacket implements Packet {
   //#endregion
 
   constructor() {
-    this.name = '';
-    this.description = '';
-    this.creator = '';
+    this.name = "";
+    this.description = "";
+    this.creator = "";
   }
 
   read(reader: Reader): void {

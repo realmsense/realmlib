@@ -1,8 +1,8 @@
-import { PacketType } from './models';
-import { Packet } from './packet';
+import { PacketType } from "./models";
+import { Packet } from "./packet";
 
-import * as IncomingPackets from './packets/incoming';
-import * as OutgoingPackets from './packets/outgoing';
+import * as IncomingPackets from "./packets/incoming";
+import * as OutgoingPackets from "./packets/outgoing";
 
 /**
  * Creates the correct packet object for the given type.
@@ -11,7 +11,7 @@ import * as OutgoingPackets from './packets/outgoing';
  */
 export function createPacket(type: string): Packet {
   
-  if (typeof type !== 'string') {
+  if (typeof type !== "string") {
     throw new TypeError(`Parameter "type" must be a string, not ${typeof type}`);
   }
 

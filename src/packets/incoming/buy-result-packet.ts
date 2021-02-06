@@ -1,7 +1,7 @@
-import { PacketMap } from '../../models/packet-map';
-import { Packet } from '../../packet';
-import { Reader } from '../../reader';
-import { Writer } from '../../writer';
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received in response to a `BuyPacket`.
@@ -23,7 +23,7 @@ export class BuyResultPacket implements Packet {
 
   constructor() {
     this.result = 0;
-    this.resultString = '';
+    this.resultString = "";
   }
 
   read(reader: Reader): void {
