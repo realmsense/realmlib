@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class RealmHeroesLeftPacket implements Packet {
 
-  readonly id = PacketMap.REALM_HERO_LEFT_MSG
+    readonly id = PacketMap.REALM_HERO_LEFT_MSG
 
-  //#region packet-specific members
-  /**
-   * The number of heroes remaining.
-   */
-  realmHeroesLeft: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The number of heroes remaining.
+     */
+    realmHeroesLeft: number;
+    //#endregion
 
-  constructor() {
-    this.realmHeroesLeft = 0;
-  }
+    constructor() {
+        this.realmHeroesLeft = 0;
+    }
 
-  read(reader: Reader): void {
-    this.realmHeroesLeft = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.realmHeroesLeft = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.realmHeroesLeft);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.realmHeroesLeft);
+    }
 }

@@ -8,45 +8,45 @@ import { Writer } from "../../writer";
  */
 export class OtherHitPacket implements Packet {
 
-  readonly id = PacketMap.OTHERHIT
+    readonly id = PacketMap.OTHERHIT
 
-  //#region packet-specific members
-  /**
-   * The current client time.
-   */
-  time: number;
-  /**
-   * The id of the bullet which hit the object.
-   */
-  bulletId: number;
-  /**
-   * The object id of player who fired the projectile which hit the object.
-   */
-  objectId: number;
-  /**
-   * The object id of the object which was hit.
-   */
-  targetId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The current client time.
+     */
+    time: number;
+    /**
+     * The id of the bullet which hit the object.
+     */
+    bulletId: number;
+    /**
+     * The object id of player who fired the projectile which hit the object.
+     */
+    objectId: number;
+    /**
+     * The object id of the object which was hit.
+     */
+    targetId: number;
+    //#endregion
 
-  constructor() {
-    this.time = 0;
-    this.bulletId = 0;
-    this.objectId = 0;
-    this.targetId = 0;
-  }
+    constructor() {
+        this.time = 0;
+        this.bulletId = 0;
+        this.objectId = 0;
+        this.targetId = 0;
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.time);
-    writer.writeUnsignedByte(this.bulletId);
-    writer.writeInt32(this.objectId);
-    writer.writeInt32(this.targetId);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.time);
+        writer.writeUnsignedByte(this.bulletId);
+        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.targetId);
+    }
 
-  read(reader: Reader): void {
-    this.time = reader.readInt32();
-    this.bulletId = reader.readUnsignedByte();
-    this.objectId = reader.readInt32();
-    this.targetId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.time = reader.readInt32();
+        this.bulletId = reader.readUnsignedByte();
+        this.objectId = reader.readInt32();
+        this.targetId = reader.readInt32();
+    }
 }

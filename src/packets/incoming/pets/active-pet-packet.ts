@@ -8,25 +8,25 @@ import { Writer } from "../../../writer";
  */
 export class ActivePetPacket implements Packet {
 
-  readonly id = PacketMap.ACTIVEPETUPDATE
-  propagate = true;
+    readonly id = PacketMap.ACTIVEPETUPDATE
+    propagate = true;
 
-  //#region packet-specific members
-  /**
-   * The instance id of the active pet.
-   */
-  instanceId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The instance id of the active pet.
+     */
+    instanceId: number;
+    //#endregion
 
-  constructor() {
-    this.instanceId = 0;
-  }
+    constructor() {
+        this.instanceId = 0;
+    }
 
-  read(reader: Reader): void {
-    this.instanceId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.instanceId = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.instanceId);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.instanceId);
+    }
 }

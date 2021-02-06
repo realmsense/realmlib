@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class QuestObjectIdPacket implements Packet {
 
-  readonly id = PacketMap.QUESTOBJID
+    readonly id = PacketMap.QUESTOBJID
 
-  //#region packet-specific members
-  /**
-   * The object id of the current quest.
-   */
-  objectId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The object id of the current quest.
+     */
+    objectId: number;
+    //#endregion
 
-  constructor() {
-    this.objectId = 0;
-  }
+    constructor() {
+        this.objectId = 0;
+    }
 
-  read(reader: Reader): void {
-    this.objectId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.objectId = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.objectId);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.objectId);
+    }
 }

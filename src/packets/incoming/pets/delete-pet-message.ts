@@ -8,25 +8,25 @@ import { Writer } from "../../../writer";
  */
 export class DeletePetMessage implements Packet {
 
-  readonly id = PacketMap.DELETE_PET
-  propagate = true;
+    readonly id = PacketMap.DELETE_PET
+    propagate = true;
 
-  //#region packet-specific members
-  /**
-   * The id of the pet which has been deleted.
-   */
-  petId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The id of the pet which has been deleted.
+     */
+    petId: number;
+    //#endregion
 
-  constructor() {
-    this.petId = 0;
-  }
+    constructor() {
+        this.petId = 0;
+    }
 
-  read(reader: Reader): void {
-    this.petId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.petId = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.petId);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.petId);
+    }
 }

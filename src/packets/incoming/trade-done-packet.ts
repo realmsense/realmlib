@@ -10,31 +10,31 @@ import { Writer } from "../../writer";
  */
 export class TradeDonePacket implements Packet {
 
-  readonly id = PacketMap.TRADEDONE
+    readonly id = PacketMap.TRADEDONE
 
-  //#region packet-specific members
-  /**
-   * The result of the trade.
-   */
-  code: TradeResult;
-  /**
-   * > Unknown.
-   */
-  description: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The result of the trade.
+     */
+    code: TradeResult;
+    /**
+     * > Unknown.
+     */
+    description: string;
+    //#endregion
 
-  constructor() {
-    this.code = 0;
-    this.description = "";
-  }
+    constructor() {
+        this.code = 0;
+        this.description = "";
+    }
 
-  read(reader: Reader): void {
-    this.code = reader.readInt32();
-    this.description = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.code = reader.readInt32();
+        this.description = reader.readString();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.code);
-    writer.writeString(this.description);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.code);
+        writer.writeString(this.description);
+    }
 }

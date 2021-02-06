@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class TeleportPacket implements Packet {
 
-  readonly id = PacketMap.TELEPORT
+    readonly id = PacketMap.TELEPORT
 
-  //#region packet-specific members
-  /**
-   * The object id of the player to teleport to.
-   */
-  objectId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The object id of the player to teleport to.
+     */
+    objectId: number;
+    //#endregion
 
-  constructor() {
-    this.objectId = 0;
-  }
+    constructor() {
+        this.objectId = 0;
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.objectId);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.objectId);
+    }
 
-  read(reader: Reader): void {
-    this.objectId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.objectId = reader.readInt32();
+    }
 }

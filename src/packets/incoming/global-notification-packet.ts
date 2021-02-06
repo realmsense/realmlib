@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class GlobalNotificationPacket implements Packet {
 
-  readonly id = PacketMap.GLOBAL_NOTIFICATION
+    readonly id = PacketMap.GLOBAL_NOTIFICATION
 
-  //#region packet-specific members
-  /**
-   * The type of notification received.
-   */
-  notificationType: number;
-  /**
-   * The notification message.
-   */
-  text: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The type of notification received.
+     */
+    notificationType: number;
+    /**
+     * The notification message.
+     */
+    text: string;
+    //#endregion
 
-  constructor() {
-    this.notificationType = 0;
-    this.text = "";
-  }
+    constructor() {
+        this.notificationType = 0;
+        this.text = "";
+    }
 
-  read(reader: Reader): void {
-    this.notificationType = reader.readInt32();
-    this.text = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.notificationType = reader.readInt32();
+        this.text = reader.readString();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.notificationType);
-    writer.writeString(this.text);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.notificationType);
+        writer.writeString(this.text);
+    }
 }

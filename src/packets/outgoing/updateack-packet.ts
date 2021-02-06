@@ -6,17 +6,17 @@ import { Packet } from "../../packet";
  */
 export class UpdateAckPacket implements Packet {
 
-  readonly id = PacketMap.UPDATEACK
+    readonly id = PacketMap.UPDATEACK
 
-  //#region packet-specific members
+    //#region packet-specific members
 
-  //#endregion
+    //#endregion
 
-  write(): void {
-    //
-  }
+    write(): void {
+        //
+    }
 
-  read(): void {
-    //
-  }
+    read(): void {
+        //
+    }
 }

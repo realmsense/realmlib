@@ -10,45 +10,45 @@ import { Writer } from "../../writer";
  */
 export class InvSwapPacket implements Packet {
 
-  readonly id = PacketMap.INVSWAP
+    readonly id = PacketMap.INVSWAP
 
-  //#region packet-specific members
-  /**
-   * The current client time.
-   */
-  time: number;
-  /**
-   * The current client position.
-   */
-  position: WorldPosData;
-  /**
-   * The slot to swap from.
-   */
-  slotObject1: SlotObjectData;
-  /**
-   * The slot to swap to.
-   */
-  slotObject2: SlotObjectData;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The current client time.
+     */
+    time: number;
+    /**
+     * The current client position.
+     */
+    position: WorldPosData;
+    /**
+     * The slot to swap from.
+     */
+    slotObject1: SlotObjectData;
+    /**
+     * The slot to swap to.
+     */
+    slotObject2: SlotObjectData;
+    //#endregion
 
-  constructor() {
-    this.time = 0;
-    this.position = new WorldPosData();
-    this.slotObject1 = new SlotObjectData();
-    this.slotObject2 = new SlotObjectData();
-  }
+    constructor() {
+        this.time = 0;
+        this.position = new WorldPosData();
+        this.slotObject1 = new SlotObjectData();
+        this.slotObject2 = new SlotObjectData();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.time);
-    this.position.write(writer);
-    this.slotObject1.write(writer);
-    this.slotObject2.write(writer);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.time);
+        this.position.write(writer);
+        this.slotObject1.write(writer);
+        this.slotObject2.write(writer);
+    }
 
-  read(reader: Reader): void {
-    this.time = reader.readInt32();
-    this.position.read(reader);
-    this.slotObject1.read(reader);
-    this.slotObject2.read(reader);
-  }
+    read(reader: Reader): void {
+        this.time = reader.readInt32();
+        this.position.read(reader);
+        this.slotObject1.read(reader);
+        this.slotObject2.read(reader);
+    }
 }

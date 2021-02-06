@@ -9,31 +9,31 @@ import { Writer } from "../../writer";
  */
 export class GroundDamagePacket implements Packet {
 
-  readonly id = PacketMap.GROUNDDAMAGE
+    readonly id = PacketMap.GROUNDDAMAGE
 
-  //#region packet-specific members
-  /**
-   * The current client time.
-   */
-  time: number;
-  /**
-   * The current client position.
-   */
-  position: WorldPosData;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The current client time.
+     */
+    time: number;
+    /**
+     * The current client position.
+     */
+    position: WorldPosData;
+    //#endregion
 
-  constructor() {
-    this.time = 0;
-    this.position = new WorldPosData();
-  }
+    constructor() {
+        this.time = 0;
+        this.position = new WorldPosData();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.time);
-    this.position.write(writer);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.time);
+        this.position.write(writer);
+    }
 
-  read(reader: Reader): void {
-    this.time = reader.readInt32();
-    this.position.read(reader);
-  }
+    read(reader: Reader): void {
+        this.time = reader.readInt32();
+        this.position.read(reader);
+    }
 }

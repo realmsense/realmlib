@@ -7,17 +7,17 @@ import { Packet } from "../../packet";
  */
 export class GoToQuestRoomPacket implements Packet {
 
-  readonly id = PacketMap.QUEST_ROOM_MSG
+    readonly id = PacketMap.QUEST_ROOM_MSG
 
-  //#region packet-specific members
+    //#region packet-specific members
 
-  //#endregion
+    //#endregion
 
-  write(): void {
-    //
-  }
+    write(): void {
+        //
+    }
 
-  read(): void {
-    //
-  }
+    read(): void {
+        //
+    }
 }

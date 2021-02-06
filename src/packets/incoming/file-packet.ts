@@ -8,32 +8,32 @@ import { Writer } from "../../writer";
  */
 export class FilePacket implements Packet {
 
-  readonly id = PacketMap.FILE
+    readonly id = PacketMap.FILE
 
-  //#region packet-specific members
-  /**
-   * The name of the received file.
-   */
-  fileName: string;
-  /**
-   * The bytes of the file. Don"t ask me why this is a string,
-   * that"s just how it is in the source code of the game.
-   */
-  file: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The name of the received file.
+     */
+    fileName: string;
+    /**
+     * The bytes of the file. Don"t ask me why this is a string,
+     * that"s just how it is in the source code of the game.
+     */
+    file: string;
+    //#endregion
 
-  constructor() {
-    this.fileName = "";
-    this.file = "";
-  }
+    constructor() {
+        this.fileName = "";
+        this.file = "";
+    }
 
-  read(reader: Reader): void {
-    this.fileName = reader.readString();
-    this.file = reader.readStringUTF32();
-  }
+    read(reader: Reader): void {
+        this.fileName = reader.readString();
+        this.file = reader.readStringUTF32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeString(this.fileName);
-    writer.writeStringUTF32(this.file);
-  }
+    write(writer: Writer): void {
+        writer.writeString(this.fileName);
+        writer.writeStringUTF32(this.file);
+    }
 }

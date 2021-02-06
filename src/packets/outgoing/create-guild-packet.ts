@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class CreateGuildPacket implements Packet {
 
-  readonly id = PacketMap.CREATEGUILD
+    readonly id = PacketMap.CREATEGUILD
 
-  //#region packet-specific members
-  /**
-   * The name of the guild being created.
-   */
-  name: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The name of the guild being created.
+     */
+    name: string;
+    //#endregion
 
-  constructor() {
-    this.name = "";
-  }
+    constructor() {
+        this.name = "";
+    }
 
-  write(writer: Writer): void {
-    writer.writeString(this.name);
-  }
+    write(writer: Writer): void {
+        writer.writeString(this.name);
+    }
 
-  read(reader: Reader): void {
-    this.name = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.name = reader.readString();
+    }
 }

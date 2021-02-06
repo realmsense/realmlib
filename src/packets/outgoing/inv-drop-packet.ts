@@ -9,24 +9,24 @@ import { Writer } from "../../writer";
  */
 export class InvDropPacket implements Packet {
 
-  readonly id = PacketMap.INVDROP
+    readonly id = PacketMap.INVDROP
 
-  //#region packet-specific members
-  /**
-   * The slot to drop the item from.
-   */
-  slotObject: SlotObjectData;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The slot to drop the item from.
+     */
+    slotObject: SlotObjectData;
+    //#endregion
 
-  constructor() {
-    this.slotObject = new SlotObjectData();
-  }
+    constructor() {
+        this.slotObject = new SlotObjectData();
+    }
 
-  write(writer: Writer): void {
-    this.slotObject.write(writer);
-  }
+    write(writer: Writer): void {
+        this.slotObject.write(writer);
+    }
 
-  read(reader: Reader): void {
-    this.slotObject.read(reader);
-  }
+    read(reader: Reader): void {
+        this.slotObject.read(reader);
+    }
 }

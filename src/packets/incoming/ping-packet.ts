@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class PingPacket implements Packet {
 
-  readonly id = PacketMap.PING
+    readonly id = PacketMap.PING
 
-  //#region packet-specific members
-  /**
-   * A nonce value which is expected to be present in the reply.
-   */
-  serial: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * A nonce value which is expected to be present in the reply.
+     */
+    serial: number;
+    //#endregion
 
-  constructor() {
-    this.serial = 0;
-  }
+    constructor() {
+        this.serial = 0;
+    }
 
-  read(reader: Reader): void {
-    this.serial = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.serial = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.serial);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.serial);
+    }
 }

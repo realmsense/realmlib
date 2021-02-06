@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class KeyInfoRequestPacket implements Packet {
 
-  readonly id = PacketMap.KEY_INFO_REQUEST
+    readonly id = PacketMap.KEY_INFO_REQUEST
 
-  //#region packet-specific members
-  /**
-   * > Unknown.
-   */
-  itemType: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * > Unknown.
+     */
+    itemType: number;
+    //#endregion
 
-  constructor() {
-    this.itemType = 0;
-  }
+    constructor() {
+        this.itemType = 0;
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.itemType);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.itemType);
+    }
 
-  read(reader: Reader): void {
-    this.itemType = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.itemType = reader.readInt32();
+    }
 }

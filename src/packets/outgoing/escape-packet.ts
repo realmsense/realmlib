@@ -7,17 +7,17 @@ import { Packet } from "../../packet";
  */
 export class EscapePacket implements Packet {
 
-  readonly id = PacketMap.ESCAPE
+    readonly id = PacketMap.ESCAPE
 
-  //#region packet-specific members
+    //#region packet-specific members
 
-  //#endregion
+    //#endregion
 
-  write(): void {
-    //
-  }
+    write(): void {
+        //
+    }
 
-  read(): void {
-    //
-  }
+    read(): void {
+        //
+    }
 }

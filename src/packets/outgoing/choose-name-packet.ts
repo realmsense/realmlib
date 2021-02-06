@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class ChooseNamePacket implements Packet {
 
-  readonly id = PacketMap.CHOOSENAME
+    readonly id = PacketMap.CHOOSENAME
 
-  //#region packet-specific members
-  /**
-   * The name to change the account"s name to.
-   */
-  name: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The name to change the account"s name to.
+     */
+    name: string;
+    //#endregion
 
-  constructor() {
-    this.name = "";
-  }
+    constructor() {
+        this.name = "";
+    }
 
-  write(writer: Writer): void {
-    writer.writeString(this.name);
-  }
+    write(writer: Writer): void {
+        writer.writeString(this.name);
+    }
 
-  read(reader: Reader): void {
-    this.name = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.name = reader.readString();
+    }
 }

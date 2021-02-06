@@ -9,32 +9,32 @@ import { Writer } from "../../writer";
  */
 export class AoeAckPacket implements Packet {
 
-  readonly id = PacketMap.AOEACK
+    readonly id = PacketMap.AOEACK
 
-  //#region packet-specific members
-  /**
-   * The current client time.
-   */
-  time: number;
-  /**
-   * The position of the AoE which this packet is acknowledging.
-   */
-  position: WorldPosData;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The current client time.
+     */
+    time: number;
+    /**
+     * The position of the AoE which this packet is acknowledging.
+     */
+    position: WorldPosData;
+    //#endregion
 
-  constructor() {
-    this.time = 0;
-    this.position = new WorldPosData();
-  }
+    constructor() {
+        this.time = 0;
+        this.position = new WorldPosData();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.time);
-    this.position.write(writer);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.time);
+        this.position.write(writer);
+    }
 
-  read(reader: Reader): void {
-    this.time = reader.readInt32();
-    this.position = new WorldPosData();
-    this.position.read(reader);
-  }
+    read(reader: Reader): void {
+        this.time = reader.readInt32();
+        this.position = new WorldPosData();
+        this.position.read(reader);
+    }
 }

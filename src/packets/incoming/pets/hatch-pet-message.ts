@@ -8,32 +8,32 @@ import { Writer } from "../../../writer";
  */
 export class HatchPetMessage implements Packet {
 
-  readonly id = PacketMap.HATCH_PET
-  propagate = true;
+    readonly id = PacketMap.HATCH_PET
+    propagate = true;
 
-  //#region packet-specific members
-  /**
-   * The name of the hatched pet.
-   */
-  petName: string;
-  /**
-   * The skin id of the hatched pet.
-   */
-  petSkin: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The name of the hatched pet.
+     */
+    petName: string;
+    /**
+     * The skin id of the hatched pet.
+     */
+    petSkin: number;
+    //#endregion
 
-  constructor() {
-    this.petName = "";
-    this.petSkin = 0;
-  }
+    constructor() {
+        this.petName = "";
+        this.petSkin = 0;
+    }
 
-  read(reader: Reader): void {
-    this.petName = reader.readString();
-    this.petSkin = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.petName = reader.readString();
+        this.petSkin = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeString(this.petName);
-    writer.writeInt32(this.petSkin);
-  }
+    write(writer: Writer): void {
+        writer.writeString(this.petName);
+        writer.writeInt32(this.petSkin);
+    }
 }

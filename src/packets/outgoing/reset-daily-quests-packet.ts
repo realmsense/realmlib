@@ -6,17 +6,17 @@ import { Packet } from "../../packet";
  */
 export class ResetDailyQuestsPacket implements Packet {
 
-  readonly id = PacketMap.RESET_DAILY_QUESTS
+    readonly id = PacketMap.RESET_DAILY_QUESTS
 
-  //#region packet-specific members
+    //#region packet-specific members
 
-  //#endregion
+    //#endregion
 
-  write(): void {
-    //
-  }
+    write(): void {
+        //
+    }
 
-  read(): void {
-    //
-  }
+    read(): void {
+        //
+    }
 }

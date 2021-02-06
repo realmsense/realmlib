@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class NewAbilityMessage implements Packet {
 
-  readonly id = PacketMap.NEW_ABILITY
+    readonly id = PacketMap.NEW_ABILITY
 
-  //#region packet-specific members
-  /**
-   * The type of ability which has been unlocked.
-   */
-  abilityType: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The type of ability which has been unlocked.
+     */
+    abilityType: number;
+    //#endregion
 
-  constructor() {
-    this.abilityType = 0;
-  }
+    constructor() {
+        this.abilityType = 0;
+    }
 
-  read(reader: Reader): void {
-    this.abilityType = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.abilityType = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.abilityType);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.abilityType);
+    }
 }

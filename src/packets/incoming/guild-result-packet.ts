@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class GuildResultPacket implements Packet {
 
-  readonly id = PacketMap.GUILDRESULT
+    readonly id = PacketMap.GUILDRESULT
 
-  //#region packet-specific members
-  /**
-   * > Unknown.
-   */
-  success: boolean;
-  /**
-   * > Unknown.
-   */
-  lineBuilderJSON: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * > Unknown.
+     */
+    success: boolean;
+    /**
+     * > Unknown.
+     */
+    lineBuilderJSON: string;
+    //#endregion
 
-  constructor() {
-    this.success = false;
-    this.lineBuilderJSON = "";
-  }
+    constructor() {
+        this.success = false;
+        this.lineBuilderJSON = "";
+    }
 
-  read(reader: Reader): void {
-    this.success = reader.readBoolean();
-    this.lineBuilderJSON = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.success = reader.readBoolean();
+        this.lineBuilderJSON = reader.readString();
+    }
 
-  write(writer: Writer): void {
-    writer.writeBoolean(this.success);
-    writer.writeString(this.lineBuilderJSON);
-  }
+    write(writer: Writer): void {
+        writer.writeBoolean(this.success);
+        writer.writeString(this.lineBuilderJSON);
+    }
 }

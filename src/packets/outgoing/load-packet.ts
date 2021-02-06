@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class LoadPacket implements Packet {
 
-  readonly id = PacketMap.LOAD
+    readonly id = PacketMap.LOAD
 
-  //#region packet-specific members
-  /**
-   * The id of the character to load.
-   */
-  charId: number;
-  /**
-   * Whether or not the character is in challenger mode.
-   */
-  isChallenger: boolean;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The id of the character to load.
+     */
+    charId: number;
+    /**
+     * Whether or not the character is in challenger mode.
+     */
+    isChallenger: boolean;
+    //#endregion
 
-  constructor() {
-    this.charId = 0;
-    this.isChallenger = false;
-  }
+    constructor() {
+        this.charId = 0;
+        this.isChallenger = false;
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.charId);
-    writer.writeBoolean(this.isChallenger);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.charId);
+        writer.writeBoolean(this.isChallenger);
+    }
 
-  read(reader: Reader): void {
-    this.charId = reader.readInt32();
-    this.isChallenger = reader.readBoolean();
-  }
+    read(reader: Reader): void {
+        this.charId = reader.readInt32();
+        this.isChallenger = reader.readBoolean();
+    }
 }

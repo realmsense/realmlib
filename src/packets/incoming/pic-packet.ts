@@ -8,38 +8,38 @@ import { Writer } from "../../writer";
  */
 export class PicPacket implements Packet {
 
-  readonly id = PacketMap.PIC
+    readonly id = PacketMap.PIC
 
-  //#region packet-specific members
-  /**
-   * The width of the image.
-   */
-  width: number;
-  /**
-   * The height of the image.
-   */
-  height: number;
-  /**
-   * The bitmap data of the image.
-   */
-  bitmapData: number[];
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The width of the image.
+     */
+    width: number;
+    /**
+     * The height of the image.
+     */
+    height: number;
+    /**
+     * The bitmap data of the image.
+     */
+    bitmapData: number[];
+    //#endregion
 
-  constructor() {
-    this.width = 0;
-    this.height = 0;
-    this.bitmapData = [];
-  }
+    constructor() {
+        this.width = 0;
+        this.height = 0;
+        this.bitmapData = [];
+    }
 
-  read(reader: Reader): void {
-    this.width = reader.readInt32();
-    this.height = reader.readInt32();
-    this.bitmapData = reader.readBytes(this.width * this.height * 4);
-  }
+    read(reader: Reader): void {
+        this.width = reader.readInt32();
+        this.height = reader.readInt32();
+        this.bitmapData = reader.readBytes(this.width * this.height * 4);
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.width);
-    writer.writeInt32(this.height);
-    writer.writeByteArray(this.bitmapData);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.width);
+        writer.writeInt32(this.height);
+        writer.writeByteArray(this.bitmapData);
+    }
 }

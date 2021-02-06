@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class ShootAckPacket implements Packet {
 
-  readonly id = PacketMap.SHOOTACK;
+    readonly id = PacketMap.SHOOTACK;
 
-  //#region packet-specific members
-  /**
-   * The current client time.
-   */
-  time: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The current client time.
+     */
+    time: number;
+    //#endregion
 
-  constructor() {
-    this.time = 0;
-  }
+    constructor() {
+        this.time = 0;
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.time);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.time);
+    }
 
-  read(reader: Reader): void {
-    this.time = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.time = reader.readInt32();
+    }
 }

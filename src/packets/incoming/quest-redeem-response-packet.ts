@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class QuestRedeemResponsePacket implements Packet {
 
-  readonly id = PacketMap.QUEST_REDEEM_RESPONSE
+    readonly id = PacketMap.QUEST_REDEEM_RESPONSE
 
-  //#region packet-specific members
-  /**
-   * > Unknown.
-   */
-  ok: boolean;
-  /**
-   * > Unknown.
-   */
-  message: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * > Unknown.
+     */
+    ok: boolean;
+    /**
+     * > Unknown.
+     */
+    message: string;
+    //#endregion
 
-  constructor() {
-    this.ok = false;
-    this.message = "";
-  }
+    constructor() {
+        this.ok = false;
+        this.message = "";
+    }
 
-  read(reader: Reader): void {
-    this.ok = reader.readBoolean();
-    this.message = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.ok = reader.readBoolean();
+        this.message = reader.readString();
+    }
 
-  write(writer: Writer): void {
-    writer.writeBoolean(this.ok);
-    writer.writeString(this.message);
-  }
+    write(writer: Writer): void {
+        writer.writeBoolean(this.ok);
+        writer.writeString(this.message);
+    }
 }

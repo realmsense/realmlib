@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class ReskinUnlockPacket implements Packet {
 
-  readonly id = PacketMap.RESKIN_UNLOCK
+    readonly id = PacketMap.RESKIN_UNLOCK
 
-  //#region packet-specific members
-  /**
-   * The id of the skin that was unlocked.
-   */
-  skinId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The id of the skin that was unlocked.
+     */
+    skinId: number;
+    //#endregion
 
-  constructor() {
-    this.skinId = 0;
-  }
+    constructor() {
+        this.skinId = 0;
+    }
 
-  read(reader: Reader): void {
-    this.skinId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.skinId = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.skinId);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.skinId);
+    }
 }

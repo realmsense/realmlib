@@ -11,60 +11,60 @@ import { Writer } from "../../writer";
  */
 export class MovePacket implements Packet {
 
-  readonly id = PacketMap.MOVE
+    readonly id = PacketMap.MOVE
 
-  //#region packet-specific members
-  /**
-   * The tick id of the `NewTickPacket` which this is acknowledging.
-   */
-  tickId: number;
-  /**
-   * The current client time.
-   */
-  time: number;
-  /**
-   * The current serer time in ms.
-   */
-  serverRealTimeMS: number;
-  /**
-   * The current client position.
-   */
-  newPosition: WorldPosData;
-  /**
-   * The move records of the client.
-   *
-   * This property can be an empty array.
-   */
-  records: MoveRecord[];
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The tick id of the `NewTickPacket` which this is acknowledging.
+     */
+    tickId: number;
+    /**
+     * The current client time.
+     */
+    time: number;
+    /**
+     * The current serer time in ms.
+     */
+    serverRealTimeMS: number;
+    /**
+     * The current client position.
+     */
+    newPosition: WorldPosData;
+    /**
+     * The move records of the client.
+     *
+     * This property can be an empty array.
+     */
+    records: MoveRecord[];
+    //#endregion
 
-  constructor() {
-    this.tickId = 0;
-    this.time = 0;
-    this.serverRealTimeMS = 0;
-    this.newPosition = new WorldPosData();
-    this.records = [];
-  }
-
-  write(writer: Writer): void {
-    writer.writeInt32(this.tickId);
-    writer.writeInt32(this.time);
-    writer.writeUInt32(this.serverRealTimeMS);
-    this.newPosition.write(writer);
-    writer.writeShort(this.records.length);
-    for (const record of this.records) {
-      record.write(writer);
+    constructor() {
+        this.tickId = 0;
+        this.time = 0;
+        this.serverRealTimeMS = 0;
+        this.newPosition = new WorldPosData();
+        this.records = [];
     }
-  }
 
-  read(reader: Reader): void {
-    this.tickId = reader.readInt32();
-    this.time = reader.readInt32();
-    this.newPosition.read(reader);
-    this.records = new Array(reader.readShort());
-    for (let i = 0; i < this.records.length; i++) {
-      this.records[i] = new MoveRecord();
-      this.records[i].read(reader);
+    write(writer: Writer): void {
+        writer.writeInt32(this.tickId);
+        writer.writeInt32(this.time);
+        writer.writeUInt32(this.serverRealTimeMS);
+        this.newPosition.write(writer);
+        writer.writeShort(this.records.length);
+        for (const record of this.records) {
+            record.write(writer);
+        }
     }
-  }
+
+    read(reader: Reader): void {
+        this.tickId = reader.readInt32();
+        this.time = reader.readInt32();
+        this.newPosition.read(reader);
+        this.records = new Array(reader.readShort());
+        for (let i = 0; i < this.records.length; i++) {
+            this.records[i] = new MoveRecord();
+            this.records[i].read(reader);
+        }
+    }
 }

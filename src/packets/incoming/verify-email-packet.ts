@@ -6,17 +6,17 @@ import { Packet } from "../../packet";
  */
 export class VerifyEmailPacket implements Packet {
 
-  readonly id = PacketMap.VERIFY_EMAIL
+    readonly id = PacketMap.VERIFY_EMAIL
 
-  //#region packet-specific members
+    //#region packet-specific members
 
-  //#endregion
+    //#endregion
 
-  read(): void {
-    //
-  }
+    read(): void {
+        //
+    }
 
-  write(): void {
-    //
-  }
+    write(): void {
+        //
+    }
 }

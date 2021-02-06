@@ -30,7 +30,8 @@
       true,
       130
     ],
-    "no-bitwise": false
+    "no-bitwise": false,
+    "indent": [true, "spaces", 4]
   },
   "rulesDirectory": []
 }

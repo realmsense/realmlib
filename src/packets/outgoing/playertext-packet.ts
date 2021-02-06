@@ -8,22 +8,22 @@ import { Writer } from "../../writer";
  */
 export class PlayerTextPacket implements Packet {
 
-  readonly id = PacketMap.PLAYERTEXT
+    readonly id = PacketMap.PLAYERTEXT
 
-  /**
-   * The message to send.
-   */
-  text: string;
+    /**
+     * The message to send.
+     */
+    text: string;
 
-  constructor() {
-    this.text = "";
-  }
+    constructor() {
+        this.text = "";
+    }
 
-  write(writer: Writer): void {
-    writer.writeString(this.text);
-  }
+    write(writer: Writer): void {
+        writer.writeString(this.text);
+    }
 
-  read(reader: Reader): void {
-    this.text = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.text = reader.readString();
+    }
 }

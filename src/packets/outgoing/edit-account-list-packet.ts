@@ -8,38 +8,38 @@ import { Writer } from "../../writer";
  */
 export class EditAccountListPacket implements Packet {
 
-  readonly id = PacketMap.EDITACCOUNTLIST
+    readonly id = PacketMap.EDITACCOUNTLIST
 
-  //#region packet-specific members
-  /**
-   * The id of the account id list being edited.
-   */
-  accountListId: number;
-  /**
-   * Whether the edit is to add to the list or remove from it.
-   */
-  add: boolean;
-  /**
-   * The object id of the player to add to the list.
-   */
-  objectId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The id of the account id list being edited.
+     */
+    accountListId: number;
+    /**
+     * Whether the edit is to add to the list or remove from it.
+     */
+    add: boolean;
+    /**
+     * The object id of the player to add to the list.
+     */
+    objectId: number;
+    //#endregion
 
-  constructor() {
-    this.accountListId = 0;
-    this.add = false;
-    this.objectId = 0;
-  }
+    constructor() {
+        this.accountListId = 0;
+        this.add = false;
+        this.objectId = 0;
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.accountListId);
-    writer.writeBoolean(this.add);
-    writer.writeInt32(this.objectId);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.accountListId);
+        writer.writeBoolean(this.add);
+        writer.writeInt32(this.objectId);
+    }
 
-  read(reader: Reader): void {
-    this.accountListId = reader.readInt32();
-    this.add = reader.readBoolean();
-    this.objectId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.accountListId = reader.readInt32();
+        this.add = reader.readBoolean();
+        this.objectId = reader.readInt32();
+    }
 }

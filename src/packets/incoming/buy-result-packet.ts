@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class BuyResultPacket implements Packet {
 
-  readonly id = PacketMap.BUYRESULT
+    readonly id = PacketMap.BUYRESULT
 
-  //#region packet-specific members
-  /**
-   * The result code.
-   */
-  result: number;
-  /**
-   * > Unknown.
-   */
-  resultString: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The result code.
+     */
+    result: number;
+    /**
+     * > Unknown.
+     */
+    resultString: string;
+    //#endregion
 
-  constructor() {
-    this.result = 0;
-    this.resultString = "";
-  }
+    constructor() {
+        this.result = 0;
+        this.resultString = "";
+    }
 
-  read(reader: Reader): void {
-    this.result = reader.readInt32();
-    this.resultString = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.result = reader.readInt32();
+        this.resultString = reader.readString();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.result);
-    writer.writeString(this.resultString);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.result);
+        writer.writeString(this.resultString);
+    }
 }

@@ -9,24 +9,24 @@ import { Writer } from "../../writer";
  */
 export class RequestTradePacket implements Packet {
 
-  readonly id = PacketMap.REQUESTTRADE
+    readonly id = PacketMap.REQUESTTRADE
 
-  //#region packet-specific members
-  /**
-   * The name of the player to request the trade with.
-   */
-  name: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The name of the player to request the trade with.
+     */
+    name: string;
+    //#endregion
 
-  constructor() {
-    this.name = "";
-  }
+    constructor() {
+        this.name = "";
+    }
 
-  write(writer: Writer): void {
-    writer.writeString(this.name);
-  }
+    write(writer: Writer): void {
+        writer.writeString(this.name);
+    }
 
-  read(reader: Reader): void {
-    this.name = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.name = reader.readString();
+    }
 }

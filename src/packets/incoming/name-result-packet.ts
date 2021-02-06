@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class NameResultPacket implements Packet {
 
-  readonly id = PacketMap.NAMERESULT
+    readonly id = PacketMap.NAMERESULT
 
-  //#region packet-specific members
-  /**
-   * Whether or not the name change was successful.
-   */
-  success: boolean;
-  /**
-   * The error which occurred, if the result was not successful.
-   */
-  errorText: string;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * Whether or not the name change was successful.
+     */
+    success: boolean;
+    /**
+     * The error which occurred, if the result was not successful.
+     */
+    errorText: string;
+    //#endregion
 
-  constructor() {
-    this.success = false;
-    this.errorText = "";
-  }
+    constructor() {
+        this.success = false;
+        this.errorText = "";
+    }
 
-  read(reader: Reader): void {
-    this.success = reader.readBoolean();
-    this.errorText = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.success = reader.readBoolean();
+        this.errorText = reader.readString();
+    }
 
-  write(writer: Writer): void {
-    writer.writeBoolean(this.success);
-    writer.writeString(this.errorText);
-  }
+    write(writer: Writer): void {
+        writer.writeBoolean(this.success);
+        writer.writeString(this.errorText);
+    }
 }

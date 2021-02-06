@@ -6,13 +6,13 @@ import { Packet } from "../../packet";
  */
 export class QuestFetchAskPacket implements Packet {
 
-  readonly id = PacketMap.QUEST_FETCH_ASK
+    readonly id = PacketMap.QUEST_FETCH_ASK
 
-  write(): void {
-    //
-  }
+    write(): void {
+        //
+    }
 
-  read(): void {
-    //
-  }
+    read(): void {
+        //
+    }
 }

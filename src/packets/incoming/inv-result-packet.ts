@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class InvResultPacket implements Packet {
 
-  readonly id = PacketMap.INVRESULT
+    readonly id = PacketMap.INVRESULT
 
-  //#region packet-specific members
-  /**
-   * > Unknown.
-   */
-  result: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * > Unknown.
+     */
+    result: number;
+    //#endregion
 
-  constructor() {
-    this.result = 0;
-  }
+    constructor() {
+        this.result = 0;
+    }
 
-  read(reader: Reader): void {
-    this.result = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.result = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.result);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.result);
+    }
 }

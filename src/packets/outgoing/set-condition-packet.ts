@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class SetConditionPacket implements Packet {
 
-  readonly id = PacketMap.SETCONDITION
+    readonly id = PacketMap.SETCONDITION
 
-  //#region packet-specific members
-  /**
-   * The condition effect being conflicted.
-   */
-  conditionEffect: number;
-  /**
-   * The duration of the conditin effect.
-   */
-  conditionDuration: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The condition effect being conflicted.
+     */
+    conditionEffect: number;
+    /**
+     * The duration of the conditin effect.
+     */
+    conditionDuration: number;
+    //#endregion
 
-  constructor() {
-    this.conditionEffect = 0;
-    this.conditionDuration = 0;
-  }
+    constructor() {
+        this.conditionEffect = 0;
+        this.conditionDuration = 0;
+    }
 
-  write(writer: Writer): void {
-    writer.writeByte(this.conditionEffect);
-    writer.writeFloat(this.conditionDuration);
-  }
+    write(writer: Writer): void {
+        writer.writeByte(this.conditionEffect);
+        writer.writeFloat(this.conditionDuration);
+    }
 
-  read(reader: Reader): void {
-    this.conditionEffect = reader.readByte();
-    this.conditionDuration = reader.readFloat();
-  }
+    read(reader: Reader): void {
+        this.conditionEffect = reader.readByte();
+        this.conditionDuration = reader.readFloat();
+    }
 }

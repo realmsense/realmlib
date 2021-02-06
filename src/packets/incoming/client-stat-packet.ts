@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class ClientStatPacket implements Packet {
 
-  readonly id = PacketMap.CLIENTSTAT
+    readonly id = PacketMap.CLIENTSTAT
 
-  //#region packet-specific members
-  /**
-   * The name of the stat.
-   */
-  name: string;
-  /**
-   * The value of the stat.
-   */
-  value: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The name of the stat.
+     */
+    name: string;
+    /**
+     * The value of the stat.
+     */
+    value: number;
+    //#endregion
 
-  constructor() {
-    this.name = "";
-    this.value = 0;
-  }
+    constructor() {
+        this.name = "";
+        this.value = 0;
+    }
 
-  read(reader: Reader): void {
-    this.name = reader.readString();
-    this.value = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.name = reader.readString();
+        this.value = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeString(this.name);
-    writer.writeInt32(this.value);
-  }
+    write(writer: Writer): void {
+        writer.writeString(this.name);
+        writer.writeInt32(this.value);
+    }
 }

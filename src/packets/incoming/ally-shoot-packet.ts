@@ -8,53 +8,53 @@ import { Writer } from "../../writer";
  */
 export class AllyShootPacket implements Packet {
 
-  readonly id = PacketMap.ALLYSHOOT
+    readonly id = PacketMap.ALLYSHOOT
 
-  //#region packet-specific members
-  /**
-   * The bullet id of the projectile which was produced.
-   */
-  bulletId: number;
-  /**
-   * The object id of the player who fired the projectile.
-   */
-  ownerId: number;
-  /**
-   * The item id of the weapon used to fire the projectile.
-   */
-  containerType: number;
-  /**
-   * The angle at which the projectile was fired.
-   */
-  angle: number;
+    //#region packet-specific members
+    /**
+     * The bullet id of the projectile which was produced.
+     */
+    bulletId: number;
+    /**
+     * The object id of the player who fired the projectile.
+     */
+    ownerId: number;
+    /**
+     * The item id of the weapon used to fire the projectile.
+     */
+    containerType: number;
+    /**
+     * The angle at which the projectile was fired.
+     */
+    angle: number;
 
-  /**
-   * Whether or not the shot is affected by the "Inspired" buff (presumably).
-   */
-  bard: boolean;
-  //#endregion
+    /**
+     * Whether or not the shot is affected by the "Inspired" buff (presumably).
+     */
+    bard: boolean;
+    //#endregion
 
-  constructor() {
-    this.bulletId = 0;
-    this.ownerId = 0;
-    this.containerType = 0;
-    this.angle = 0;
-    this.bard = false;
-  }
+    constructor() {
+        this.bulletId = 0;
+        this.ownerId = 0;
+        this.containerType = 0;
+        this.angle = 0;
+        this.bard = false;
+    }
 
-  read(reader: Reader): void {
-    this.bulletId = reader.readUnsignedByte();
-    this.ownerId = reader.readInt32();
-    this.containerType = reader.readShort();
-    this.angle = reader.readFloat();
-    this.bard = reader.readBoolean();
-  }
+    read(reader: Reader): void {
+        this.bulletId = reader.readUnsignedByte();
+        this.ownerId = reader.readInt32();
+        this.containerType = reader.readShort();
+        this.angle = reader.readFloat();
+        this.bard = reader.readBoolean();
+    }
 
-  write(writer: Writer): void {
-    writer.writeUnsignedByte(this.bulletId);
-    writer.writeInt32(this.ownerId);
-    writer.writeShort(this.containerType);
-    writer.writeFloat(this.angle);
-    writer.writeBoolean(this.bard);
-  }
+    write(writer: Writer): void {
+        writer.writeUnsignedByte(this.bulletId);
+        writer.writeInt32(this.ownerId);
+        writer.writeShort(this.containerType);
+        writer.writeFloat(this.angle);
+        writer.writeBoolean(this.bard);
+    }
 }

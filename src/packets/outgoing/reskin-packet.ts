@@ -8,24 +8,24 @@ import { Writer } from "../../writer";
  */
 export class ReskinPacket implements Packet {
 
-  readonly id = PacketMap.RESKIN
+    readonly id = PacketMap.RESKIN
 
-  //#region packet-specific members
-  /**
-   * The id of the skin to activate.
-   */
-  skinId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The id of the skin to activate.
+     */
+    skinId: number;
+    //#endregion
 
-  constructor() {
-    this.skinId = 0;
-  }
+    constructor() {
+        this.skinId = 0;
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.skinId);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.skinId);
+    }
 
-  read(reader: Reader): void {
-    this.skinId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.skinId = reader.readInt32();
+    }
 }

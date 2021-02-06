@@ -8,20 +8,20 @@ import { Writer } from "../../writer";
  */
 export class NewCharacterInfoPacket implements Packet {
 
-  readonly id = PacketMap.NEW_CHARACTER_INFORMATION
+    readonly id = PacketMap.NEW_CHARACTER_INFORMATION
 
-  charXML: string;
-  //#endregion
+    charXML: string;
+    //#endregion
 
-  constructor() {
-    this.charXML = "";
-  }
+    constructor() {
+        this.charXML = "";
+    }
 
-  read(reader: Reader): void {
-    this.charXML = reader.readString();
-  }
+    read(reader: Reader): void {
+        this.charXML = reader.readString();
+    }
 
-  write(writer: Writer): void {
-    writer.writeString(this.charXML);
-  }
+    write(writer: Writer): void {
+        writer.writeString(this.charXML);
+    }
 }

@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class PlayerHitPacket implements Packet {
 
-  readonly id = PacketMap.PLAYERHIT
+    readonly id = PacketMap.PLAYERHIT
 
-  //#region packet-specific members
-  /**
-   * The id of the bullet which hit the player.
-   */
-  bulletId: number;
-  /**
-   * The object id of the enemy that hit the player.
-   */
-  objectId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The id of the bullet which hit the player.
+     */
+    bulletId: number;
+    /**
+     * The object id of the enemy that hit the player.
+     */
+    objectId: number;
+    //#endregion
 
-  constructor() {
-    this.bulletId = 0;
-    this.objectId = 0;
-  }
+    constructor() {
+        this.bulletId = 0;
+        this.objectId = 0;
+    }
 
-  write(writer: Writer): void {
-    writer.writeUnsignedByte(this.bulletId);
-    writer.writeInt32(this.objectId);
-  }
+    write(writer: Writer): void {
+        writer.writeUnsignedByte(this.bulletId);
+        writer.writeInt32(this.objectId);
+    }
 
-  read(reader: Reader): void {
-    this.bulletId = reader.readUnsignedByte();
-    this.objectId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.bulletId = reader.readUnsignedByte();
+        this.objectId = reader.readInt32();
+    }
 }

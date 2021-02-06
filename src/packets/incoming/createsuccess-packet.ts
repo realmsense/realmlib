@@ -8,31 +8,31 @@ import { Writer } from "../../writer";
  */
 export class CreateSuccessPacket implements Packet {
 
-  readonly id = PacketMap.CREATE_SUCCESS
+    readonly id = PacketMap.CREATE_SUCCESS
 
-  //#region packet-specific members
-  /**
-   * The object id of the player"s character.
-   */
-  objectId: number;
-  /**
-   * The character id of the player"s character.
-   */
-  charId: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The object id of the player"s character.
+     */
+    objectId: number;
+    /**
+     * The character id of the player"s character.
+     */
+    charId: number;
+    //#endregion
 
-  constructor() {
-    this.objectId = 0;
-    this.charId = 0;
-  }
+    constructor() {
+        this.objectId = 0;
+        this.charId = 0;
+    }
 
-  read(reader: Reader): void {
-    this.objectId = reader.readInt32();
-    this.charId = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.objectId = reader.readInt32();
+        this.charId = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.objectId);
-    writer.writeInt32(this.charId);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.charId);
+    }
 }

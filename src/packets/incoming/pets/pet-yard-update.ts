@@ -9,25 +9,25 @@ import { Writer } from "../../../writer";
  */
 export class PetYardUpdate implements Packet {
 
-  readonly id = PacketMap.PETYARDUPDATE
-  propagate = true;
+    readonly id = PacketMap.PETYARDUPDATE
+    propagate = true;
 
-  //#region packet-specific members
-  /**
-   * The type of the new yard.
-   */
-  yardType: PetYardType;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The type of the new yard.
+     */
+    yardType: PetYardType;
+    //#endregion
 
-  constructor() {
-    this.yardType = 0;
-  }
+    constructor() {
+        this.yardType = 0;
+    }
 
-  read(reader: Reader): void {
-    this.yardType = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.yardType = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeInt32(this.yardType);
-  }
+    write(writer: Writer): void {
+        writer.writeInt32(this.yardType);
+    }
 }

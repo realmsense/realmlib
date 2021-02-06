@@ -5,61 +5,61 @@ import { read as compressedRead } from "./compressed-int";
 import { StatType } from "../models/stat-type";
 
 export class StatData implements DataPacket {
-  /**
-   * The type of stat.
-   */
-  statType: number;
-  /**
-   * The number value of this stat, if this is not a string stat.
-   */
-  statValue: number;
-  /**
-   * The string value of this stat, if this is a string stat.
-   */
-  stringStatValue: string;
-  /**
-   * Unknown
-   */
-  unknownByte: number;
+    /**
+     * The type of stat.
+     */
+    statType: number;
+    /**
+     * The number value of this stat, if this is not a string stat.
+     */
+    statValue: number;
+    /**
+     * The string value of this stat, if this is a string stat.
+     */
+    stringStatValue: string;
+    /**
+     * Unknown
+     */
+    unknownByte: number;
 
-  constructor() {
-    this.statType = 0;
-    this.statValue = 0;
-    this.stringStatValue = "";
-    this.unknownByte = 0;
-  }
-
-  read(reader: Reader): void {
-    this.statType = reader.readUnsignedByte();
-    if (this.isStringStat()) {
-      this.stringStatValue = reader.readString();
-    } else {
-      this.statValue = compressedRead(reader);
+    constructor() {
+        this.statType = 0;
+        this.statValue = 0;
+        this.stringStatValue = "";
+        this.unknownByte = 0;
     }
-    this.unknownByte = reader.readByte();
-  }
 
-  write(writer: Writer): void {
-    writer.writeByte(this.statType);
-    if (this.isStringStat()) {
-      writer.writeString(this.stringStatValue);
-    } else {
-      writer.writeInt32(this.statValue);
+    read(reader: Reader): void {
+        this.statType = reader.readUnsignedByte();
+        if (this.isStringStat()) {
+            this.stringStatValue = reader.readString();
+        } else {
+            this.statValue = compressedRead(reader);
+        }
+        this.unknownByte = reader.readByte();
     }
-    writer.writeByte(this.unknownByte);
-  }
 
-  isStringStat(): boolean {
-    switch (this.statType) {
-      case StatType.NAME_STAT:
-      case StatType.GUILD_NAME_STAT:
-      case StatType.PET_NAME_STAT:
-      case StatType.ACCOUNT_ID_STAT:
-      case StatType.OWNER_ACCOUNT_ID_STAT:
-      case StatType.GRAVE_ACCOUNT_ID:
-        return true;
-      default:
-        return false;
+    write(writer: Writer): void {
+        writer.writeByte(this.statType);
+        if (this.isStringStat()) {
+            writer.writeString(this.stringStatValue);
+        } else {
+            writer.writeInt32(this.statValue);
+        }
+        writer.writeByte(this.unknownByte);
     }
-  }
+
+    isStringStat(): boolean {
+        switch (this.statType) {
+            case StatType.NAME_STAT:
+            case StatType.GUILD_NAME_STAT:
+            case StatType.PET_NAME_STAT:
+            case StatType.ACCOUNT_ID_STAT:
+            case StatType.OWNER_ACCOUNT_ID_STAT:
+            case StatType.GRAVE_ACCOUNT_ID:
+                return true;
+            default:
+                return false;
+        }
+    }
 }

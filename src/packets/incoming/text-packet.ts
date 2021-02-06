@@ -8,81 +8,81 @@ import { Writer } from "../../writer";
  */
 export class TextPacket implements Packet {
 
-  readonly id = PacketMap.TEXT
+    readonly id = PacketMap.TEXT
 
-  //#region packet-specific members
-  /**
-   * The sender of the message.
-   */
-  name: string;
-  /**
-   * The object id of the sender.
-   */
-  objectId: number;
-  /**
-   * The number of stars of the sender.
-   */
-  numStars: number;
-  /**
-   * The length of time to display the chat bubble for.
-   */
-  bubbleTime: number;
-  /**
-   * The recipient of the message. This is only used if the
-   * message is a private message.
-   */
-  recipient: string;
-  /**
-   * The content of the message.
-   */
-  text: string;
-  /**
-   * > Unknown.
-   */
-  cleanText: string;
-  /**
-   * Whether or not the sender of the message is a supporter.
-   */
-  isSupporter: boolean;
-  /**
-   * The star background of the player
-   */
-  starBackground: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The sender of the message.
+     */
+    name: string;
+    /**
+     * The object id of the sender.
+     */
+    objectId: number;
+    /**
+     * The number of stars of the sender.
+     */
+    numStars: number;
+    /**
+     * The length of time to display the chat bubble for.
+     */
+    bubbleTime: number;
+    /**
+     * The recipient of the message. This is only used if the
+     * message is a private message.
+     */
+    recipient: string;
+    /**
+     * The content of the message.
+     */
+    text: string;
+    /**
+     * > Unknown.
+     */
+    cleanText: string;
+    /**
+     * Whether or not the sender of the message is a supporter.
+     */
+    isSupporter: boolean;
+    /**
+     * The star background of the player
+     */
+    starBackground: number;
+    //#endregion
 
-  constructor() {
-    this.name = "";
-    this.objectId = 0;
-    this.numStars = 0;
-    this.bubbleTime = 0;
-    this.recipient = "";
-    this.text = "";
-    this.cleanText = "";
-    this.isSupporter = false;
-    this.starBackground = 0;
-  }
+    constructor() {
+        this.name = "";
+        this.objectId = 0;
+        this.numStars = 0;
+        this.bubbleTime = 0;
+        this.recipient = "";
+        this.text = "";
+        this.cleanText = "";
+        this.isSupporter = false;
+        this.starBackground = 0;
+    }
 
-  read(reader: Reader): void {
-    this.name = reader.readString();
-    this.objectId = reader.readInt32();
-    this.numStars = reader.readInt32();
-    this.bubbleTime = reader.readUnsignedByte();
-    this.recipient = reader.readString();
-    this.text = reader.readString();
-    this.cleanText = reader.readString();
-    this.isSupporter = reader.readBoolean();
-    this.starBackground = reader.readInt32();
-  }
+    read(reader: Reader): void {
+        this.name = reader.readString();
+        this.objectId = reader.readInt32();
+        this.numStars = reader.readInt32();
+        this.bubbleTime = reader.readUnsignedByte();
+        this.recipient = reader.readString();
+        this.text = reader.readString();
+        this.cleanText = reader.readString();
+        this.isSupporter = reader.readBoolean();
+        this.starBackground = reader.readInt32();
+    }
 
-  write(writer: Writer): void {
-    writer.writeString(this.name);
-    writer.writeInt32(this.objectId);
-    writer.writeInt32(this.numStars);
-    writer.writeUnsignedByte(this.bubbleTime);
-    writer.writeString(this.recipient);
-    writer.writeString(this.text);
-    writer.writeString(this.cleanText);
-    writer.writeBoolean(this.isSupporter);
-    writer.writeInt32(this.starBackground);
-  }
+    write(writer: Writer): void {
+        writer.writeString(this.name);
+        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.numStars);
+        writer.writeUnsignedByte(this.bubbleTime);
+        writer.writeString(this.recipient);
+        writer.writeString(this.text);
+        writer.writeString(this.cleanText);
+        writer.writeBoolean(this.isSupporter);
+        writer.writeInt32(this.starBackground);
+    }
 }

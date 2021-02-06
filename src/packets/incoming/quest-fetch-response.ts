@@ -9,39 +9,39 @@ import { Writer } from "../../writer";
  */
 export class QuestFetchResponsePacket implements Packet {
 
-  readonly id = PacketMap.QUEST_FETCH_RESPONSE
+    readonly id = PacketMap.QUEST_FETCH_RESPONSE
 
-  //#region packet-specific members
-  /**
-   * The quests which were fetched.
-   */
-  quests: QuestData[];
-  /**
-   * The cost in gold of the next quest refresh.
-   */
-  nextRefreshPrice: number;
-  //#endregion
+    //#region packet-specific members
+    /**
+     * The quests which were fetched.
+     */
+    quests: QuestData[];
+    /**
+     * The cost in gold of the next quest refresh.
+     */
+    nextRefreshPrice: number;
+    //#endregion
 
-  constructor() {
-    this.quests = [];
-    this.nextRefreshPrice = 0;
-  }
-
-  read(reader: Reader): void {
-    const questsLen = reader.readShort();
-    this.quests = new Array<QuestData>(questsLen);
-    for (let i = 0; i < questsLen; i++) {
-      this.quests[i] = new QuestData();
-      this.quests[i].read(reader);
+    constructor() {
+        this.quests = [];
+        this.nextRefreshPrice = 0;
     }
-    this.nextRefreshPrice = reader.readShort();
-  }
 
-  write(writer: Writer): void {
-    writer.writeShort(this.quests.length);
-    for (const quest of this.quests) {
-      quest.write(writer);
+    read(reader: Reader): void {
+        const questsLen = reader.readShort();
+        this.quests = new Array<QuestData>(questsLen);
+        for (let i = 0; i < questsLen; i++) {
+            this.quests[i] = new QuestData();
+            this.quests[i].read(reader);
+        }
+        this.nextRefreshPrice = reader.readShort();
     }
-    writer.writeShort(this.nextRefreshPrice);
-  }
+
+    write(writer: Writer): void {
+        writer.writeShort(this.quests.length);
+        for (const quest of this.quests) {
+            quest.write(writer);
+        }
+        writer.writeShort(this.nextRefreshPrice);
+    }
 }
