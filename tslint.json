@@ -29,7 +29,8 @@
     "max-line-length": [
       true,
       130
-    ]
+    ],
+    "no-bitwise": false
   },
   "rulesDirectory": []
 }
