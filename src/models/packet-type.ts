@@ -1,7 +1,6 @@
 /**
  * A strongly typed representation of the packet types.
  */
-// tslint:disable variable-name
 export const PacketType = {
         FAILURE: "FAILURE",
         HELLO: "HELLO",

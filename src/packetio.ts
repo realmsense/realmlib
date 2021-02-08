@@ -56,10 +56,8 @@ export class PacketIO extends EventEmitter {
     private writer: Writer;
     private reader: Reader;
     private eventHandlers: Map<string, (...args: any[]) => void>;
-    // tslint:disable:variable-name
     private _lastIncomingPacket: Packet | undefined;
     private _lastOutgoingPacket: Packet | undefined;
-    // tslint:enable:variable-name
 
     /**
      * Creates a new `PacketIO` instance.
