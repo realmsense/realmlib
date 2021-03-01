@@ -10,7 +10,7 @@ import { Writer } from "../../writer";
  */
 export class UseItemPacket implements Packet {
 
-    readonly id = PacketMap.USEITEM
+    readonly id = PacketMap.USE_ITEM
 
     //#region packet-specific members
     /**

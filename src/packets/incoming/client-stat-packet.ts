@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class ClientStatPacket implements Packet {
 
-    readonly id = PacketMap.CLIENTSTAT
+    readonly id = PacketMap.CLIENT_STAT
 
     //#region packet-specific members
     /**

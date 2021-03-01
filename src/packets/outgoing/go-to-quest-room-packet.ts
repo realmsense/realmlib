@@ -7,7 +7,7 @@ import { Packet } from "../../packet";
  */
 export class GoToQuestRoomPacket implements Packet {
 
-    readonly id = PacketMap.QUEST_ROOM_MSG
+    readonly id = PacketMap.GO_TO_QUEST_ROOM
 
     //#region packet-specific members
 

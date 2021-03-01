@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class PlayerTextPacket implements Packet {
 
-    readonly id = PacketMap.PLAYERTEXT
+    readonly id = PacketMap.PLAYER_TEXT
 
     /**
      * The message to send.

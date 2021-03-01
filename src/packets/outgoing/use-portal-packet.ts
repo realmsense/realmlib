@@ -9,7 +9,7 @@ import { Writer } from "../../writer";
  */
 export class UsePortalPacket implements Packet {
 
-    readonly id = PacketMap.USEPORTAL;
+    readonly id = PacketMap.USE_PORTAL;
 
     //#region packet-specific members
     /**

@@ -9,7 +9,7 @@ import { Writer } from "../../writer";
  */
 export class AccountListPacket implements Packet {
 
-    readonly id = PacketMap.ACCOUNTLIST
+    readonly id = PacketMap.ACCOUNT_LIST
 
     //#region packet-specific members
     /**

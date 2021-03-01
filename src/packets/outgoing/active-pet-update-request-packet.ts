@@ -9,7 +9,7 @@ import { Writer } from "../../writer";
  */
 export class ActivePetUpdateRequestPacket implements Packet {
 
-    readonly id = PacketMap.ACTIVE_PET_UPDATE_REQUEST
+    readonly id = PacketMap.ACTIVE_PET_UPDATE_REQUEST;
     propagate = true;
 
     //#region packet-specific members

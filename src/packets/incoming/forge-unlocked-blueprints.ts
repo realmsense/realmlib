@@ -7,9 +7,9 @@ import { read as compressedRead } from "../../data/compressed-int";
 /**
  * Received in response to `MapInfoPacket`.
  */
-export class UnlockedBlueprintsPacket implements Packet {
+export class ForgeUnlockedBlueprintsPacket implements Packet {
 
-    readonly id = PacketMap.UNLOCKED_BLUEPRINTS;
+    readonly id = PacketMap.FORGE_UNLOCKED_BLUEPRINTS;
 
     /**
      * An array of blueprint IDs that the player has unlocked.

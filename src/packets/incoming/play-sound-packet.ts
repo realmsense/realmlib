@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class PlaySoundPacket implements Packet {
 
-    readonly id = PacketMap.PLAYSOUND
+    readonly id = PacketMap.PLAY_SOUND
 
     //#region packet-specific members
     /**

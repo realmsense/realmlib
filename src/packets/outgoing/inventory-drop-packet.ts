@@ -7,9 +7,9 @@ import { Writer } from "../../writer";
 /**
  * Sent to drop an item from the client"s inventory.
  */
-export class InvDropPacket implements Packet {
+export class InventoryDropPacket implements Packet {
 
-    readonly id = PacketMap.INVDROP
+    readonly id = PacketMap.INVENTORY_DROP
 
     //#region packet-specific members
     /**

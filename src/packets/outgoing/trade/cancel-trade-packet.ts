@@ -6,7 +6,7 @@ import { Packet } from "../../../packet";
  */
 export class CancelTradePacket implements Packet {
 
-    readonly id = PacketMap.CANCELTRADE
+    readonly id = PacketMap.CANCEL_TRADE
 
     //#region packet-specific members
 

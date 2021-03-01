@@ -6,9 +6,9 @@ import { Writer } from "../../writer";
 /**
  * > Unknown.
  */
-export class InvResultPacket implements Packet {
+export class InventoryResultPacket implements Packet {
 
-    readonly id = PacketMap.INVRESULT
+    readonly id = PacketMap.INVENTORY_RESULT
 
     //#region packet-specific members
     /**

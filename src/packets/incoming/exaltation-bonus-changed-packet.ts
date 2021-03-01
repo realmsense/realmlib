@@ -6,9 +6,9 @@ import { Writer } from "../../writer";
 /**
  * Received when the players exaltation stats update
  */
-export class ExaltationUpdatePacket implements Packet {
+export class ExaltationBonusChangedPacket implements Packet {
 
-    readonly id = PacketMap.EXALTATION_UPDATE;
+    readonly id = PacketMap.EXALTATION_BONUS_CHANGED;
 
     objType: number;
     attackProgress: number;

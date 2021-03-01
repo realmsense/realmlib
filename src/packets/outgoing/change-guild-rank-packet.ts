@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class ChangeGuildRankPacket implements Packet {
 
-    readonly id = PacketMap.CHANGEGUILDRANK
+    readonly id = PacketMap.CHANGE_GUILD_RANK
 
     //#region packet-specific members
     /**

@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class SquareHitPacket implements Packet {
 
-    readonly id = PacketMap.SQUAREHIT
+    readonly id = PacketMap.SQUARE_HIT
 
     //#region packet-specific members
     /**

@@ -6,8 +6,8 @@ import { Writer } from "../../writer";
 /**
  * Received when the client connects to a server with a queue.
  */
-export class QueueInfoPacket implements Packet {
-    readonly id = PacketMap.QUEUE_INFO
+export class QueueMessagePacket implements Packet {
+    readonly id = PacketMap.QUEUE_MESSAGE
 
     /**
      * The current position of the client in the queue

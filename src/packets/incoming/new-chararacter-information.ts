@@ -6,7 +6,7 @@ import { Writer } from "../../writer";
 /**
  * > Unknown
  */
-export class NewCharacterInfoPacket implements Packet {
+export class NewCharacterInformationPacket implements Packet {
 
     readonly id = PacketMap.NEW_CHARACTER_INFORMATION
 

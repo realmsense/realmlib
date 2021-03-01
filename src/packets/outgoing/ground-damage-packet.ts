@@ -9,7 +9,7 @@ import { Writer } from "../../writer";
  */
 export class GroundDamagePacket implements Packet {
 
-    readonly id = PacketMap.GROUNDDAMAGE
+    readonly id = PacketMap.GROUND_DAMAGE
 
     //#region packet-specific members
     /**

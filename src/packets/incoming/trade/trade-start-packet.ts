@@ -9,7 +9,7 @@ import { Writer } from "../../../writer";
  */
 export class TradeStartPacket implements Packet {
 
-    readonly id = PacketMap.TRADESTART
+    readonly id = PacketMap.TRADE_START
 
     //#region packet-specific members
     /**

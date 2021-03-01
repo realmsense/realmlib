@@ -6,9 +6,9 @@ import { Writer } from "../../writer";
 /**
  * Received to tell the client how many heroes are left in the current realm.
  */
-export class RealmHeroesLeftPacket implements Packet {
+export class HeroLeftPacket implements Packet {
 
-    readonly id = PacketMap.REALM_HERO_LEFT_MSG
+    readonly id = PacketMap.HERO_LEFT
 
     //#region packet-specific members
     /**

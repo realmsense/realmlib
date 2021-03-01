@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class InvitedToGuildPacket implements Packet {
 
-    readonly id = PacketMap.INVITEDTOGUILD
+    readonly id = PacketMap.INVITED_TO_GUILD
 
     //#region packet-specific members
     /**

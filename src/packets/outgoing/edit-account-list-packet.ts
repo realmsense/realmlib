@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class EditAccountListPacket implements Packet {
 
-    readonly id = PacketMap.EDITACCOUNTLIST
+    readonly id = PacketMap.EDIT_ACCOUNT_LIST
 
     //#region packet-specific members
     /**

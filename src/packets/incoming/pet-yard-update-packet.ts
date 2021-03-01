@@ -7,9 +7,9 @@ import { Writer } from "../../writer";
 /**
  * Received when the pet yard is updated to a new type of yard.
  */
-export class PetYardUpdate implements Packet {
+export class PetYardUpdatePacket implements Packet {
 
-    readonly id = PacketMap.PETYARDUPDATE
+    readonly id = PacketMap.PET_YARD_UPDATE
     propagate = true;
 
     //#region packet-specific members

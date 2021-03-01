@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class CreateGuildPacket implements Packet {
 
-    readonly id = PacketMap.CREATEGUILD
+    readonly id = PacketMap.CREATE_GUILD
 
     //#region packet-specific members
     /**

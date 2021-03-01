@@ -6,9 +6,9 @@ import { Writer } from "../../writer";
 /**
  * Sent to claim rewards from the login calendar.
  */
-export class ClaimDailyRewardMessage implements Packet {
+export class ClaimDailyRewardMessagePacket implements Packet {
 
-    readonly id = PacketMap.CLAIM_LOGIN_REWARD_MSG
+    readonly id = PacketMap.CLAIM_DAILY_REWARD_MESSAGE
 
     //#region packet-specific members
     /**

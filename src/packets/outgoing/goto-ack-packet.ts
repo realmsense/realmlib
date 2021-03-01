@@ -4,11 +4,11 @@ import { Reader } from "../../reader";
 import { Writer } from "../../writer";
 
 /**
- * Sent to acknowledge an `EnemyShootPacket`.
+ * Sent to acknowledge a `GotoPacket`.
  */
-export class ShootAckPacket implements Packet {
+export class GotoAckPacket implements Packet {
 
-    readonly id = PacketMap.SHOOTACK;
+    readonly id = PacketMap.GOTO_ACK
 
     //#region packet-specific members
     /**

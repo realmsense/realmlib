@@ -8,9 +8,9 @@ import { Writer } from "../../writer";
 /**
  * Sent to swap the items of two slots.
  */
-export class InvSwapPacket implements Packet {
+export class InventorySwapPacket implements Packet {
 
-    readonly id = PacketMap.INVSWAP
+    readonly id = PacketMap.INVENTORY_SWAP
 
     //#region packet-specific members
     /**

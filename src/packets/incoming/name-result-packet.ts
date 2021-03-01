@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class NameResultPacket implements Packet {
 
-    readonly id = PacketMap.NAMERESULT
+    readonly id = PacketMap.NAME_RESULT
 
     //#region packet-specific members
     /**

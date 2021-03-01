@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class ActivePetPacket implements Packet {
 
-    readonly id = PacketMap.ACTIVEPETUPDATE
+    readonly id = PacketMap.ACTIVE_PET;
     propagate = true;
 
     //#region packet-specific members

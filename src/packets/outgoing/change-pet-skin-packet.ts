@@ -9,7 +9,7 @@ import { Writer } from "../../writer";
  */
 export class ChangePetSkinPacket implements Packet {
 
-    readonly id = PacketMap.PET_CHANGE_SKIN_MSG
+    readonly id = PacketMap.CHANGE_PET_SKIN
     propagate = true;
 
     //#region packet-specific members

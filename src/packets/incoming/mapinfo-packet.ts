@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class MapInfoPacket implements Packet {
 
-    readonly id = PacketMap.MAPINFO
+    readonly id = PacketMap.MAP_INFO
 
     //#region packet-specific members
     /**

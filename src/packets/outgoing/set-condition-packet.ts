@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class SetConditionPacket implements Packet {
 
-    readonly id = PacketMap.SETCONDITION
+    readonly id = PacketMap.SET_CONDITION
 
     //#region packet-specific members
     /**

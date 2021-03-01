@@ -7,9 +7,9 @@ import { PacketMap } from "../../models/packet-map";
 /**
  * Received for information when the player enters the new vault
  */
-export class VaultUpdatePacket implements Packet {
+export class VaultContentPacket implements Packet {
 
-    readonly id = PacketMap.VAULT_UPDATE;
+    readonly id = PacketMap.VAULT_CONTENT;
 
     unknownBool: boolean;
     vaultItemCount: number;

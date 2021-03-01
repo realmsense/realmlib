@@ -10,7 +10,7 @@ import { read as compressedRead } from "../../data/compressed-int";
  */
 export class ShowEffectPacket implements Packet {
 
-    readonly id = PacketMap.SHOWEFFECT;
+    readonly id = PacketMap.SHOW_EFFECT;
 
     //#region packet-specific members
     /**

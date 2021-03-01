@@ -6,7 +6,7 @@ import { Packet } from "../../packet";
  */
 export class CheckCreditsPacket implements Packet {
 
-    readonly id = PacketMap.CHECKCREDITS
+    readonly id = PacketMap.CHECK_CREDITS
 
     //#region packet-specific members
 

@@ -6,9 +6,9 @@ import { Writer } from "../../writer";
 /**
  * Received to give the player information about a newly evolved pet.
  */
-export class EvolvedPetMessage implements Packet {
+export class EvolvedPetMessagePacket implements Packet {
 
-    readonly id = PacketMap.EVOLVE_PET
+    readonly id = PacketMap.EVOLVED_PET_MESSAGE;
     propagate = true;
 
     //#region packet-specific members

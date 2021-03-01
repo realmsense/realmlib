@@ -9,7 +9,7 @@ import { Writer } from "../../writer";
  */
 export class NewTickPacket implements Packet {
 
-    readonly id = PacketMap.NEWTICK
+    readonly id = PacketMap.NEW_TICK
 
     //#region packet-specific members
     /**

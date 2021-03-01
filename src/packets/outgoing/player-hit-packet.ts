@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class PlayerHitPacket implements Packet {
 
-    readonly id = PacketMap.PLAYERHIT
+    readonly id = PacketMap.PLAYER_HIT
 
     //#region packet-specific members
     /**

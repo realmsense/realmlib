@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class AllyShootPacket implements Packet {
 
-    readonly id = PacketMap.ALLYSHOOT
+    readonly id = PacketMap.ALLY_SHOOT
 
     //#region packet-specific members
     /**

@@ -2,21 +2,21 @@ import { PacketMap } from "../../models/packet-map";
 import { Packet } from "../../packet";
 
 /**
- * Received to prompt the player to verify their email.
+ * Sent to acknowledge an `UpdatePacket`.
  */
-export class VerifyEmailPacket implements Packet {
+export class UpdateAckPacket implements Packet {
 
-    readonly id = PacketMap.VERIFY_EMAIL
+    readonly id = PacketMap.UPDATE_ACK
 
     //#region packet-specific members
 
     //#endregion
 
-    read(): void {
+    write(): void {
         //
     }
 
-    write(): void {
+    read(): void {
         //
     }
 }

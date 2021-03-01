@@ -6,9 +6,9 @@ import { Writer } from "../../writer";
 /**
  * Received when a new ability has been unlocked by the player.
  */
-export class NewAbilityMessage implements Packet {
+export class NewAbilityMessagePacket implements Packet {
 
-    readonly id = PacketMap.NEW_ABILITY
+    readonly id = PacketMap.NEW_ABILITY_MESSAGE
 
     //#region packet-specific members
     /**

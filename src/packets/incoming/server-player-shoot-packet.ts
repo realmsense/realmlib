@@ -9,7 +9,7 @@ import { Writer } from "../../writer";
  */
 export class ServerPlayerShootPacket implements Packet {
 
-    readonly id = PacketMap.SERVERPLAYERSHOOT
+    readonly id = PacketMap.SERVER_PLAYER_SHOOT
 
     //#region packet-specific members
     /**

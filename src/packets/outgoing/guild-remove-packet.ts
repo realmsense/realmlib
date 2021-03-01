@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class GuildRemovePacket implements Packet {
 
-    readonly id = PacketMap.GUILDREMOVE
+    readonly id = PacketMap.GUILD_REMOVE
 
     //#region packet-specific members
     /**
