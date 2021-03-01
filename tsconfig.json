@@ -1,24 +1,26 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "declaration": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "incremental": false,
-    "rootDir": "./src",
-    "outDir": "./lib",
-    "lib": ["ES2020"]
-  },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "lib",
-    "node_modules",
-    "test"
-  ]
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "commonjs",
+        "declaration": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "incremental": false,
+        "rootDir": "./src",
+        "outDir": "./lib",
+        "lib": [
+            "ES2020"
+        ]
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "lib",
+        "node_modules",
+        "test"
+    ]
 }

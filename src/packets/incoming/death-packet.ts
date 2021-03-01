@@ -64,10 +64,10 @@ export class DeathPacket implements Packet {
     }
 
     write(writer: Writer): void {
-     writer.writeString(this.accountId);
-     writer.writeInt32(this.charId);
-     writer.writeString(this.killedBy);
-     writer.writeInt32(this.zombieType);
-     writer.writeInt32(this.zombieId);
+        writer.writeString(this.accountId);
+        writer.writeInt32(this.charId);
+        writer.writeString(this.killedBy);
+        writer.writeInt32(this.zombieType);
+        writer.writeInt32(this.zombieId);
     }
 }

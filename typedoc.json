@@ -1,9 +1,9 @@
 {
-  "name": "realmlib",
-  "mode": "file",
-  "exclude": [
-    "**/*+(index).ts"
-  ],
-  "excludeExternals": true,
-  "out": "./docs"
+    "name": "realmlib",
+    "mode": "file",
+    "exclude": [
+        "**/*+(index).ts"
+    ],
+    "excludeExternals": true,
+    "out": "./docs"
 }

@@ -228,7 +228,7 @@ export class PacketIO extends EventEmitter {
             if (!type) {
                 this.emit("error", new Error(
                     `Unkown packet id ${id} received from server!\n\tBuffer size: ${this.reader.length}\n\tBytes: ${this.reader.readBytes(this.reader.length).toString()}`
-                    ));
+                ));
                 return undefined;
             }
             if (this.listenerCount(type) !== 0) {
