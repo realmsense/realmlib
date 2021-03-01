@@ -120,7 +120,7 @@ export class PacketIO extends EventEmitter {
      * Sends a packet.
      * @param packet The packet to send.
      */
-    send(packet: Packet) {
+    send(packet: Packet): void {
         if (!this.socket || this.socket.destroyed) {
             this.emit("error", new Error("Not attached to a socket."));
             return;
@@ -143,6 +143,7 @@ export class PacketIO extends EventEmitter {
      * them to the socket.
      */
     private async drainQueue() {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const packet = this.outgoingQueue.shift()!;
         this._lastOutgoingPacket = packet;
         this.writer.index = 5;
@@ -226,7 +227,7 @@ export class PacketIO extends EventEmitter {
             if (!type) {
                 this.emit("error", new Error(
                     `Unkown packet id ${id} received from server!\n\tBuffer size: ${this.reader.length}\n\tBytes: ${this.reader.readBytes(this.reader.length).toString()}`
-                    ));
+                ));
                 return undefined;
             }
             if (this.listenerCount(type) !== 0) {

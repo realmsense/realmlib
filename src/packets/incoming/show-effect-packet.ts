@@ -62,7 +62,7 @@ export class ShowEffectPacket implements Packet {
             this.pos1.x = 0;
         }
         if (loc2 & 4) {
-                        this.pos1.y = reader.readFloat();
+            this.pos1.y = reader.readFloat();
         } else {
             this.pos1.y = 0;
         }

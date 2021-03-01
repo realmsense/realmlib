@@ -5,27 +5,27 @@ import { PacketMap } from "../../models/packet-map";
 
 export class ChatToken implements Packet {
 
-        readonly id = PacketMap.CHATTOKEN;
+    readonly id = PacketMap.CHATTOKEN;
 
-        token: string;
-        host: string;
-        port: number;
+    token: string;
+    host: string;
+    port: number;
 
-        constructor() {
-                this.token = "";
-                this.host = "";
-                this.port = 0;
-        }
+    constructor() {
+        this.token = "";
+        this.host = "";
+        this.port = 0;
+    }
 
-        read(reader: Reader): void {
-                this.token = reader.readString();
-                this.host = reader.readString();
-                this.port = reader.readInt32();
-        }
+    read(reader: Reader): void {
+        this.token = reader.readString();
+        this.host = reader.readString();
+        this.port = reader.readInt32();
+    }
 
-        write(writer: Writer): void {
-                writer.writeString(this.token);
-                writer.writeString(this.host);
-                writer.writeInt32(this.port);
-        }
+    write(writer: Writer): void {
+        writer.writeString(this.token);
+        writer.writeString(this.host);
+        writer.writeInt32(this.port);
+    }
 }
