@@ -13,7 +13,7 @@ A networking library for Realm of the Mad God Exalt.
 Make sure you have [Nodejs 12+](https://nodejs.org/en/download/) installed then download the project:
 
 ```bash
-git clone https://git.extacy.cc/Extacy/realmlib.git
+git clone https://github.com/Extacy/realmlib.git
 cd realmlib
 ```
 
@@ -31,7 +31,7 @@ Your compiled code will be in the `lib` folder ready to use
 The realmlib networking module cannot be used on its own. It is designed to be used as a building block for larger RotMG projects which require an implementation of the RotMG networking protocol. Such project may include
 
 + MITM proxies (such as KRelay or JRelay).
-+ Clientless applications (such as [nrelay](https://git.extacy.cc/Extacy/nrelay)).
++ Clientless applications (such as [nrelay](https://github.com/Extacy/nrelay)).
 
 ### Using the `PacketIO` class
 
