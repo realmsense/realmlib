@@ -1,6 +1,5 @@
 import { Reader } from "../reader";
 
-/* tslint:disable:no-bitwise */
 export function read(reader: Reader): number {
     let value = 0;
     let uByte = reader.readUnsignedByte();
@@ -19,4 +18,3 @@ export function read(reader: Reader): number {
     }
     return value;
 }
-/* tslint:enable:no-bitwise */

@@ -39,7 +39,6 @@ export class RC4 {
             this.state[this.i] = this.state[this.j];
             this.state[this.j] = tmp;
             const k = this.state[(this.state[this.i] + this.state[this.j]) % 256];
-            /* tslint:disable-next-line no-bitwise */
             data[n] = data[n] ^ k;
         }
     }

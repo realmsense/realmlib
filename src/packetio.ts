@@ -56,10 +56,8 @@ export class PacketIO extends EventEmitter {
     private writer: Writer;
     private reader: Reader;
     private eventHandlers: Map<string, (...args: any[]) => void>;
-    // tslint:disable:variable-name
     private _lastIncomingPacket: Packet | undefined;
     private _lastOutgoingPacket: Packet | undefined;
-    // tslint:enable:variable-name
 
     /**
      * Creates a new `PacketIO` instance.
@@ -122,7 +120,7 @@ export class PacketIO extends EventEmitter {
      * Sends a packet.
      * @param packet The packet to send.
      */
-    send(packet: Packet) {
+    send(packet: Packet): void {
         if (!this.socket || this.socket.destroyed) {
             this.emit("error", new Error("Not attached to a socket."));
             return;
@@ -145,6 +143,7 @@ export class PacketIO extends EventEmitter {
      * them to the socket.
      */
     private async drainQueue() {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const packet = this.outgoingQueue.shift()!;
         this._lastOutgoingPacket = packet;
         this.writer.index = 5;
