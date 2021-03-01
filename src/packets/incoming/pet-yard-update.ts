@@ -1,8 +1,8 @@
-import { PacketMap } from "../../../models/packet-map";
-import { PetYardType } from "../../../models/pet-yard-type";
-import { Packet } from "../../../packet";
-import { Reader } from "../../../reader";
-import { Writer } from "../../../writer";
+import { PacketMap } from "../../models/packet-map";
+import { PetYardType } from "../../models/pet-yard-type";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Received when the pet yard is updated to a new type of yard.

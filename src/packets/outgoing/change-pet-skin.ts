@@ -1,8 +1,8 @@
-import { PetUpgradePaymentType } from "../../../models";
-import { PacketMap } from "../../../models/packet-map";
-import { Packet } from "../../../packet";
-import { Reader } from "../../../reader";
-import { Writer } from "../../../writer";
+import { PetUpgradePaymentType } from "../../models";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Sent to change skin of a pet.

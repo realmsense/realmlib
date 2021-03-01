@@ -1,8 +1,8 @@
-import { ActivePetUpdateType } from "../../../models/active-pet-update-type";
-import { PacketMap } from "../../../models/packet-map";
-import { Packet } from "../../../packet";
-import { Reader } from "../../../reader";
-import { Writer } from "../../../writer";
+import { ActivePetUpdateType } from "../../models/active-pet-update-type";
+import { PacketMap } from "../../models/packet-map";
+import { Packet } from "../../packet";
+import { Reader } from "../../reader";
+import { Writer } from "../../writer";
 
 /**
  * Sent to make an update to the pet currently following the player.
