@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class QuestObjectIdPacket implements Packet {
 
-    readonly id = PacketMap.QUEST_OBJ_ID
+    readonly id = PacketMap.QUEST_OBJECT_ID;
 
     //#region packet-specific members
     /**
