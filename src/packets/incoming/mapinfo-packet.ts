@@ -10,69 +10,71 @@ export class MapInfoPacket implements Packet {
 
     readonly id = PacketMap.MAP_INFO
 
-    //#region packet-specific members
     /**
      * The width of the map.
      */
     width: number;
+
     /**
      * The height of the map.
      */
     height: number;
+
     /**
-     * The name of the map.
+     * The name of the map. (Nexus)
      */
     name: string;
+
     /**
-     * > Unknown.
+     * Used for displaying the map's correct name in the client.
+     * Either simply the map's `name` or in the format: `{server.nexus}` 
      */
     displayName: string;
+
     /**
-     * The name of the realm.
+     * The name of the realm. (Nexus)
      */
     realmName: string;
+    
     /**
-     * The difficulty rating of the map.
-     */
-    difficulty: number;
-    /**
-     * The seed value for the client"s PRNG.
+     * The seed value for the client's PRNG.
      */
     fp: number;
+
     /**
      * > Unkown.
      */
     background: number;
+
+    /**
+     * The difficulty rating of the map.
+     */
+    difficulty: number;
+
     /**
      * Whether or not players can teleport in the map.
      */
     allowPlayerTeleport: boolean;
+
     /**
      * > Unkown.
      */
     showDisplays: boolean;
+
     /**
      * The number of players allowed in this map.
      */
     maxPlayers: number;
-    /**
-     * The connection guid to use for the hello packet.
-     */
-    connectionGuid: string;
-    /**
-     * > Unkown.
-     */
-    clientXML: string[];
-    /**
-     * > Unkown.
-     */
-    extraXML: string[];
 
     /**
-     * > Unknown.
+     * Unknown.
      */
     gameOpenedTime: number;
-    //#endregion
+
+    /**
+     * The current RotMG Exalt Version (e.g. 1.3.3.1.0)
+     */
+    exaltVersion: string;
 
     constructor() {
         this.width = 0;
@@ -80,16 +82,14 @@ export class MapInfoPacket implements Packet {
         this.name = "";
         this.displayName = "";
         this.realmName = "";
-        this.difficulty = 0;
         this.fp = 0;
         this.background = 0;
+        this.difficulty = 0;
         this.allowPlayerTeleport = false;
         this.showDisplays = false;
         this.maxPlayers = 0;
-        this.connectionGuid = "";
-        this.clientXML = [];
-        this.extraXML = [];
         this.gameOpenedTime = 0;
+        this.exaltVersion = ""
     }
 
     read(reader: Reader): void {
@@ -104,17 +104,8 @@ export class MapInfoPacket implements Packet {
         this.allowPlayerTeleport = reader.readBoolean();
         this.showDisplays = reader.readBoolean();
         this.maxPlayers = reader.readShort();
-        this.connectionGuid = reader.readString();
         this.gameOpenedTime = reader.readUInt32();
-        this.clientXML = new Array<string>(reader.readShort());
-        for (let i = 0; i < this.clientXML.length; i++) {
-            this.clientXML[i] = reader.readStringUTF32();
-        }
-        this.extraXML = new Array<string>(reader.readShort());
-        for (let i = 0; i < this.extraXML.length; i++) {
-            this.extraXML[i] = reader.readStringUTF32();
-        }
-
+        this.exaltVersion = reader.readString();
     }
 
     write(writer: Writer): void {
@@ -129,16 +120,7 @@ export class MapInfoPacket implements Packet {
         writer.writeBoolean(this.allowPlayerTeleport);
         writer.writeBoolean(this.showDisplays);
         writer.writeShort(this.maxPlayers);
-        writer.writeString(this.connectionGuid);
-        writer.writeShort(this.clientXML.length);
         writer.writeUInt32(this.gameOpenedTime);
-        for (const xml of this.clientXML) {
-            writer.writeStringUTF32(xml);
-        }
-        writer.writeShort(this.extraXML.length);
-        for (const xml of this.extraXML) {
-            writer.writeStringUTF32(xml);
-        }
-
+        writer.writeString(this.exaltVersion);
     }
 }
