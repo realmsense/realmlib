@@ -9,143 +9,97 @@ import { Writer } from "../../writer";
  */
 export class HelloPacket implements Packet {
 
-    readonly id = PacketMap.HELLO
+    readonly id = PacketMap.HELLO;
 
-    //#region packet-specific members
     /**
-     * The current build version of RotMG.
+     * The current RotMG Exalt Version (e.g. 1.3.3.1.0)
      */
-    buildVersion: string;
+    exaltVersion: string;
+
     /**
-     * The id of the map to connect to.
+     * The ID of the map to connect to.
      */
     gameId: number;
+
     /**
-     * The email of the account being used.
+     * The accessToken of the client.
      */
-    guid: string;
-    /**
-     * A random 32 bit integer value.
-     */
-    random1: number;
-    /**
-     * The password of the account being used.
-     */
-    password: string;
-    /**
-     * A random 32 bit integer value.
-     */
-    random2: number;
-    /**
-     * The client secret of the account being used.
-     */
-    secret: string;
+    accessToken: string;
+
     /**
      * The key time of the `key` being used.
      */
     keyTime: number;
+
     /**
      * The key of the map to connect to.
      */
     key: number[];
+
     /**
-     * > Unknown.
+     * Unknown. Seems to be unused
      */
     mapJSON: string;
+
     /**
-     * > Unknown.
+     * Unknown. Seems to always be "rotmg"
      */
     entryTag: string;
+
     /**
-     * > Unknown.
+     * Unknown. Seems to always be "rotmg"
      */
-    gameNet: string;
+    entryTag2: string;
+
     /**
-     * > Unknown.
+     * The clientToken of the client.
      */
-    gameNetUserId: string;
+    clientToken: string;
+
     /**
-     * > Unknown.
-     */
-    playPlatform: string;
-    /**
-     * > Unknown.
+     * The token for this platform
+     * Exalt: `8bV53M5ysJdVjU4M97fh2g7BnPXhefnc`
+     * Flash: `XTeP7hERdchV5jrBZEYNebAqDPU6tKU6`
      */
     platformToken: string;
-    /**
-     * > Unknown.
-     */
-    userToken: string;
-    /**
-     * A random string which is appended to the end of the hello packet.
-     */
-    trailer: string;
-    /**
-     * The connection guid of the last map info packet.
-     */
-    previousConnectionGuid: string;
-    //#endregion
 
     constructor() {
-        this.buildVersion = "";
+        this.exaltVersion = "";
         this.gameId = 0;
-        this.guid = "";
-        this.random1 = 0;
-        this.password = "";
-        this.random2 = 0;
-        this.secret = "";
+        this.accessToken = "";
         this.keyTime = 0;
         this.key = [];
         this.mapJSON = "";
         this.entryTag = "";
-        this.gameNet = "";
-        this.gameNetUserId = "";
-        this.playPlatform = "";
+        this.entryTag2 = "";
+        this.clientToken = "";
         this.platformToken = "";
-        this.userToken = "";
-        this.trailer = "";
-        this.previousConnectionGuid = "";
+        this.unknown = [];
     }
 
     write(writer: Writer): void {
-        writer.writeString(this.buildVersion);
+        writer.writeString(this.exaltVersion);
         writer.writeInt32(this.gameId);
-        writer.writeString(this.guid);
-        writer.writeInt32(this.random1);
-        writer.writeString(this.password);
-        writer.writeInt32(this.random2);
-        writer.writeString(this.secret);
+        writer.writeString(this.accessToken);
         writer.writeInt32(this.keyTime);
         writer.writeByteArray(this.key);
         writer.writeStringUTF32(this.mapJSON);
-        writer.writeString(this.entryTag);
-        writer.writeString(this.gameNet);
-        writer.writeString(this.gameNetUserId);
-        writer.writeString(this.playPlatform);
+        writer.writeStringUTF32(this.entryTag);
+        writer.writeStringUTF32(this.entryTag2);
+        writer.writeStringUTF32(this.clientToken);
         writer.writeString(this.platformToken);
-        writer.writeString(this.userToken);
-        writer.writeString(this.trailer);
-        writer.writeString(this.previousConnectionGuid);
     }
 
     read(reader: Reader): void {
-        this.buildVersion = reader.readString();
+        this.exaltVersion = reader.readString();
         this.gameId = reader.readInt32();
-        this.guid = reader.readString();
-        this.random1 = reader.readInt32();
-        this.password = reader.readString();
-        this.random2 = reader.readInt32();
-        this.secret = reader.readString();
+        this.accessToken = reader.readString();
         this.keyTime = reader.readInt32();
         this.key = reader.readByteArray();
         this.mapJSON = reader.readStringUTF32();
-        this.entryTag = reader.readString();
-        this.gameNet = reader.readString();
-        this.gameNetUserId = reader.readString();
-        this.playPlatform = reader.readString();
+        this.entryTag = reader.readStringUTF32();
+        this.entryTag2 = reader.readStringUTF32();
+        this.clientToken = reader.readStringUTF32();
         this.platformToken = reader.readString();
-        this.userToken = reader.readString();
-        this.trailer = reader.readString();
-        this.previousConnectionGuid = reader.readString();
     }
 }
