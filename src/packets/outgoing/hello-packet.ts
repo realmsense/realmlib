@@ -74,7 +74,6 @@ export class HelloPacket implements Packet {
         this.entryTag2 = "";
         this.clientToken = "";
         this.platformToken = "";
-        this.unknown = [];
     }
 
     write(writer: Writer): void {
