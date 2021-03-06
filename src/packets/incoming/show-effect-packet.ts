@@ -3,7 +3,6 @@ import { PacketMap } from "../../models/packet-map";
 import { Packet } from "../../packet";
 import { Reader } from "../../reader";
 import { Writer } from "../../writer";
-import { read as compressedRead } from "../../data/compressed-int";
 
 /**
  * Received to tell the player to display an effect such as an AOE grenade.
@@ -52,7 +51,7 @@ export class ShowEffectPacket implements Packet {
         this.effectType = reader.readUnsignedByte();
         const loc2 = reader.readUnsignedByte();
         if (loc2 & 64) {
-            this.targetObjectId = compressedRead(reader);
+            this.targetObjectId = reader.readCompressedInt();
         } else {
             this.targetObjectId = 0;
         }

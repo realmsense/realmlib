@@ -1,6 +1,5 @@
 import { Packet } from "../../packet";
 import { Reader } from "../../reader";
-import { read as compressedRead } from "../../data/compressed-int";
 import { Writer } from "../../writer";
 import { PacketMap } from "../../models/packet-map";
 
@@ -39,28 +38,28 @@ export class VaultContentPacket implements Packet {
 
     read(reader: Reader): void {
         this.unknownBool = reader.readBoolean();
-        this.vaultItemCount = compressedRead(reader);
-        this.giftItemCount = compressedRead(reader);
-        this.potionItemCount = compressedRead(reader);
+        this.vaultItemCount = reader.readCompressedInt();
+        this.giftItemCount = reader.readCompressedInt();
+        this.potionItemCount = reader.readCompressedInt();
 
         let counter = 0;
-        const itemCount = compressedRead(reader);
+        const itemCount = reader.readCompressedInt();
         while (counter < itemCount) {
-            this.vaultContents.push(compressedRead(reader));
+            this.vaultContents.push(reader.readCompressedInt());
             counter++;
         }
 
-        const giftItemCount = compressedRead(reader);
+        const giftItemCount = reader.readCompressedInt();
         counter = 0;
         while (counter < giftItemCount) {
-            this.giftContents.push(compressedRead(reader));
+            this.giftContents.push(reader.readCompressedInt());
             counter++;
         }
 
-        const potionCount = compressedRead(reader);
+        const potionCount = reader.readCompressedInt();
         counter = 0;
         while (counter < potionCount) {
-            this.potionContents.push(compressedRead(reader));
+            this.potionContents.push(reader.readCompressedInt());
             counter++;
         }
 

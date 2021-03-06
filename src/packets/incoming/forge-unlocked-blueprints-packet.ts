@@ -2,7 +2,6 @@ import { PacketMap } from "../../models/packet-map";
 import { Packet } from "../../packet";
 import { Reader } from "../../reader";
 import { Writer } from "../../writer";
-import { read as compressedRead } from "../../data/compressed-int";
 
 /**
  * Received in response to `MapInfoPacket`.
@@ -23,7 +22,7 @@ export class ForgeUnlockedBlueprintsPacket implements Packet {
     read(reader: Reader): void {
         const count = reader.readByte();
         for (let i = 0; i < count; i++) {
-            this.unlockedBlueprints.push(compressedRead(reader));
+            this.unlockedBlueprints.push(reader.readCompressedInt());
         }
     }
 

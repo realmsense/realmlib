@@ -159,6 +159,29 @@ export class Reader {
     }
 
     /**
+     * Reads a "Compressed Integer" from the buffer.
+     */
+    readCompressedInt(): number {
+        let value = 0;
+        let uByte = this.readUnsignedByte();
+        const isNegative = (uByte & 64) !== 0;
+        let shift = 6;
+        value = uByte & 63;
+    
+        while (uByte & 128) {
+            uByte = this.readUnsignedByte();
+            value = value | (uByte & 127) << shift;
+            shift += 7;
+        }
+    
+        if (isNegative) {
+            value = -value;
+        }
+
+        return value;
+    }
+
+    /**
      * Changes the size of the buffer without affecting the contents.
      * @param newSize The new size of the buffer.
      */

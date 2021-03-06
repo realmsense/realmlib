@@ -1,7 +1,6 @@
 import { Writer } from "../writer";
 import { Reader } from "../reader";
 import { DataPacket } from "../packet";
-import { read as compressedRead } from "./compressed-int";
 import { WorldPosData } from "./world-pos-data";
 import { StatData } from "./stat-data";
 
@@ -27,9 +26,9 @@ export class ObjectStatusData implements DataPacket {
     }
 
     read(reader: Reader): void {
-        this.objectId = compressedRead(reader);
+        this.objectId = reader.readCompressedInt();
         this.pos.read(reader);
-        const statLen = compressedRead(reader);
+        const statLen = reader.readCompressedInt();
         this.stats = new Array(statLen);
         for (let i = 0; i < statLen; i++) {
             const sd = new StatData();
