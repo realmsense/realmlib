@@ -25,11 +25,11 @@ jobs:
     - name: Install dependencies
       run: npm clean-install
     
-    - name: Run Linter
+    - name: Run linters
       uses: wearerequired/lint-action@v1
-        with:
-          eslint: true
-          prettier: true
+      with:
+        eslint: true
+        prettier: true
     
     - name: Compile TypeScript Code
       run: npm run compile
