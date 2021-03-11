@@ -5,10 +5,8 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
-        "prepublishOnly": "npm run compile && npm test",
         "compile": "tsc -p .",
-        "lint": "eslint src/**/*.ts",
-        "test": "mocha -r ts-node/register test/*.spec.ts",
+        "lint": "eslint . --ext ts",
         "docs": "typedoc --options ./typedoc.json"
     },
     "files": [
@@ -43,6 +41,5 @@
         "ts-node": "^7.0.1",
         "typedoc": "^0.15.8",
         "typescript": "^3.9.7"
-    },
-    "dependencies": {}
+    }
 }
