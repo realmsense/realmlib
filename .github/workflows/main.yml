@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Git repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '15'
+    
+    - name: Install dependencies
+      run: npm clean-install
+    
+    - name: Run Lint
+      run: npm run lint
+
+    - name: Compile TypeScript Code
+      run: npm run compile
+
+    - name: Generate Docs
+      run: npm run docs
