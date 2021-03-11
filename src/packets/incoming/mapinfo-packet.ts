@@ -8,7 +8,7 @@ import { Writer } from "../../writer";
  */
 export class MapInfoPacket implements Packet {
 
-    readonly id = PacketMap.MAP_INFO
+    readonly id = PacketMap.MAP_INFO;
 
     /**
      * The width of the map.
@@ -89,7 +89,7 @@ export class MapInfoPacket implements Packet {
         this.showDisplays = false;
         this.maxPlayers = 0;
         this.gameOpenedTime = 0;
-        this.exaltVersion = ""
+        this.exaltVersion = "";
     }
 
     read(reader: Reader): void {
