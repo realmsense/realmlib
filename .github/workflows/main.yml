@@ -1,4 +1,4 @@
-name: CI
+name: Build
 
 on:
   push:
@@ -33,3 +33,15 @@ jobs:
 
     - name: Generate Docs
       run: npm run docs
+
+    - name: Archive docs
+      uses: actions/upload-artifact@v2
+      with:
+        name: docs
+        path: docs
+
+    - name: Archive compiled code
+      uses: actions/upload-artifact@v2
+      with:
+        name: lib
+        path: lib
