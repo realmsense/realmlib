@@ -14,7 +14,7 @@ export class HelloPacket implements Packet {
     /**
      * The current RotMG Exalt Version (e.g. 1.3.3.1.0)
      */
-    exaltVersion: string;
+    buildVersion: string;
 
     /**
      * The ID of the map to connect to.
@@ -44,12 +44,12 @@ export class HelloPacket implements Packet {
     /**
      * Unknown. Seems to always be "rotmg"
      */
-    entryTag: string;
+    gameNet: string;
 
     /**
      * Unknown. Seems to always be "rotmg"
      */
-    entryTag2: string;
+    playPlatform: string;
 
     /**
      * The clientToken of the client.
@@ -64,40 +64,40 @@ export class HelloPacket implements Packet {
     platformToken: string;
 
     constructor() {
-        this.exaltVersion = "";
+        this.buildVersion = "";
         this.gameId = 0;
         this.accessToken = "";
         this.keyTime = 0;
         this.key = [];
         this.mapJSON = "";
-        this.entryTag = "";
-        this.entryTag2 = "";
+        this.gameNet = "";
+        this.playPlatform = "";
         this.clientToken = "";
         this.platformToken = "";
     }
 
     write(writer: Writer): void {
-        writer.writeString(this.exaltVersion);
+        writer.writeString(this.buildVersion);
         writer.writeInt32(this.gameId);
         writer.writeString(this.accessToken);
         writer.writeInt32(this.keyTime);
         writer.writeByteArray(this.key);
         writer.writeStringUTF32(this.mapJSON);
-        writer.writeStringUTF32(this.entryTag);
-        writer.writeStringUTF32(this.entryTag2);
+        writer.writeStringUTF32(this.gameNet);
+        writer.writeStringUTF32(this.playPlatform);
         writer.writeStringUTF32(this.clientToken);
         writer.writeString(this.platformToken);
     }
 
     read(reader: Reader): void {
-        this.exaltVersion = reader.readString();
+        this.buildVersion = reader.readString();
         this.gameId = reader.readInt32();
         this.accessToken = reader.readString();
         this.keyTime = reader.readInt32();
         this.key = reader.readByteArray();
         this.mapJSON = reader.readStringUTF32();
-        this.entryTag = reader.readStringUTF32();
-        this.entryTag2 = reader.readStringUTF32();
+        this.gameNet = reader.readStringUTF32();
+        this.playPlatform = reader.readStringUTF32();
         this.clientToken = reader.readStringUTF32();
         this.platformToken = reader.readString();
     }
