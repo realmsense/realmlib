@@ -1,9 +1,5 @@
 {
     "name": "realmlib",
-    "mode": "file",
-    "exclude": [
-        "**/*+(index).ts"
-    ],
-    "excludeExternals": true,
+    "entryPoints": ["src/index.ts"],
     "out": "./docs"
 }
