@@ -2,38 +2,38 @@
 
 A networking library for Realm of the Mad God Exalt.
 
-[![Build](https://github.com/Extacy/realmlib/actions/workflows/main.yml/badge.svg)](https://github.com/Extacy/realmlib/actions/workflows/main.yml)
+This project cannot be used by itself, it is designed to be used as a building block for larger RotMG projects which require an implementation of the RotMG networking protocol.
+
+Projects using realmlib:
+* [rotmg-proxy](https://github.com/Extacy/rotmg-proxy)
+* [rotmg-headless](https://github.com/Extacy/rotmg-headless)
 
 ## Contents
 
 + [Install](#install)
-+ [Use](#use)
-  + [Using the `PacketIO` class](#using-the-packetio-class)
++ [Usage](#usage)
++ [Docs](#docs)
++ [Acknowledgements](#acknowledgements)
 
 ## Install
 
-Make sure you have [Nodejs 12+](https://nodejs.org/en/download/) installed then download the project:
-
+Install realmlib:
 ```bash
-git clone https://github.com/Extacy/realmlib.git
+# Add as a submodule (clones the repo)
+git submodule add https://github.com/Extacy/realmlib
+
+# Compile the code
 cd realmlib
+npm install && tsc -p .
+
+# Install realmlib
+cd ..
+npm install ./realmlib/
 ```
 
-Install the TypeScript compiler then compile the source:
+The compiled code will be present in the `dist/` directory for use.
 
-```bash
-npm install -g typescript
-tsc -p .
-```
-
-Your compiled code will be in the `lib` folder ready to use
-
-## Use
-
-The realmlib networking module cannot be used on its own. It is designed to be used as a building block for larger RotMG projects which require an implementation of the RotMG networking protocol. Such project may include
-
-+ MITM proxies (such as KRelay or JRelay).
-+ Clientless applications (such as [nrelay](https://github.com/Extacy/nrelay)).
+## Usage
 
 ### Using the `PacketIO` class
 
@@ -70,3 +70,13 @@ const clientIO = new PacketIO({
   }
 })
 ```
+
+## Docs
+The inline API documentation can be generated in `./docs/` using the following command:
+```
+npm run docs
+```
+
+## Acknowledgements
+
+[thomas-crane](https://github.com/thomas-crane/realmlib-net) - Original realmlib project
