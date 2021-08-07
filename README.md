@@ -24,7 +24,8 @@ git submodule add https://github.com/Extacy/realmlib
 
 # Compile the code
 cd realmlib
-npm install && tsc -p .
+npm install
+npm run compile
 
 # Install realmlib
 cd ..
