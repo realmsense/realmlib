@@ -1,55 +1,39 @@
-import { FailureCode } from "../../models/failure-code";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketMap, FailureCode, Reader, Writer } from "../..";
 
 /**
- * Received when an error has occurred.
+ * Received when an error has occured.
+ * Il2Cpp: `PGFHFIAAKOI`
  */
 export class FailurePacket implements Packet {
 
     readonly id = PacketMap.FAILURE
 
-    //#region packet-specific members
     /**
-     * The error id of the failure.
-     * @see `FailureCode`
+     * The ID of the failure.
+     * @see FailureCode
+     * Il2Cpp: `ENBELELJMBC`
      */
-    errorId: FailureCode;
+    public errorId: FailureCode;
+
     /**
-     * A description of the error.
+     * The message associated with the error. Often a blank string
+     * Example: `s.update_client`
+     * Il2Cpp: `GDCKNNCIFNM`
      */
-    errorDescription: string;
-    /**
-     * The place where the error occurred.
-     */
-    errorPlace: string;
-    /**
-     * The id of the connection in which
-     * the error occurred.
-     */
-    errorConnectionId: string;
-    //#endregion
+    public message: string;
 
     constructor() {
         this.errorId = 0;
-        this.errorDescription = "";
-        this.errorPlace = "";
-        this.errorConnectionId = "";
+        this.message = "";
     }
 
     read(reader: Reader): void {
         this.errorId = reader.readInt32();
-        this.errorDescription = reader.readString();
-        this.errorPlace = reader.readString();
-        this.errorConnectionId = reader.readString();
+        this.message = reader.readString();
     }
 
     write(writer: Writer): void {
         writer.writeInt32(this.errorId);
-        writer.writeString(this.errorDescription);
-        writer.writeString(this.errorPlace);
-        writer.writeString(this.errorConnectionId);
+        writer.writeString(this.message);
     }
 }
