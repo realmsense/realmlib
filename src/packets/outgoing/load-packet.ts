@@ -1,25 +1,24 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketMap, Writer, Reader } from "../..";
 
 /**
  * Sent in response to a `MapInfoPacket` to load a character into the map.
+ * Il2Cpp: `MADFOFBKLAM`
  */
 export class LoadPacket implements Packet {
 
     readonly id = PacketMap.LOAD
 
-    //#region packet-specific members
     /**
      * The id of the character to load.
+     * Il2Cpp: `FALDIKKJBIK`
      */
     charId: number;
+
     /**
-     * Whether or not the character is in challenger mode.
+     * If the character is in challenger mode. (unused)
+     * Il2Cpp: `KNJGHIJFLEM`
      */
     isChallenger: boolean;
-    //#endregion
 
     constructor() {
         this.charId = 0;
