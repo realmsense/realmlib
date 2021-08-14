@@ -1,19 +1,26 @@
-import { Writer } from "../writer";
-import { Reader } from "../reader";
-import { DataPacket } from "../packet";
+import { DataPacket, Reader, Writer } from "..";
 
+/**
+ * Used for receiving new tiles in `UpdatePacket`
+ * Class: `KADGIIPCDNH`
+ */
 export class GroundTileData implements DataPacket {
 
     /**
      * The X coordinate of this tile.
+     * Property: `EOOJAMLJAOM`
      */
     x: number;
+    
     /**
      * The Y coordinate of this tile.
+     * Property: `JDEKCEFBJFP`
      */
     y: number;
+    
     /**
      * The tile type of this tile.
+     * Property: `PBDBCHKPMDP`
      */
     type: number;
 

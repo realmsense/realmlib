@@ -3,8 +3,19 @@ import { Reader } from "../reader";
 import { DataPacket } from "../packet";
 import { Point } from "../models/point";
 
+/**
+ * Class: `OHPIBKLOFIN`
+ */
 export class WorldPosData implements DataPacket, Point {
+
+    /**
+     * Property: `FEKAOEJOMJJ`
+     */
     x: number;
+    
+    /**
+     * Property: `CPDPNHKICLK`
+     */
     y: number;
 
     /**
@@ -31,10 +42,7 @@ export class WorldPosData implements DataPacket, Point {
      * Returns the square distance between this point and the other point.
      * @param point The other point.
      */
-    squareDistanceTo<T extends Point>(point: T): number {
-        if (!point || typeof point.x !== "number" || typeof point.y !== "number") {
-            throw new TypeError(`Parameter "point" must be a Point, not ${typeof point}`);
-        }
+    squareDistanceTo(point: Point): number {
         const a = point.x - this.x;
         const b = point.y - this.y;
         return a ** 2 + b ** 2;

@@ -3,21 +3,32 @@ import { Reader } from "../reader";
 import { DataPacket } from "../packet";
 import { StatType } from "../models/stat-type";
 
+/**
+ * Class: `EALCAHFJEEN`
+ */
 export class StatData implements DataPacket {
+
     /**
      * The type of stat.
+     * Property: `OCBDAMHCCMJ` 
      */
     statType: number;
+
     /**
      * The number value of this stat, if this is not a string stat.
+     * Property: `NMJKAKHMCDA` 
      */
     statValue: number;
+
     /**
      * The string value of this stat, if this is a string stat.
+     * Property: `LBMAFNDDCEP` 
      */
     stringStatValue: string;
+
     /**
      * Unknown
+     * Property: `KMCOCGCHFOB`
      */
     unknownByte: number;
 

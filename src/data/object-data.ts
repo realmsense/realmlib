@@ -1,15 +1,21 @@
-import { Writer } from "../writer";
-import { Reader } from "../reader";
-import { DataPacket } from "../packet";
-import { ObjectStatusData } from "./object-status-data";
+import { ObjectStatusData } from ".";
+import { DataPacket, Reader, Writer } from "..";
 
+/**
+ * Used for receiving new objects in `UpdatePacket`
+ * Class: `MIFLGAPPNJI`
+ */
 export class ObjectData implements DataPacket {
+
     /**
      * The type of this object.
+     * Property: `LDGGOBCHABO`
      */
     objectType: number;
+
     /**
      * The status of this object.
+     * Property: LBNLJFBLMJG
      */
     status: ObjectStatusData;
 

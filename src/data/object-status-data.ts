@@ -4,18 +4,26 @@ import { DataPacket } from "../packet";
 import { WorldPosData } from "./world-pos-data";
 import { StatData } from "./stat-data";
 
+/**
+ * Class: `LCNFOAPGNNJ`
+ */
 export class ObjectStatusData implements DataPacket {
 
     /**
      * The object id of the object which this status is for.
+     * Property: `LADFHJEFKEC`
      */
     objectId: number;
+
     /**
      * The position of the object which this status is for.
+     * Property: `CBLBGAHHEHF`
      */
     pos: WorldPosData;
+    
     /**
      * A list of stats for the object which this status is for.
+     * Property: `EJKLDLMHEJH`
      */
     stats: StatData[];
 
@@ -31,9 +39,9 @@ export class ObjectStatusData implements DataPacket {
         const statLen = reader.readCompressedInt();
         this.stats = new Array(statLen);
         for (let i = 0; i < statLen; i++) {
-            const sd = new StatData();
-            sd.read(reader);
-            this.stats[i] = sd;
+            const stat = new StatData();
+            stat.read(reader);
+            this.stats[i] = stat;
         }
     }
 

@@ -3,14 +3,11 @@ import { Packet } from "../../packet";
 
 /**
  * Sent to acknowledge an `UpdatePacket`.
+ * Class: `ELDCHOHIMNN`
  */
 export class UpdateAckPacket implements Packet {
 
     readonly id = PacketMap.UPDATE_ACK
-
-    //#region packet-specific members
-
-    //#endregion
 
     write(): void {
         //

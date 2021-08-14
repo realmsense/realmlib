@@ -1,34 +1,33 @@
-import { GroundTileData } from "../../data/ground-tile-data";
-import { ObjectData } from "../../data/object-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketMap, GroundTileData, ObjectData, Reader, Writer } from "../..";
 
 /**
  * Received when an update even occurs. Some events include
  * + One or more new objects have entered the map (become visible)
  * + One or more objects have left the map (become invisible)
  * + New tiles are visible
+ * Class: `IEKOKOHCCDK`
  */
 export class UpdatePacket implements Packet {
 
     readonly id = PacketMap.UPDATE
 
-    //#region packet-specific members
     /**
      * The new tiles which are visible.
+     * Property: `OLILOJAALNJ`
      */
     tiles: GroundTileData[];
+
     /**
      * The new objects which have entered the map (become visible).
+     * Property: `MFJMLMCLPCC`
      */
     newObjects: ObjectData[];
+
     /**
      * The visible objects which have left the map (become invisible).
+     * Property: `LHBOGDNNELA`
      */
     drops: number[];
-    //#endregion
 
     constructor() {
         this.tiles = [];
@@ -40,17 +39,17 @@ export class UpdatePacket implements Packet {
         const tilesLen = reader.readCompressedInt();
         this.tiles = new Array<GroundTileData>(tilesLen);
         for (let i = 0; i < tilesLen; i++) {
-            const gd = new GroundTileData();
-            gd.read(reader);
-            this.tiles[i] = gd;
+            const tile = new GroundTileData();
+            tile.read(reader);
+            this.tiles[i] = tile;
         }
 
         const newObjectsLen = reader.readCompressedInt();
         this.newObjects = new Array<ObjectData>(newObjectsLen);
         for (let i = 0; i < newObjectsLen; i++) {
-            const od = new ObjectData();
-            od.read(reader);
-            this.newObjects[i] = od;
+            const object = new ObjectData();
+            object.read(reader);
+            this.newObjects[i] = object;
         }
 
         const dropsLen = reader.readCompressedInt();
@@ -65,10 +64,12 @@ export class UpdatePacket implements Packet {
         for (const tile of this.tiles) {
             tile.write(writer);
         }
+
         writer.writeShort(this.newObjects.length);
-        for (const obj of this.newObjects) {
-            obj.write(writer);
+        for (const object of this.newObjects) {
+            object.write(writer);
         }
+
         writer.writeShort(this.drops.length);
         for (const drop of this.drops) {
             writer.writeInt32(drop);
