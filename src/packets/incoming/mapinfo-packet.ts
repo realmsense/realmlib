@@ -1,80 +1,106 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketMap, Reader, Writer } from "../..";
 
 /**
  * Received in response to the `HelloPacket`.
+ * Il2Cpp: `ECMJOEBPKFH`
  */
 export class MapInfoPacket implements Packet {
 
     readonly id = PacketMap.MAP_INFO;
 
     /**
-     * The width of the map.
+     * The width of the map
+     * Example: `256`
+     * Il2Cpp: `NAJHAFAAFPK`
      */
     width: number;
 
     /**
-     * The height of the map.
+     * The height of the map
+     * Example: `256`
+     * Il2Cpp: `IEOOAEECDOM`
      */
     height: number;
 
     /**
-     * The name of the map. (Nexus)
+     * The name of the name
+     * Example: `Nexus`
+     * Il2Cpp: `NCADAPAJGCH`
      */
     name: string;
 
     /**
-     * Used for displaying the map's correct name in the client.
-     * Either simply the map's `name` or in the format: `{server.nexus}` 
+     * Used for display the map's correct name for the client.
+     * Possibly used with getLanguageStrings however rotmg devs changed `{server.nexus}` to `{s.nexus}` without updating language strings soo 🤷🤷
+     * Example: `{s.nexus}`
+     * Il2Cpp: `LLGLFMAAOMM`
      */
     displayName: string;
 
     /**
-     * The name of the realm. (Nexus)
+     * The name of the map's realm (parent server). Defaults to `name` if this the parent map.
+     * Example: `Nexus`
+     * Il2Cpp: `NMMNFHJFDNA`
      */
     realmName: string;
-    
+
     /**
-     * The seed value for the client's PRNG.
+     * The seed used for the client's pseudorandom number generator
+     * Example: `833640993`
+     * Il2Cpp: `HFLMBNOPFHB`
      */
     fp: number;
 
     /**
-     * > Unkown.
+     * Used to display custom backgrounds for certain maps. (like in the new sprite worlds)
+     * Il2Cpp: `CJODIDDGHED`
      */
     background: number;
 
     /**
-     * The difficulty rating of the map.
+     * The difficulty rating of the map. -1 for unrated maps
+     * Il2Cpp: `FBGBLFGEPFO`
      */
     difficulty: number;
 
     /**
-     * Whether or not players can teleport in the map.
+     * Whether players are allowed to teleport to each other or not
+     * Il2Cpp: `LOCFIONPLJG`
      */
-    allowPlayerTeleport: boolean;
+    blockPlayerTeleport: boolean;
 
     /**
-     * > Unkown.
+     * Unknown, seems to always be `true`
+     * Il2Cpp: `HHFAHKMEGGI`
      */
     showDisplays: boolean;
 
     /**
-     * The number of players allowed in this map.
+     * The maximum number of players for this map
+     * Example: `300`
+     * Il2Cpp: `BNPKHIHMFHE`
      */
     maxPlayers: number;
 
     /**
-     * Unknown.
+     * The timestamp 
+     * Example: `1626773726`
+     * Il2Cpp: `HJDJDCJBOJL`
      */
     gameOpenedTime: number;
 
     /**
-     * The current RotMG Exalt Version (e.g. 1.3.3.1.0)
+     * The exalt version of the server sending the map. This is shown in top left in the actual game client
+     * Example: `1.6.3.0.0`
+     * Il2Cpp: `MGGKEKIHBHD`
      */
     exaltVersion: string;
+
+    /**
+     * Unknown. Seems to always be 0 (and sometimes not read?)
+     * Il2Cpp: `HLEGONBABNF`
+     */
+    var14: number;
 
     constructor() {
         this.width = 0;
@@ -85,11 +111,12 @@ export class MapInfoPacket implements Packet {
         this.fp = 0;
         this.background = 0;
         this.difficulty = 0;
-        this.allowPlayerTeleport = false;
-        this.showDisplays = false;
+        this.blockPlayerTeleport = false;
+        this.showDisplays = true;
         this.maxPlayers = 0;
         this.gameOpenedTime = 0;
         this.exaltVersion = "";
+        this.var14 = 0;
     }
 
     read(reader: Reader): void {
@@ -98,14 +125,15 @@ export class MapInfoPacket implements Packet {
         this.name = reader.readString();
         this.displayName = reader.readString();
         this.realmName = reader.readString();
-        this.fp = reader.readUInt32();
+        this.fp = reader.readInt32();
         this.background = reader.readInt32();
         this.difficulty = reader.readInt32();
-        this.allowPlayerTeleport = reader.readBoolean();
+        this.blockPlayerTeleport = reader.readBoolean();
         this.showDisplays = reader.readBoolean();
         this.maxPlayers = reader.readShort();
-        this.gameOpenedTime = reader.readUInt32();
+        this.gameOpenedTime = reader.readInt32();
         this.exaltVersion = reader.readString();
+        this.var14 = reader.readInt32();
     }
 
     write(writer: Writer): void {
@@ -117,10 +145,11 @@ export class MapInfoPacket implements Packet {
         writer.writeInt32(this.fp);
         writer.writeInt32(this.background);
         writer.writeInt32(this.difficulty);
-        writer.writeBoolean(this.allowPlayerTeleport);
+        writer.writeBoolean(this.blockPlayerTeleport);
         writer.writeBoolean(this.showDisplays);
         writer.writeShort(this.maxPlayers);
-        writer.writeUInt32(this.gameOpenedTime);
+        writer.writeInt32(this.gameOpenedTime);
         writer.writeString(this.exaltVersion);
+        writer.writeInt32(this.var14);
     }
 }
