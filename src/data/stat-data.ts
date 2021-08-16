@@ -12,19 +12,19 @@ export class StatData implements DataPacket {
      * The type of stat.
      * Property: `OCBDAMHCCMJ` 
      */
-    statType: number;
+    type: number;
 
     /**
      * The number value of this stat, if this is not a string stat.
      * Property: `NMJKAKHMCDA` 
      */
-    statValue: number;
+    value: number;
 
     /**
      * The string value of this stat, if this is a string stat.
      * Property: `LBMAFNDDCEP` 
      */
-    stringStatValue: string;
+    stringValue: string;
 
     /**
      * Unknown
@@ -33,34 +33,34 @@ export class StatData implements DataPacket {
     unknownByte: number;
 
     constructor() {
-        this.statType = 0;
-        this.statValue = 0;
-        this.stringStatValue = "";
+        this.type = 0;
+        this.value = 0;
+        this.stringValue = "";
         this.unknownByte = 0;
     }
 
     read(reader: Reader): void {
-        this.statType = reader.readUnsignedByte();
+        this.type = reader.readUnsignedByte();
         if (this.isStringStat()) {
-            this.stringStatValue = reader.readString();
+            this.stringValue = reader.readString();
         } else {
-            this.statValue = reader.readCompressedInt();
+            this.value = reader.readCompressedInt();
         }
         this.unknownByte = reader.readByte();
     }
 
     write(writer: Writer): void {
-        writer.writeByte(this.statType);
+        writer.writeByte(this.type);
         if (this.isStringStat()) {
-            writer.writeString(this.stringStatValue);
+            writer.writeString(this.stringValue);
         } else {
-            writer.writeInt32(this.statValue);
+            writer.writeInt32(this.value);
         }
         writer.writeByte(this.unknownByte);
     }
 
     isStringStat(): boolean {
-        switch (this.statType) {
+        switch (this.type) {
             case StatType.NAME_STAT:
             case StatType.GUILD_NAME_STAT:
             case StatType.PET_NAME_STAT:
