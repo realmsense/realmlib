@@ -46,15 +46,9 @@ export class HelloPacket implements Packet {
 
     /**
      * Unknown. Seems to always be blank
-     * Il2Cpp: `BGCCNHMJOOJ`
-     */
-    var6: string;
-
-    /**
-     * Unknown. Seems to always be blank
      * Il2Cpp: `CELBPAJCPDF`
      */
-    var7: string;
+    var6: string;
 
     /**
      * Either `rotmg` or `steam`
@@ -66,7 +60,7 @@ export class HelloPacket implements Packet {
      * Unknown. Seems to always be blank
      * Il2Cpp: `ONGAMPFEICJ`
      */
-    var9: string;
+    var8: string;
 
     /**
      * Either `rotmg` or `steam`
@@ -102,9 +96,8 @@ export class HelloPacket implements Packet {
         this.keyTime = 0;
         this.key = [];
         this.var6 = "";
-        this.var7 = "";
         this.gameNet = "";
-        this.var9 = "";
+        this.var8 = "";
         this.playPlatform = "";
         this.var11 = "";
         this.clientToken = "";
@@ -117,10 +110,9 @@ export class HelloPacket implements Packet {
         this.accessToken = reader.readString();
         this.keyTime = reader.readInt32();
         this.key = reader.readByteArray();
-        this.var6 = reader.readStringUTF32();
-        this.var7 = reader.readString();
+        this.var6 = reader.readString();
         this.gameNet = reader.readString();
-        this.var9 = reader.readString();
+        this.var8 = reader.readString();
         this.playPlatform = reader.readString();
         this.var11 = reader.readString();
         this.clientToken = reader.readString();
@@ -133,10 +125,9 @@ export class HelloPacket implements Packet {
         writer.writeString(this.accessToken);
         writer.writeInt32(this.keyTime);
         writer.writeByteArray(this.key);
-        writer.writeStringUTF32(this.var6);
-        writer.writeString(this.var7);
+        writer.writeString(this.var6);
         writer.writeString(this.gameNet);
-        writer.writeString(this.var9);
+        writer.writeString(this.var8);
         writer.writeString(this.playPlatform);
         writer.writeString(this.var11);
         writer.writeString(this.clientToken);
