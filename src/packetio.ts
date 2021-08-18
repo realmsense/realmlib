@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { Socket } from "net";
 import { INCOMING_KEY, OUTGOING_KEY, RC4 } from "./crypto";
-import { Packet } from "./packet";
+import { Packet } from "./models/packet";
 import { PacketMap } from "./models/packet-map";
 import { createPacket } from "./create-packet";
 import { Reader } from "./reader";

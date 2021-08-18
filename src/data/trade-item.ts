@@ -1,6 +1,6 @@
 import { Writer } from "../writer";
 import { Reader } from "../reader";
-import { DataPacket } from "../packet";
+import { DataPacket } from "../models/packet";
 
 export class TradeItem implements DataPacket {
 

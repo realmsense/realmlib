@@ -1,6 +1,6 @@
-import { PacketMap } from "./models/packet-map";
-import { Reader } from "./reader";
-import { Writer } from "./writer";
+import { PacketMap } from "./packet-map";
+import { Reader } from "../reader";
+import { Writer } from "../writer";
 
 /**
  * A packet which can be both received from the server and sent to the server.

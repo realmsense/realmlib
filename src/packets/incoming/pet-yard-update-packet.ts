@@ -1,6 +1,6 @@
 import { PacketMap } from "../../models/packet-map";
-import { PetYardType } from "../../models/pet-yard-type";
-import { Packet } from "../../packet";
+import { PetYardType } from "../../constants/pet-yard-type";
+import { Packet } from "../../models/packet";
 import { Reader } from "../../reader";
 import { Writer } from "../../writer";
 

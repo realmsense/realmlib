@@ -1,5 +1,5 @@
 import { PacketType } from "./models";
-import { Packet } from "./packet";
+import { Packet } from "./models/packet";
 
 import * as IncomingPackets from "./packets/incoming";
 import * as OutgoingPackets from "./packets/outgoing";

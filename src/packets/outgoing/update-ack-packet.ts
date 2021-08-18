@@ -1,5 +1,5 @@
 import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../packet";
+import { Packet } from "../../models/packet";
 
 /**
  * Sent to acknowledge an `UpdatePacket`.

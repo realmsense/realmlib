@@ -1,8 +1,4 @@
-import { TradeResult } from "../../../models/trade-result";
-import { PacketMap } from "../../../models/packet-map";
-import { Packet } from "../../../packet";
-import { Reader } from "../../../reader";
-import { Writer } from "../../../writer";
+import { Packet, PacketMap, TradeResult, Reader, Writer } from "../../..";
 
 /**
  * Received when the active trade has completed, regardless of whether

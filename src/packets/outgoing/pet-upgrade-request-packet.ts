@@ -1,9 +1,4 @@
-import { SlotObjectData } from "../../data";
-import { PacketMap } from "../../models/packet-map";
-import { PetUpgradePaymentType } from "../../models/pet-upgrade-payment-type";
-import { Packet } from "../../packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketMap, SlotObjectData, PetUpgradePaymentType, Writer, Reader } from "../..";
 
 /**
  * Sent to upgrade (feed) a pet.

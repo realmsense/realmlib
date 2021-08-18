@@ -1,6 +1,6 @@
 import { Writer } from "../writer";
 import { Reader } from "../reader";
-import { DataPacket } from "../packet";
+import { DataPacket } from "../models/packet";
 import { WorldPosData } from "./world-pos-data";
 import { StatData } from "./stat-data";
 

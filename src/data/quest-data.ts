@@ -1,4 +1,4 @@
-import { DataPacket } from "../packet";
+import { DataPacket } from "../models/packet";
 import { Reader } from "../reader";
 import { Writer } from "../writer";
 

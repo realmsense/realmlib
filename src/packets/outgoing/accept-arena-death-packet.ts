@@ -1,4 +1,4 @@
-import { Packet } from "../../packet";
+import { Packet } from "../../models/packet";
 import { PacketMap } from "../../models/packet-map";
 
 /**

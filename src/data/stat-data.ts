@@ -1,7 +1,7 @@
 import { Writer } from "../writer";
 import { Reader } from "../reader";
-import { DataPacket } from "../packet";
-import { StatType } from "../models/stat-type";
+import { DataPacket } from "../models/packet";
+import { StatType } from "../constants/stat-type";
 
 /**
  * Class: `EALCAHFJEEN`
