@@ -1,73 +1,82 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketMap, GameId, Reader, Writer } from "../..";
 
 /**
  * Received to instruct the client to connect to a new host.
+ * Il2Cpp: `GOJNAJGEICA`
  */
 export class ReconnectPacket implements Packet {
 
     readonly id = PacketMap.RECONNECT
 
-    //#region packet-specific members
     /**
-     * The name of the new host.
+     * The name of the new host / map.
+     * Il2Cpp: `NCADAPAJGCH`
      */
     name: string;
+    
     /**
-     * The address of the new host.
+     * The address of the new host
+     * Il2Cpp: `AKPFOLMJFAF`
      */
     host: string;
+
     /**
-     * > Unknown.
-     */
-    stats: string;
-    /**
-     * The port of the new host.
+     * The port of the new host
+     * Il2Cpp: `OKDEMCCMFAI`
      */
     port: number;
+
     /**
-     * The `gameId` to send in the next `HelloPacket`.
+     * The `gameId` to send in the next `HelloPacket`
+     * Il2Cpp: `NLKIJIIPGFB`
      */
-    gameId: number;
+    gameId: GameId;
+
     /**
-     * The `keyTime` to send in the next `HelloPacket`.
+     * The `keyTime` to send in the next `HelloPacket`
+     * Il2Cpp: `HPKPIKODNEN`
      */
     keyTime: number;
+
     /**
-     * The `key` to send in the next `HelloPacket`.
+     * Unused, always false.
+     * Il2Cpp: `FKEOPOCCDEH`
+     */
+    fromArena: boolean;
+    
+    /**
+     * The `key` to send in the next `HelloPacket`
+     * Il2Cpp: `PEIBBDFDIFK`
      */
     key: number[];
-    //#endregion
-
+    
     constructor() {
         this.name = "";
         this.host = "";
-        this.stats = "";
         this.port = 0;
         this.gameId = 0;
         this.keyTime = 0;
+        this.fromArena = false;
         this.key = [];
     }
 
     read(reader: Reader): void {
         this.name = reader.readString();
         this.host = reader.readString();
-        this.stats = reader.readString();
-        this.port = reader.readInt32();
+        this.port = reader.readUnsignedShort();
         this.gameId = reader.readInt32();
         this.keyTime = reader.readInt32();
+        this.fromArena = reader.readBoolean();
         this.key = reader.readByteArray();
     }
 
     write(writer: Writer): void {
         writer.writeString(this.name);
         writer.writeString(this.host);
-        writer.writeString(this.stats);
-        writer.writeInt32(this.port);
+        writer.writeUnsignedShort(this.port);
         writer.writeInt32(this.gameId);
         writer.writeInt32(this.keyTime);
+        writer.writeBoolean(this.fromArena);
         writer.writeByteArray(this.key);
     }
 }
