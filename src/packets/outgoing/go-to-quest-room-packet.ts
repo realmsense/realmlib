@@ -1,5 +1,5 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
+import { Packet, PacketType } from "../..";
+
 
 /**
  * Sent to prompt the server to send a `ReconnectPacket` which
@@ -7,12 +7,8 @@ import { Packet } from "../../models/packet";
  */
 export class GoToQuestRoomPacket implements Packet {
 
-    readonly id = PacketMap.GO_TO_QUEST_ROOM
-
-    //#region packet-specific members
-
-    //#endregion
-
+    readonly type = PacketType.GO_TO_QUEST_ROOM;
+    
     write(): void {
         //
     }

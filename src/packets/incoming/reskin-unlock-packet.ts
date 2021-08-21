@@ -1,22 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to notify the player that a new skin has been unlocked.
  */
 export class ReskinUnlockPacket implements Packet {
 
-    readonly id = PacketMap.RESKIN_UNLOCK
+    readonly type = PacketType.RESKIN_UNLOCK;
 
-    //#region packet-specific members
     /**
      * The id of the skin that was unlocked.
      */
     skinId: number;
-    //#endregion
-
+    
     constructor() {
         this.skinId = 0;
     }

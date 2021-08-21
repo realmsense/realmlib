@@ -1,17 +1,12 @@
-import { QuestData } from "../../data/quest-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, QuestData, Reader, Writer } from "../..";
 
 /**
  * Received to tell the player about new quests.
  */
 export class QuestFetchResponsePacket implements Packet {
 
-    readonly id = PacketMap.QUEST_FETCH_RESPONSE
+    readonly type = PacketType.QUEST_FETCH_RESPONSE;
 
-    //#region packet-specific members
     /**
      * The quests which were fetched.
      */
@@ -20,8 +15,7 @@ export class QuestFetchResponsePacket implements Packet {
      * The cost in gold of the next quest refresh.
      */
     nextRefreshPrice: number;
-    //#endregion
-
+    
     constructor() {
         this.quests = [];
         this.nextRefreshPrice = 0;

@@ -1,4 +1,4 @@
-import { Packet, PacketMap, TradeResult, Reader, Writer } from "../../..";
+import { Packet, PacketType, TradeResult, Reader, Writer } from "../../..";
 
 /**
  * Received when the active trade has completed, regardless of whether
@@ -6,9 +6,8 @@ import { Packet, PacketMap, TradeResult, Reader, Writer } from "../../..";
  */
 export class TradeDonePacket implements Packet {
 
-    readonly id = PacketMap.TRADE_DONE
+    readonly type = PacketType.TRADE_DONE;
 
-    //#region packet-specific members
     /**
      * The result of the trade.
      */
@@ -17,8 +16,7 @@ export class TradeDonePacket implements Packet {
      * > Unknown.
      */
     description: string;
-    //#endregion
-
+    
     constructor() {
         this.code = 0;
         this.description = "";

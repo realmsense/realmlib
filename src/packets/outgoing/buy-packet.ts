@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to buy an item.
  */
 export class BuyPacket implements Packet {
 
-    readonly id = PacketMap.BUY;
+    readonly type = PacketType.BUY;
 
-    //#region packet-specific members
     /**
      * The object id of the item being purchased.
      */
@@ -19,8 +15,7 @@ export class BuyPacket implements Packet {
      * The number of items being purchased.
      */
     quantity: number;
-    //#endregion
-
+    
     constructor() {
         this.objectId = 0;
         this.quantity = 0;

@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * > Unknown.
  */
 export class SquareHitPacket implements Packet {
 
-    readonly id = PacketMap.SQUARE_HIT
+    readonly type = PacketType.SQUARE_HIT;
 
-    //#region packet-specific members
     /**
      * The current client time.
      */
@@ -23,8 +19,7 @@ export class SquareHitPacket implements Packet {
      * > Unknown.
      */
     objectId: number;
-    //#endregion
-
+    
     constructor() {
         this.time = 0;
         this.bulletId = 0;

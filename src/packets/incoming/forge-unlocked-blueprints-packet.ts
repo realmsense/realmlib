@@ -1,14 +1,11 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received in response to `MapInfoPacket`.
  */
 export class ForgeUnlockedBlueprintsPacket implements Packet {
 
-    readonly id = PacketMap.FORGE_UNLOCKED_BLUEPRINTS;
+    readonly type = PacketType.FORGE_UNLOCKED_BLUEPRINTS;
 
     /**
      * An array of blueprint IDs that the player has unlocked.

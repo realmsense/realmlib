@@ -1,14 +1,12 @@
-import { Packet, PacketMap, PetUpgradePaymentType, Writer, Reader } from "../..";
+import { Packet, PacketType, PetUpgradePaymentType, Writer, Reader } from "../..";
 
 /**
  * Sent to change skin of a pet.
  */
 export class ChangePetSkinPacket implements Packet {
 
-    readonly id = PacketMap.CHANGE_PET_SKIN
-    propagate = true;
-
-    //#region packet-specific members
+    readonly type = PacketType.CHANGE_PET_SKIN;
+    
     /**
      * The id of the pet whose skin is changing.
      */
@@ -21,8 +19,7 @@ export class ChangePetSkinPacket implements Packet {
      * The type of currency to use when changing the pet skin.
      */
     currency: PetUpgradePaymentType;
-    //#endregion
-
+    
     constructor() {
         this.petId = 0;
         this.skinType = 0;

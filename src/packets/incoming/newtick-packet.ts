@@ -1,17 +1,12 @@
-import { ObjectStatusData } from "../../data/object-status-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, ObjectStatusData, Reader, Writer } from "../..";
 
 /**
  * Received to notify the player of a new game tick.
  */
 export class NewTickPacket implements Packet {
 
-    readonly id = PacketMap.NEW_TICK
+    readonly type = PacketType.NEW_TICK;
 
-    //#region packet-specific members
     /**
      * The id of the tick.
      */
@@ -38,8 +33,7 @@ export class NewTickPacket implements Packet {
      * such as players, which are always at least visible on the minimap.
      */
     statuses: ObjectStatusData[];
-    //#endregion
-
+    
     constructor() {
         this.tickId = 0;
         this.tickTime = 0;

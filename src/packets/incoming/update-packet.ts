@@ -1,4 +1,4 @@
-import { Packet, PacketMap, GroundTileData, ObjectData, Reader, Writer } from "../..";
+import { Packet, PacketType, GroundTileData, ObjectData, Reader, Writer } from "../..";
 
 /**
  * Received when an update even occurs. Some events include
@@ -9,7 +9,7 @@ import { Packet, PacketMap, GroundTileData, ObjectData, Reader, Writer } from ".
  */
 export class UpdatePacket implements Packet {
 
-    readonly id = PacketMap.UPDATE
+    readonly type = PacketType.UPDATE;
 
     /**
      * The new tiles which are visible.

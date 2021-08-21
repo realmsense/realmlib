@@ -1,17 +1,13 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
+import { Packet, PacketType } from "../..";
+
 
 /**
  * Sent to reset the daily quests currently available.
  */
 export class ResetDailyQuestsPacket implements Packet {
 
-    readonly id = PacketMap.RESET_DAILY_QUESTS
-
-    //#region packet-specific members
-
-    //#endregion
-
+    readonly type = PacketType.RESET_DAILY_QUESTS;
+    
     write(): void {
         //
     }

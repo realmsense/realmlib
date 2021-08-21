@@ -1,17 +1,12 @@
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, Writer, Reader } from "../..";
 
 /**
  * Sent to acknowledge an `AoePacket`.
  */
 export class AoeAckPacket implements Packet {
 
-    readonly id = PacketMap.AOE_ACK
+    readonly type = PacketType.AOE_ACK;
 
-    //#region packet-specific members
     /**
      * The current client time.
      */
@@ -20,8 +15,7 @@ export class AoeAckPacket implements Packet {
      * The position of the AoE which this packet is acknowledging.
      */
     position: WorldPosData;
-    //#endregion
-
+    
     constructor() {
         this.time = 0;
         this.position = new WorldPosData();

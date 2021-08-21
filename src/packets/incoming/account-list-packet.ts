@@ -1,7 +1,4 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to provide lists of accounts ids which are
@@ -9,9 +6,8 @@ import { Writer } from "../../writer";
  */
 export class AccountListPacket implements Packet {
 
-    readonly id = PacketMap.ACCOUNT_LIST
+    readonly type = PacketType.ACCOUNT_LIST;
 
-    //#region packet-specific members
     /**
      * The id of the account id list.
      */
@@ -24,8 +20,7 @@ export class AccountListPacket implements Packet {
      * > Unknown.
      */
     lockAction: number;
-    //#endregion
-
+    
     constructor() {
         this.accountListId = 0;
         this.accountIds = [];

@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent when the player is hit.
  */
 export class PlayerHitPacket implements Packet {
 
-    readonly id = PacketMap.PLAYER_HIT
+    readonly type = PacketType.PLAYER_HIT;
 
-    //#region packet-specific members
     /**
      * The id of the bullet which hit the player.
      */
@@ -19,8 +15,7 @@ export class PlayerHitPacket implements Packet {
      * The object id of the enemy that hit the player.
      */
     objectId: number;
-    //#endregion
-
+    
     constructor() {
         this.bulletId = 0;
         this.objectId = 0;

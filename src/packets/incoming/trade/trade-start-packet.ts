@@ -1,17 +1,12 @@
-import { TradeItem } from "../../../data/trade-item";
-import { PacketMap } from "../../../models/packet-map";
-import { Packet } from "../../../models/packet";
-import { Reader } from "../../../reader";
-import { Writer } from "../../../writer";
+import { Packet, PacketType, TradeItem, Reader, Writer } from "../../..";
 
 /**
  * Received when a new active trade has been initiated.
  */
 export class TradeStartPacket implements Packet {
 
-    readonly id = PacketMap.TRADE_START
+    readonly type = PacketType.TRADE_START;
 
-    //#region packet-specific members
     /**
      * A description of the player"s inventory. Items 0-3 are the hotbar items,
      * and 4-12 are the 8 inventory slots.
@@ -26,8 +21,7 @@ export class TradeStartPacket implements Packet {
      * hotbar items, and 4-12 are the 8 inventory slots.
      */
     partnerItems: TradeItem[];
-    //#endregion
-
+    
     constructor() {
         this.clientItems = [];
         this.partnerName = "";

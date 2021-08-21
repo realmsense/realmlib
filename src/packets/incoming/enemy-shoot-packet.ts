@@ -1,17 +1,12 @@
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, Reader, Writer } from "../..";
 
 /**
  * Received when a visible enemy shoots a projectile.
  */
 export class EnemyShootPacket implements Packet {
 
-    readonly id = PacketMap.ENEMY_SHOOT
+    readonly type = PacketType.ENEMY_SHOOT;
 
-    //#region packet-specific members
     /**
      * The id of the bullet which was fired.
      */
@@ -45,8 +40,7 @@ export class EnemyShootPacket implements Packet {
      * The angle in degrees between the projectiles if `numShots > 1`.
      */
     angleInc: number;
-    //#endregion
-
+    
     constructor() {
         this.bulletId = 0;
         this.ownerId = 0;

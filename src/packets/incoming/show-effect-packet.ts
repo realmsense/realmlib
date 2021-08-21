@@ -1,17 +1,12 @@
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, Reader, Writer } from "../..";
 
 /**
  * Received to tell the player to display an effect such as an AOE grenade.
  */
 export class ShowEffectPacket implements Packet {
 
-    readonly id = PacketMap.SHOW_EFFECT;
+    readonly type = PacketType.SHOW_EFFECT;
 
-    //#region packet-specific members
     /**
      * The type of effect to display.
      */
@@ -36,8 +31,7 @@ export class ShowEffectPacket implements Packet {
      * The duration of the effect.
      */
     duration: number;
-    //#endregion
-
+    
     constructor() {
         this.effectType = 0;
         this.targetObjectId = 0;

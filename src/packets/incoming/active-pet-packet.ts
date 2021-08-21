@@ -1,23 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to notify the player of a new pet.
  */
 export class ActivePetPacket implements Packet {
 
-    readonly id = PacketMap.ACTIVE_PET;
-    propagate = true;
-
-    //#region packet-specific members
+    readonly type = PacketType.ACTIVE_PET;
+    
     /**
      * The instance id of the active pet.
      */
     instanceId: number;
-    //#endregion
-
+    
     constructor() {
         this.instanceId = 0;
     }

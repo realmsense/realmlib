@@ -1,16 +1,12 @@
-import { PacketMap } from "../../../models/packet-map";
-import { Packet } from "../../../models/packet";
-import { Reader } from "../../../reader";
-import { Writer } from "../../../writer";
+import { Packet, PacketType, Reader, Writer } from "../../..";
 
 /**
  * Received when the active trade is changed.
  */
 export class TradeChangedPacket implements Packet {
 
-    readonly id = PacketMap.TRADE_CHANGED
+    readonly type = PacketType.TRADE_CHANGED;
 
-    //#region packet-specific members
     /**
      * A description of which items in the trade partner"s inventory are selected.
      * Items 0-3 are the hotbar items, and 4-12 are the 8 inventory slots.
@@ -18,8 +14,7 @@ export class TradeChangedPacket implements Packet {
      * If a value is `true`, then the item is selected.
      */
     offer: boolean[];
-    //#endregion
-
+    
     constructor() {
         this.offer = [];
     }

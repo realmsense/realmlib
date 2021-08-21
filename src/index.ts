@@ -1,4 +1,3 @@
-export * from "./create-packet";
 export * from "./packetio";
 export * from "./reader";
 export * from "./writer";

@@ -1,14 +1,11 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received when the players exaltation stats update
  */
 export class ExaltationBonusChangedPacket implements Packet {
 
-    readonly id = PacketMap.EXALTATION_BONUS_CHANGED;
+    readonly type = PacketType.EXALTATION_BONUS_CHANGED;
 
     objType: number;
     attackProgress: number;

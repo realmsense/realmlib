@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received when a global notification is sent out to all players.
  */
 export class GlobalNotificationPacket implements Packet {
 
-    readonly id = PacketMap.GLOBAL_NOTIFICATION
+    readonly type = PacketType.GLOBAL_NOTIFICATION;
 
-    //#region packet-specific members
     /**
      * The type of notification received.
      */
@@ -19,8 +15,7 @@ export class GlobalNotificationPacket implements Packet {
      * The notification message.
      */
     text: string;
-    //#endregion
-
+    
     constructor() {
         this.notificationType = 0;
         this.text = "";

@@ -1,9 +1,4 @@
-import { MoveRecord } from "../../data/move-record";
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, MoveRecord, Writer, Reader } from "../..";
 
 /**
  * Sent to acknowledge a `NewTickPacket`, and to notify the
@@ -11,9 +6,8 @@ import { Writer } from "../../writer";
  */
 export class MovePacket implements Packet {
 
-    readonly id = PacketMap.MOVE
+    readonly type = PacketType.MOVE;
 
-    //#region packet-specific members
     /**
      * The tick id of the `NewTickPacket` which this is acknowledging.
      */
@@ -36,8 +30,7 @@ export class MovePacket implements Packet {
      * This property can be an empty array.
      */
     records: MoveRecord[];
-    //#endregion
-
+    
     constructor() {
         this.tickId = 0;
         this.time = 0;

@@ -1,17 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to give the player information about a newly evolved pet.
  */
 export class EvolvedPetMessagePacket implements Packet {
 
-    readonly id = PacketMap.EVOLVED_PET_MESSAGE;
-    propagate = true;
-
-    //#region packet-specific members
+    readonly type = PacketType.EVOLVED_PET_MESSAGE;
+    
     /**
      * The id of the pet which has evolved.
      */
@@ -24,8 +19,7 @@ export class EvolvedPetMessagePacket implements Packet {
      * The skin id of the pet after its evolution.
      */
     finalSkin: number;
-    //#endregion
-
+    
     constructor() {
         this.petId = 0;
         this.initialSkin = 0;

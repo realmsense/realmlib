@@ -1,23 +1,17 @@
-import { SlotObjectData } from "../../data/slot-object-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, SlotObjectData, Writer, Reader } from "../..";
 
 /**
  * Sent to drop an item from the client"s inventory.
  */
 export class InventoryDropPacket implements Packet {
 
-    readonly id = PacketMap.INVENTORY_DROP
+    readonly type = PacketType.INVENTORY_DROP;
 
-    //#region packet-specific members
     /**
      * The slot to drop the item from.
      */
     slotObject: SlotObjectData;
-    //#endregion
-
+    
     constructor() {
         this.slotObject = new SlotObjectData();
     }

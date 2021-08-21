@@ -1,17 +1,12 @@
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, Reader, Writer } from "../..";
 
 /**
  * Received when another player shoots.
  */
 export class ServerPlayerShootPacket implements Packet {
 
-    readonly id = PacketMap.SERVER_PLAYER_SHOOT
+    readonly type = PacketType.SERVER_PLAYER_SHOOT;
 
-    //#region packet-specific members
     /**
      * The id of the bullet that was produced.
      */
@@ -36,8 +31,7 @@ export class ServerPlayerShootPacket implements Packet {
      * The damage which will be dealt by the projectile.
      */
     damage: number;
-    //#endregion
-
+    
     constructor() {
         this.bulletId = 0;
         this.ownerId = 0;

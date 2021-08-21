@@ -1,7 +1,4 @@
-import { PacketMap } from "../../../models/packet-map";
-import { Packet } from "../../../models/packet";
-import { Reader } from "../../../reader";
-import { Writer } from "../../../writer";
+import { Packet, PacketType, Writer, Reader } from "../../..";
 
 /**
  * Sent to request a trade with a player, as well as
@@ -9,14 +6,12 @@ import { Writer } from "../../../writer";
  */
 export class RequestTradePacket implements Packet {
 
-    readonly id = PacketMap.REQUEST_TRADE
+    readonly type = PacketType.REQUEST_TRADE;
 
-    //#region packet-specific members
     /**
      * The name of the player to request the trade with.
      */
     name: string;
-    //#endregion
 
     constructor() {
         this.name = "";

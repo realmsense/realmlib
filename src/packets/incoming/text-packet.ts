@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received when a chat message is sent by another player or NPC.
  */
 export class TextPacket implements Packet {
 
-    readonly id = PacketMap.TEXT
+    readonly type = PacketType.TEXT;
 
-    //#region packet-specific members
     /**
      * The sender of the message.
      */
@@ -48,8 +44,7 @@ export class TextPacket implements Packet {
      * The star background of the player
      */
     starBackground: number;
-    //#endregion
-
+    
     constructor() {
         this.name = "";
         this.objectId = 0;

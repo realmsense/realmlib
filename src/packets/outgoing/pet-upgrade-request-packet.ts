@@ -1,14 +1,12 @@
-import { Packet, PacketMap, SlotObjectData, PetUpgradePaymentType, Writer, Reader } from "../..";
+import { Packet, PacketType, SlotObjectData, PetUpgradePaymentType, Writer, Reader } from "../..";
 
 /**
  * Sent to upgrade (feed) a pet.
  */
 export class PetUpgradeRequestPacket implements Packet {
 
-    readonly id = PacketMap.PET_UPGRADE_REQUEST
-    propagate = true;
-
-    //#region packet-specific members
+    readonly type = PacketType.PET_UPGRADE_REQUEST;
+    
     /**
      * > Unknown.
      */
@@ -33,8 +31,7 @@ export class PetUpgradeRequestPacket implements Packet {
      * The type of currency which will be used to purchase the upgrade.
      */
     paymentType: PetUpgradePaymentType;
-    //#endregion
-
+    
     constructor() {
         this.petTransType = 0;
         this.pIdOne = 0;

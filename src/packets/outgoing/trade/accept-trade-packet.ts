@@ -1,16 +1,12 @@
-import { PacketMap } from "../../../models/packet-map";
-import { Packet } from "../../../models/packet";
-import { Reader } from "../../../reader";
-import { Writer } from "../../../writer";
+import { Packet, PacketType, Writer, Reader } from "../../..";
 
 /**
  * Sent to accept the current active trade.
  */
 export class AcceptTradePacket implements Packet {
 
-    readonly id = PacketMap.ACCEPT_TRADE
+    readonly type = PacketType.ACCEPT_TRADE;
 
-    //#region packet-specific members
     /**
      * A description of which items in the client"s inventory are selected.
      * Items 0-3 are the hotbar items, and 4-12 are the 8 inventory slots.
@@ -25,8 +21,7 @@ export class AcceptTradePacket implements Packet {
      * If a value is `true`, then the item is selected.
      */
     partnerOffer: boolean[];
-    //#endregion
-
+    
     constructor() {
         this.clientOffer = [];
         this.partnerOffer = [];

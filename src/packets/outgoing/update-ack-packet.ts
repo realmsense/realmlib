@@ -1,5 +1,4 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
+import { Packet, PacketType } from "../..";
 
 /**
  * Sent to acknowledge an `UpdatePacket`.
@@ -7,7 +6,7 @@ import { Packet } from "../../models/packet";
  */
 export class UpdateAckPacket implements Packet {
 
-    readonly id = PacketMap.UPDATE_ACK
+    readonly type = PacketType.UPDATE_ACK;
 
     write(): void {
         //

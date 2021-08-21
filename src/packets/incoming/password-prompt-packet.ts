@@ -1,22 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to prompt the player to enter their password.
  */
 export class PasswordPromptPacket implements Packet {
 
-    readonly id = PacketMap.PASSWORD_PROMPT
+    readonly type = PacketType.PASSWORD_PROMPT;
 
-    //#region packet-specific members
     /**
      * > Unknown.
      */
     cleanPasswordStatus: number;
-    //#endregion
-
+    
     constructor() {
         this.cleanPasswordStatus = 0;
     }

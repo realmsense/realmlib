@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received when another player shoots a projectile.
  */
 export class AllyShootPacket implements Packet {
 
-    readonly id = PacketMap.ALLY_SHOOT
+    readonly type = PacketType.ALLY_SHOOT;
 
-    //#region packet-specific members
     /**
      * The bullet id of the projectile which was produced.
      */
@@ -32,8 +28,7 @@ export class AllyShootPacket implements Packet {
      * Whether or not the shot is affected by the "Inspired" buff (presumably).
      */
     bard: boolean;
-    //#endregion
-
+    
     constructor() {
         this.bulletId = 0;
         this.ownerId = 0;

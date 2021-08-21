@@ -1,22 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to remove a player from the client"s current guild.
  */
 export class GuildRemovePacket implements Packet {
 
-    readonly id = PacketMap.GUILD_REMOVE
+    readonly type = PacketType.GUILD_REMOVE;
 
-    //#region packet-specific members
     /**
      * The name of the player to remove.
      */
     name: string;
-    //#endregion
-
+    
     constructor() {
         this.name = "";
     }

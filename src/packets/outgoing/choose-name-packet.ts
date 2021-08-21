@@ -1,22 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to change the client"s account name.
  */
 export class ChooseNamePacket implements Packet {
 
-    readonly id = PacketMap.CHOOSE_NAME
+    readonly type = PacketType.CHOOSE_NAME;
 
-    //#region packet-specific members
     /**
      * The name to change the account"s name to.
      */
     name: string;
-    //#endregion
-
+    
     constructor() {
         this.name = "";
     }

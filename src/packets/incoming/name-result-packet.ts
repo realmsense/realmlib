@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received in response to a `ChooseNamePacket`.
  */
 export class NameResultPacket implements Packet {
 
-    readonly id = PacketMap.NAME_RESULT
+    readonly type = PacketType.NAME_RESULT;
 
-    //#region packet-specific members
     /**
      * Whether or not the name change was successful.
      */
@@ -19,8 +15,7 @@ export class NameResultPacket implements Packet {
      * The error which occurred, if the result was not successful.
      */
     errorText: string;
-    //#endregion
-
+    
     constructor() {
         this.success = false;
         this.errorText = "";

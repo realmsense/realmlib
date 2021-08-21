@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to create a new character.
  */
 export class CreatePacket implements Packet {
 
-    readonly id = PacketMap.CREATE
+    readonly type = PacketType.CREATE;
 
-    //#region packet-specific members
     /**
      * The class to use for the new character.
      */
@@ -24,8 +20,7 @@ export class CreatePacket implements Packet {
      * Whether or not the character is in challenger mode.
      */
     isChallenger: boolean;
-    //#endregion
-
+    
     constructor() {
         this.classType = 0;
         this.skinType = 0;

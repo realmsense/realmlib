@@ -1,4 +1,4 @@
-import { Packet, PacketMap, Reader, Writer } from "../..";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received in response to the `HelloPacket`.
@@ -6,7 +6,7 @@ import { Packet, PacketMap, Reader, Writer } from "../..";
  */
 export class MapInfoPacket implements Packet {
 
-    readonly id = PacketMap.MAP_INFO;
+    readonly type = PacketType.MAP_INFO;
 
     /**
      * The width of the map

@@ -1,17 +1,12 @@
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, Writer, Reader } from "../..";
 
 /**
  * Sent when the player shoots a projectile.
  */
 export class PlayerShootPacket implements Packet {
 
-    readonly id = PacketMap.PLAYER_SHOOT
+    readonly type = PacketType.PLAYER_SHOOT;
 
-    //#region packet-specific members
     /**
      * The current client time.
      */
@@ -44,8 +39,7 @@ export class PlayerShootPacket implements Packet {
      * If the projectile is a burst
      */
     isBurst: boolean;
-    //#endregion
-
+    
     constructor() {
         this.time = 0;
         this.bulletId = 0;

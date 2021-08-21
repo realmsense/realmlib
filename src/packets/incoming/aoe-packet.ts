@@ -1,17 +1,12 @@
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, Reader, Writer } from "../..";
 
 /**
  * Received when an AoE grenade has hit the ground.
  */
 export class AoePacket implements Packet {
 
-    readonly id = PacketMap.AOE
+    readonly type = PacketType.AOE;
 
-    //#region packet-specific members
     /**
      * The position which the grenade landed at.
      */
@@ -46,8 +41,7 @@ export class AoePacket implements Packet {
      * Whether or not the damage of this grenade pierces armor.
      */
     armorPiercing: boolean;
-    //#endregion
-
+    
     constructor() {
         this.pos = new WorldPosData();
         this.radius = 0;

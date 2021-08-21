@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to edit an account id list.
  */
 export class EditAccountListPacket implements Packet {
 
-    readonly id = PacketMap.EDIT_ACCOUNT_LIST
+    readonly type = PacketType.EDIT_ACCOUNT_LIST;
 
-    //#region packet-specific members
     /**
      * The id of the account id list being edited.
      */
@@ -23,8 +19,7 @@ export class EditAccountListPacket implements Packet {
      * The object id of the player to add to the list.
      */
     objectId: number;
-    //#endregion
-
+    
     constructor() {
         this.accountListId = 0;
         this.add = false;

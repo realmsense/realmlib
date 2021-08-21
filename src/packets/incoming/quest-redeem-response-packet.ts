@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * > Unknown.
  */
 export class QuestRedeemResponsePacket implements Packet {
 
-    readonly id = PacketMap.QUEST_REDEEM_RESPONSE
+    readonly type = PacketType.QUEST_REDEEM_RESPONSE;
 
-    //#region packet-specific members
     /**
      * > Unknown.
      */
@@ -19,8 +15,7 @@ export class QuestRedeemResponsePacket implements Packet {
      * > Unknown.
      */
     message: string;
-    //#endregion
-
+    
     constructor() {
         this.ok = false;
         this.message = "";

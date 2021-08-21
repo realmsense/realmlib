@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received when a notification is received by the player.
  */
 export class NotificationPacket implements Packet {
 
-    readonly id = PacketMap.NOTIFICATION
+    readonly type = PacketType.NOTIFICATION;
 
-    //#region packet-specific members
     /**
      * The object id of the entity which the notification is for.
      */
@@ -23,8 +19,7 @@ export class NotificationPacket implements Packet {
      * The color of the notification text.
      */
     color: number;
-    //#endregion
-
+    
     constructor() {
         this.objectId = 0;
         this.message = "";

@@ -1,4 +1,4 @@
-import { Packet, PacketMap, Writer, Reader } from "../..";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent in response to a `MapInfoPacket` to load a character into the map.
@@ -6,7 +6,7 @@ import { Packet, PacketMap, Writer, Reader } from "../..";
  */
 export class LoadPacket implements Packet {
 
-    readonly id = PacketMap.LOAD
+    readonly type = PacketType.LOAD;
 
     /**
      * The id of the character to load.

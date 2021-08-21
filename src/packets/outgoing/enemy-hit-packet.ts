@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent when an enemy has been hit by the player.
  */
 export class EnemyHitPacket implements Packet {
 
-    readonly id = PacketMap.ENEMY_HIT
+    readonly type = PacketType.ENEMY_HIT;
 
-    //#region packet-specific members
     /**
      * The current client time.
      */
@@ -27,8 +23,7 @@ export class EnemyHitPacket implements Packet {
      * Whether or not the projectile will kill the enemy.
      */
     kill: boolean;
-    //#endregion
-
+    
     constructor() {
         this.time = 0;
         this.bulletId = 0;

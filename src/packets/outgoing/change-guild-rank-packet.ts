@@ -1,16 +1,13 @@
-import { PacketMap } from "../../models/packet-map";
+import { Writer, Reader, PacketType } from "../..";
 import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
 
 /**
  * Sent to change the guild rank of a member in the player"s guild.
  */
 export class ChangeGuildRankPacket implements Packet {
 
-    readonly id = PacketMap.CHANGE_GUILD_RANK
+    readonly type = PacketType.CHANGE_GUILD_RANK;
 
-    //#region packet-specific members
     /**
      * The name of the player whose rank will change.
      */
@@ -19,8 +16,7 @@ export class ChangeGuildRankPacket implements Packet {
      * The new rank of the player.
      */
     guildRank: number;
-    //#endregion
-
+    
     constructor() {
         this.name = "";
         this.guildRank = 0;

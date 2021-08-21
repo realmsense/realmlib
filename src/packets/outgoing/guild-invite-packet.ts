@@ -1,21 +1,16 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to invite a player to the client"s current guild.
  */
 export class GuildInvitePacket implements Packet {
 
-    readonly id = PacketMap.GUILD_INVITE
+    readonly type = PacketType.GUILD_INVITE;
 
-    //#region packet-specific members
     /**
      * The name of the player to invite.
      */
     name: string;
-    //#endregion
 
     constructor() {
         this.name = "";

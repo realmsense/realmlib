@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to give the player information about their stats.
  */
 export class ClientStatPacket implements Packet {
 
-    readonly id = PacketMap.CLIENT_STAT
+    readonly type = PacketType.CLIENT_STAT;
 
-    //#region packet-specific members
     /**
      * The name of the stat.
      */
@@ -19,8 +15,7 @@ export class ClientStatPacket implements Packet {
      * The value of the stat.
      */
     value: number;
-    //#endregion
-
+    
     constructor() {
         this.name = "";
         this.value = 0;

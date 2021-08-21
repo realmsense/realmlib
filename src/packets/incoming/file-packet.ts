@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * A packet which contains a file.
  */
 export class FilePacket implements Packet {
 
-    readonly id = PacketMap.FILE
+    readonly type = PacketType.FILE;
 
-    //#region packet-specific members
     /**
      * The name of the received file.
      */
@@ -20,8 +16,7 @@ export class FilePacket implements Packet {
      * that"s just how it is in the source code of the game.
      */
     file: string;
-    //#endregion
-
+    
     constructor() {
         this.fileName = "";
         this.file = "";

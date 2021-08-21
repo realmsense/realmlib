@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received when a player has died.
  */
 export class DeathPacket implements Packet {
 
-    readonly id = PacketMap.DEATH
+    readonly type = PacketType.DEATH;
 
-    //#region packet-specific members
     /**
      * The account id of the player who died.
      */
@@ -41,8 +37,7 @@ export class DeathPacket implements Packet {
      * Unknown exalt stat type
      */
     unknown: number
-    //#endregion
-
+    
     constructor() {
         this.accountId = "";
         this.charId = 0;

@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received in response to a `CreatePacket`.
  */
 export class CreateSuccessPacket implements Packet {
 
-    readonly id = PacketMap.CREATE_SUCCESS
+    readonly type = PacketType.CREATE_SUCCESS;
 
-    //#region packet-specific members
     /**
      * The object id of the player"s character.
      */
@@ -19,8 +15,7 @@ export class CreateSuccessPacket implements Packet {
      * The character id of the player"s character.
      */
     charId: number;
-    //#endregion
-
+    
     constructor() {
         this.objectId = 0;
         this.charId = 0;

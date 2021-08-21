@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent when the player inflicts a condition effect.
  */
 export class SetConditionPacket implements Packet {
 
-    readonly id = PacketMap.SET_CONDITION
+    readonly type = PacketType.SET_CONDITION;
 
-    //#region packet-specific members
     /**
      * The condition effect being conflicted.
      */
@@ -19,8 +15,7 @@ export class SetConditionPacket implements Packet {
      * The duration of the conditin effect.
      */
     conditionDuration: number;
-    //#endregion
-
+    
     constructor() {
         this.conditionEffect = 0;
         this.conditionDuration = 0;

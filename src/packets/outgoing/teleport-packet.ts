@@ -1,22 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to teleport to another player.
  */
 export class TeleportPacket implements Packet {
 
-    readonly id = PacketMap.TELEPORT
+    readonly type = PacketType.TELEPORT;
 
-    //#region packet-specific members
     /**
      * The object id of the player to teleport to.
      */
     objectId: number;
-    //#endregion
-
+    
     constructor() {
         this.objectId = 0;
     }

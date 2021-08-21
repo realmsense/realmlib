@@ -1,7 +1,4 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to prompt the server to send a `ReconnectPacket` which
@@ -9,15 +6,13 @@ import { Writer } from "../../writer";
  */
 export class UsePortalPacket implements Packet {
 
-    readonly id = PacketMap.USE_PORTAL;
+    readonly type = PacketType.USE_PORTAL;
 
-    //#region packet-specific members
     /**
      * The object id of the portal to enter.
      */
     objectId: number;
-    //#endregion
-
+    
     constructor() {
         this.objectId = 0;
     }

@@ -1,22 +1,16 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to notify the player that a pet has been deleted.
  */
 export class DeletePetMessagePacket implements Packet {
 
-    readonly id = PacketMap.DELETE_PET_MESSAGE
-    propagate = true;
+    readonly type = PacketType.DELETE_PET_MESSAGE;
 
-    //#region packet-specific members
     /**
      * The id of the pet which has been deleted.
      */
     petId: number;
-    //#endregion
 
     constructor() {
         this.petId = 0;

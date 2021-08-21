@@ -1,5 +1,4 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
+import { Packet, PacketType } from "../..";
 
 /**
  * Sent to prompt the server to send a `ReconnectPacket` which
@@ -7,12 +6,8 @@ import { Packet } from "../../models/packet";
  */
 export class EscapePacket implements Packet {
 
-    readonly id = PacketMap.ESCAPE
-
-    //#region packet-specific members
-
-    //#endregion
-
+    readonly type = PacketType.ESCAPE;
+    
     write(): void {
         //
     }

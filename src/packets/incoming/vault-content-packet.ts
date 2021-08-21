@@ -1,14 +1,11 @@
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
-import { PacketMap } from "../../models/packet-map";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received for information when the player enters the new vault
  */
 export class VaultContentPacket implements Packet {
 
-    readonly id = PacketMap.VAULT_CONTENT;
+    readonly type = PacketType.VAULT_CONTENT;
 
     unknownBool: boolean;
     vaultItemCount: number;

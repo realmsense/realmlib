@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to acknowledge the `PingPacket.`
  */
 export class PongPacket implements Packet {
 
-    readonly id = PacketMap.PONG
+    readonly type = PacketType.PONG;
 
-    //#region packet-specific members
     /**
      * The serial value received in the `PingPacket` which this acknowledges.
      */
@@ -19,8 +15,7 @@ export class PongPacket implements Packet {
      * The current client time.
      */
     time: number;
-    //#endregion
-
+    
     constructor() {
         this.serial = 0;
         this.time = 0;

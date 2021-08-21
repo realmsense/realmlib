@@ -1,4 +1,4 @@
-import { Packet, PacketMap, GameId, Reader, Writer } from "../..";
+import { Packet, PacketType, GameId, Reader, Writer } from "../..";
 
 /**
  * Received to instruct the client to connect to a new host.
@@ -6,7 +6,7 @@ import { Packet, PacketMap, GameId, Reader, Writer } from "../..";
  */
 export class ReconnectPacket implements Packet {
 
-    readonly id = PacketMap.RECONNECT
+    readonly type = PacketType.RECONNECT;
 
     /**
      * The name of the new host / map.

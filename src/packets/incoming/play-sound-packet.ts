@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to tell the client to play a sound.
  */
 export class PlaySoundPacket implements Packet {
 
-    readonly id = PacketMap.PLAY_SOUND
+    readonly type = PacketType.PLAY_SOUND;
 
-    //#region packet-specific members
     /**
      * The object id of the origin of the sound.
      */
@@ -19,8 +15,7 @@ export class PlaySoundPacket implements Packet {
      * The id of the sound to play.
      */
     soundId: number;
-    //#endregion
-
+    
     constructor() {
         this.ownerId = 0;
         this.soundId = 0;

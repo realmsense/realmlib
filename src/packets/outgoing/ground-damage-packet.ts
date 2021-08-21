@@ -1,17 +1,12 @@
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, Writer, Reader } from "../..";
 
 /**
  * Sent when the client takes damage from a ground source, such as lava.
  */
 export class GroundDamagePacket implements Packet {
 
-    readonly id = PacketMap.GROUND_DAMAGE
+    readonly type = PacketType.GROUND_DAMAGE;
 
-    //#region packet-specific members
     /**
      * The current client time.
      */
@@ -20,8 +15,7 @@ export class GroundDamagePacket implements Packet {
      * The current client position.
      */
     position: WorldPosData;
-    //#endregion
-
+    
     constructor() {
         this.time = 0;
         this.position = new WorldPosData();

@@ -1,4 +1,4 @@
-import { Packet, PacketMap, FailureCode, Reader, Writer } from "../..";
+import { Packet, PacketType, FailureCode, Reader, Writer } from "../..";
 
 /**
  * Received when an error has occured.
@@ -6,21 +6,21 @@ import { Packet, PacketMap, FailureCode, Reader, Writer } from "../..";
  */
 export class FailurePacket implements Packet {
 
-    readonly id = PacketMap.FAILURE
+    readonly type = PacketType.FAILURE;
 
     /**
      * The ID of the failure.
      * @see FailureCode
      * Il2Cpp: `ENBELELJMBC`
      */
-    public errorId: FailureCode;
+    errorId: FailureCode;
 
     /**
      * The message associated with the error. Often a blank string
      * Example: `s.update_client`
      * Il2Cpp: `GDCKNNCIFNM`
      */
-    public message: string;
+    message: string;
 
     constructor() {
         this.errorId = 0;

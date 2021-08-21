@@ -1,18 +1,12 @@
-import { SlotObjectData } from "../../data/slot-object-data";
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, SlotObjectData, WorldPosData, Writer, Reader } from "../..";
 
 /**
  * Sent to use an item, such as an ability or consumable.
  */
 export class UseItemPacket implements Packet {
 
-    readonly id = PacketMap.USE_ITEM
+    readonly type = PacketType.USE_ITEM;
 
-    //#region packet-specific members
     /**
      * The current client time.
      */
@@ -29,8 +23,7 @@ export class UseItemPacket implements Packet {
      * The type of item usage.
      */
     useType: number;
-    //#endregion
-
+    
     constructor() {
         this.time = 0;
         this.slotObject = new SlotObjectData();

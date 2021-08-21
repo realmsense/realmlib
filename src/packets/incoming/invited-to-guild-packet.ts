@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received when the player is invited to a guild.
  */
 export class InvitedToGuildPacket implements Packet {
 
-    readonly id = PacketMap.INVITED_TO_GUILD
+    readonly type = PacketType.INVITED_TO_GUILD;
 
-    //#region packet-specific members
     /**
      * The name of the player who sent the invite.
      */
@@ -19,8 +15,7 @@ export class InvitedToGuildPacket implements Packet {
      * The name of the guild which the invite is for.
      */
     guildName: string;
-    //#endregion
-
+    
     constructor() {
         this.name = "";
         this.guildName = "";

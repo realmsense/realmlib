@@ -1,4 +1,5 @@
-import { Packet, PacketMap, GameId, Reader, Writer } from "../..";
+import { Packet, PacketType, GameId, Reader, Writer } from "../..";
+
 
 /**
  * Sent whenever the Client connects to a new map.
@@ -7,7 +8,7 @@ import { Packet, PacketMap, GameId, Reader, Writer } from "../..";
  */
 export class HelloPacket implements Packet {
 
-    readonly id = PacketMap.HELLO;
+    readonly type = PacketType.HELLO;
 
     /**
      * The current Exalt Version

@@ -1,14 +1,11 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent when the client sends a chat message.
  */
 export class PlayerTextPacket implements Packet {
 
-    readonly id = PacketMap.PLAYER_TEXT
+    readonly type = PacketType.PLAYER_TEXT;
 
     /**
      * The message to send.

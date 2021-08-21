@@ -1,22 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received when a new ability has been unlocked by the player.
  */
 export class NewAbilityMessagePacket implements Packet {
 
-    readonly id = PacketMap.NEW_ABILITY_MESSAGE
+    readonly type = PacketType.NEW_ABILITY_MESSAGE;
 
-    //#region packet-specific members
     /**
      * The type of ability which has been unlocked.
      */
     abilityType: number;
-    //#endregion
-
+    
     constructor() {
         this.abilityType = 0;
     }

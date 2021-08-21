@@ -1,22 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to accept a pending guild invite.
  */
 export class JoinGuildPacket implements Packet {
 
-    readonly id = PacketMap.JOIN_GUILD
+    readonly type = PacketType.JOIN_GUILD;
 
-    //#region packet-specific members
     /**
      * The name of the guild for which there is a pending invite.
      */
     guildName: string;
-    //#endregion
-
+    
     constructor() {
         this.guildName = "";
     }

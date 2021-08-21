@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * > Unknown.
  */
 export class GuildResultPacket implements Packet {
 
-    readonly id = PacketMap.GUILD_RESULT
+    readonly type = PacketType.GUILD_RESULT;
 
-    //#region packet-specific members
     /**
      * > Unknown.
      */
@@ -19,8 +15,7 @@ export class GuildResultPacket implements Packet {
      * > Unknown.
      */
     lineBuilderJSON: string;
-    //#endregion
-
+    
     constructor() {
         this.success = false;
         this.lineBuilderJSON = "";

@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to tell the player about damage done to other players and enemies.
  */
 export class DamagePacket implements Packet {
 
-    readonly id = PacketMap.DAMAGE
+    readonly type = PacketType.DAMAGE;
 
-    //#region packet-specific members
     /**
      * The object id of the entity receiving the damage.
      */
@@ -35,8 +31,7 @@ export class DamagePacket implements Packet {
      * The object id of the entity which owned the bullet that caused the damage.
      */
     objectId: number;
-    //#endregion
-
+    
     constructor() {
         this.targetId = 0;
         this.effects = [];

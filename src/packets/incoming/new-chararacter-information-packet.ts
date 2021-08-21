@@ -1,18 +1,14 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * > Unknown
  */
 export class NewCharacterInformationPacket implements Packet {
 
-    readonly id = PacketMap.NEW_CHARACTER_INFORMATION
+    readonly type = PacketType.NEW_CHARACTER_INFORMATION;
 
     charXML: string;
-    //#endregion
-
+    
     constructor() {
         this.charXML = "";
     }

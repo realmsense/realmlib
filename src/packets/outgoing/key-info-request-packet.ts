@@ -1,22 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * > Unknown.
  */
 export class KeyInfoRequestPacket implements Packet {
 
-    readonly id = PacketMap.KEY_INFO_REQUEST
+    readonly type = PacketType.KEY_INFO_REQUEST;
 
-    //#region packet-specific members
     /**
      * > Unknown.
      */
     itemType: number;
-    //#endregion
-
+    
     constructor() {
         this.itemType = 0;
     }

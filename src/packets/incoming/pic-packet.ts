@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * A packet which contains a bitmap image.
  */
 export class PicPacket implements Packet {
 
-    readonly id = PacketMap.PIC
+    readonly type = PacketType.PIC;
 
-    //#region packet-specific members
     /**
      * The width of the image.
      */
@@ -23,8 +19,7 @@ export class PicPacket implements Packet {
      * The bitmap data of the image.
      */
     bitmapData: number[];
-    //#endregion
-
+    
     constructor() {
         this.width = 0;
         this.height = 0;

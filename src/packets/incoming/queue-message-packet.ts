@@ -1,13 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
+import { Reader, Writer, PacketType } from "../..";
 import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
 
 /**
  * Received when the client connects to a server with a queue.
  */
 export class QueueMessagePacket implements Packet {
-    readonly id = PacketMap.QUEUE_MESSAGE
+
+    readonly type = PacketType.QUEUE_MESSAGE;
 
     /**
      * The current position of the client in the queue

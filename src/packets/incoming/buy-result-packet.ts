@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received in response to a `BuyPacket`.
  */
 export class BuyResultPacket implements Packet {
 
-    readonly id = PacketMap.BUY_RESULT
+    readonly type = PacketType.BUY_RESULT;
 
-    //#region packet-specific members
     /**
      * The result code.
      */
@@ -19,8 +15,7 @@ export class BuyResultPacket implements Packet {
      * > Unknown.
      */
     resultString: string;
-    //#endregion
-
+    
     constructor() {
         this.result = 0;
         this.resultString = "";

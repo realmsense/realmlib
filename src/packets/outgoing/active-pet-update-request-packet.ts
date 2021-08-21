@@ -1,14 +1,12 @@
-import { Packet, PacketMap, ActivePetUpdateType, Writer, Reader } from "../..";
+import { Packet, PacketType, ActivePetUpdateType, Writer, Reader } from "../..";
 
 /**
  * Sent to make an update to the pet currently following the player.
  */
 export class ActivePetUpdateRequestPacket implements Packet {
 
-    readonly id = PacketMap.ACTIVE_PET_UPDATE_REQUEST;
-    propagate = true;
-
-    //#region packet-specific members
+    readonly type = PacketType.ACTIVE_PET_UPDATE_REQUEST;
+    
     /**
      * The type of update to perform.
      */
@@ -17,8 +15,7 @@ export class ActivePetUpdateRequestPacket implements Packet {
      * The instance id of the pet to update.
      */
     instanceId: number;
-    //#endregion
-
+    
     constructor() {
         this.commandType = 0;
         this.instanceId = 0;

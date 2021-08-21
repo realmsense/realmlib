@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to claim rewards from the login calendar.
  */
-export class ClaimDailyRewardMessagePacket implements Packet {
+export class ClaimDailyRewardPacket implements Packet {
 
-    readonly id = PacketMap.CLAIM_DAILY_REWARD_MESSAGE
+    readonly type = PacketType.CLAIM_DAILY_REWARD_MESSAGE;
 
-    //#region packet-specific members
     /**
      * The key of the item being claimed.
      */
@@ -19,8 +15,7 @@ export class ClaimDailyRewardMessagePacket implements Packet {
      * The type of claim being made.
      */
     claimType: string;
-    //#endregion
-
+    
     constructor() {
         this.claimKey = "";
         this.claimType = "";

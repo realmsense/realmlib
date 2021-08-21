@@ -6,7 +6,7 @@ export * from "./change-guild-rank-packet";
 export * from "./change-pet-skin-packet";
 export * from "./check-credits-packet";
 export * from "./choose-name-packet";
-export * from "./claim-daily-reward-message-packet";
+export * from "./claim-daily-reward-packet";
 export * from "./create-guild-packet";
 export * from "./create-packet";
 export * from "./edit-account-list-packet";

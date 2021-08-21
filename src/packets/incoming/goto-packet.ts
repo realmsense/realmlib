@@ -1,17 +1,12 @@
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, Reader, Writer } from "../..";
 
 /**
  * Received when an entity has moved to a new position.
  */
 export class GotoPacket implements Packet {
 
-    readonly id = PacketMap.GOTO
+    readonly type = PacketType.GOTO;
 
-    //#region packet-specific members
     /**
      * The object id of the entity which moved.
      */
@@ -20,8 +15,7 @@ export class GotoPacket implements Packet {
      * The new position of the entity.
      */
     position: WorldPosData;
-    //#endregion
-
+    
     constructor() {
         this.objectId = 0;
         this.position = new WorldPosData();

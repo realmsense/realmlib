@@ -1,16 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * > Unknown.
  */
 export class KeyInfoResponsePacket implements Packet {
 
-    readonly id = PacketMap.KEY_INFO_RESPONSE
+    readonly type = PacketType.KEY_INFO_RESPONSE;
 
-    //#region packet-specific members
     /**
      * > Unknown.
      */
@@ -23,8 +19,7 @@ export class KeyInfoResponsePacket implements Packet {
      * > Unknown.
      */
     creator: string;
-    //#endregion
-
+    
     constructor() {
         this.name = "";
         this.description = "";

@@ -1,22 +1,17 @@
-import { PacketMap } from "../../../models/packet-map";
-import { Packet } from "../../../models/packet";
-import { Reader } from "../../../reader";
-import { Writer } from "../../../writer";
+import { Packet, PacketType, Reader, Writer } from "../../..";
 
 /**
  * Received when a trade is requested.
  */
 export class TradeRequestedPacket implements Packet {
 
-    readonly id = PacketMap.TRADE_REQUESTED
+    readonly type = PacketType.TRADE_REQUESTED;
 
-    //#region packet-specific members
     /**
      * The name of the player who requested the trade.
      */
     name: string;
-    //#endregion
-
+    
     constructor() {
         this.name = "";
     }

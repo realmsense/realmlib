@@ -1,18 +1,12 @@
-import { SlotObjectData } from "../../data/slot-object-data";
-import { WorldPosData } from "../../data/world-pos-data";
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, WorldPosData, SlotObjectData, Writer, Reader } from "../..";
 
 /**
  * Sent to swap the items of two slots.
  */
 export class InventorySwapPacket implements Packet {
 
-    readonly id = PacketMap.INVENTORY_SWAP
+    readonly type = PacketType.INVENTORY_SWAP;
 
-    //#region packet-specific members
     /**
      * The current client time.
      */
@@ -29,8 +23,7 @@ export class InventorySwapPacket implements Packet {
      * The slot to swap to.
      */
     slotObject2: SlotObjectData;
-    //#endregion
-
+    
     constructor() {
         this.time = 0;
         this.position = new WorldPosData();

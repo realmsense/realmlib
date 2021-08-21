@@ -1,17 +1,12 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received to give the player information about a newly hatched pet.
  */
 export class HatchPetPacket implements Packet {
 
-    readonly id = PacketMap.HATCH_PET
-    propagate = true;
-
-    //#region packet-specific members
+    readonly type = PacketType.HATCH_PET;
+    
     /**
      * The name of the hatched pet.
      */
@@ -20,8 +15,7 @@ export class HatchPetPacket implements Packet {
      * The skin id of the hatched pet.
      */
     petSkin: number;
-    //#endregion
-
+    
     constructor() {
         this.petName = "";
         this.petSkin = 0;

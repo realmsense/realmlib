@@ -1,22 +1,17 @@
-import { PacketMap } from "../../models/packet-map";
-import { Packet } from "../../models/packet";
-import { Reader } from "../../reader";
-import { Writer } from "../../writer";
+import { Packet, PacketType, Writer, Reader } from "../..";
 
 /**
  * Sent to acknowledge a `GotoPacket`.
  */
 export class GotoAckPacket implements Packet {
 
-    readonly id = PacketMap.GOTO_ACK
+    readonly type = PacketType.GOTO_ACK;
 
-    //#region packet-specific members
     /**
      * The current client time.
      */
     time: number;
-    //#endregion
-
+    
     constructor() {
         this.time = 0;
     }
