@@ -33,12 +33,12 @@ export class TradeAcceptedPacket implements Packet {
     }
 
     read(reader: Reader): void {
-        const clientOfferLen = reader.readShort();
+        const clientOfferLen = reader.readInt16();
         this.clientOffer = new Array<boolean>(clientOfferLen);
         for (let i = 0; i < clientOfferLen; i++) {
             this.clientOffer[i] = reader.readBoolean();
         }
-        const partnerOfferLen = reader.readShort();
+        const partnerOfferLen = reader.readInt16();
         this.partnerOffer = new Array<boolean>(partnerOfferLen);
         for (let i = 0; i < partnerOfferLen; i++) {
             this.partnerOffer[i] = reader.readBoolean();
@@ -46,11 +46,11 @@ export class TradeAcceptedPacket implements Packet {
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.clientOffer.length);
+        writer.writeInt16(this.clientOffer.length);
         for (const offer of this.clientOffer) {
             writer.writeBoolean(offer);
         }
-        writer.writeShort(this.partnerOffer.length);
+        writer.writeInt16(this.partnerOffer.length);
         for (const offer of this.partnerOffer) {
             writer.writeBoolean(offer);
         }

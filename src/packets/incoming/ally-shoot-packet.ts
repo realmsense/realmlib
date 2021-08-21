@@ -45,7 +45,7 @@ export class AllyShootPacket implements Packet {
     read(reader: Reader): void {
         this.bulletId = reader.readUnsignedByte();
         this.ownerId = reader.readInt32();
-        this.containerType = reader.readShort();
+        this.containerType = reader.readInt16();
         this.angle = reader.readFloat();
         this.bard = reader.readBoolean();
     }
@@ -53,7 +53,7 @@ export class AllyShootPacket implements Packet {
     write(writer: Writer): void {
         writer.writeUnsignedByte(this.bulletId);
         writer.writeInt32(this.ownerId);
-        writer.writeShort(this.containerType);
+        writer.writeInt16(this.containerType);
         writer.writeFloat(this.angle);
         writer.writeBoolean(this.bard);
     }

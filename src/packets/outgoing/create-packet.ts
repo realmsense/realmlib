@@ -33,14 +33,14 @@ export class CreatePacket implements Packet {
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.classType);
-        writer.writeShort(this.skinType);
+        writer.writeInt16(this.classType);
+        writer.writeInt16(this.skinType);
         writer.writeBoolean(this.isChallenger);
     }
 
     read(reader: Reader): void {
-        this.classType = reader.readShort();
-        this.skinType = reader.readShort();
+        this.classType = reader.readInt16();
+        this.skinType = reader.readInt16();
         this.isChallenger = reader.readBoolean();
     }
 }

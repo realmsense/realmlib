@@ -25,7 +25,7 @@ export class TradeChangedPacket implements Packet {
     }
 
     read(reader: Reader): void {
-        const offerLen = reader.readShort();
+        const offerLen = reader.readInt16();
         this.offer = new Array<boolean>(offerLen);
         for (let i = 0; i < offerLen; i++) {
             this.offer[i] = reader.readBoolean();
@@ -33,7 +33,7 @@ export class TradeChangedPacket implements Packet {
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.offer.length);
+        writer.writeInt16(this.offer.length);
         for (const offer of this.offer) {
             writer.writeBoolean(offer);
         }

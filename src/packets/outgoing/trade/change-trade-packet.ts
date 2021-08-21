@@ -25,14 +25,14 @@ export class ChangeTradePacket implements Packet {
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.offer.length);
+        writer.writeInt16(this.offer.length);
         for (const slot of this.offer) {
             writer.writeBoolean(slot);
         }
     }
 
     read(reader: Reader): void {
-        this.offer = new Array(reader.readShort());
+        this.offer = new Array(reader.readInt16());
         for (let i = 0; i < this.offer.length; i++) {
             this.offer[i] = reader.readBoolean();
         }

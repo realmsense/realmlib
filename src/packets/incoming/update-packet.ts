@@ -60,17 +60,17 @@ export class UpdatePacket implements Packet {
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.tiles.length);
+        writer.writeInt16(this.tiles.length);
         for (const tile of this.tiles) {
             tile.write(writer);
         }
 
-        writer.writeShort(this.newObjects.length);
+        writer.writeInt16(this.newObjects.length);
         for (const object of this.newObjects) {
             object.write(writer);
         }
 
-        writer.writeShort(this.drops.length);
+        writer.writeInt16(this.drops.length);
         for (const drop of this.drops) {
             writer.writeInt32(drop);
         }

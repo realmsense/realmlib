@@ -25,12 +25,12 @@ export class QueueMessagePacket implements Packet {
     }
 
     read(reader: Reader): void {
-        this.currentPosition = reader.readUnsignedShort();
-        this.maxPosition = reader.readUnsignedShort();
+        this.currentPosition = reader.readUInt16();
+        this.maxPosition = reader.readUInt16();
     }
 
     write(writer: Writer): void {
-        writer.writeUnsignedShort(this.currentPosition);
-        writer.writeUnsignedShort(this.maxPosition);
+        writer.writeUInt16(this.currentPosition);
+        writer.writeUInt16(this.maxPosition);
     }
 }

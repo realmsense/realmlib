@@ -34,7 +34,7 @@ export class AccountListPacket implements Packet {
 
     read(reader: Reader): void {
         this.accountListId = reader.readInt32();
-        const accountIdsLen = reader.readShort();
+        const accountIdsLen = reader.readInt16();
         this.accountIds = new Array<string>(accountIdsLen);
         for (let i = 0; i < accountIdsLen; i++) {
             this.accountIds[i] = reader.readString();
@@ -44,7 +44,7 @@ export class AccountListPacket implements Packet {
 
     write(writer: Writer): void {
         writer.writeInt32(this.accountListId);
-        writer.writeShort(this.accountIds.length);
+        writer.writeInt16(this.accountIds.length);
         for (const id of this.accountIds) {
             writer.writeString(id);
         }

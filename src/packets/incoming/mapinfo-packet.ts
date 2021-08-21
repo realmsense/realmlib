@@ -130,7 +130,7 @@ export class MapInfoPacket implements Packet {
         this.difficulty = reader.readInt32();
         this.blockPlayerTeleport = reader.readBoolean();
         this.showDisplays = reader.readBoolean();
-        this.maxPlayers = reader.readShort();
+        this.maxPlayers = reader.readInt16();
         this.gameOpenedTime = reader.readInt32();
         this.exaltVersion = reader.readString();
         this.var14 = reader.readInt32();
@@ -147,7 +147,7 @@ export class MapInfoPacket implements Packet {
         writer.writeInt32(this.difficulty);
         writer.writeBoolean(this.blockPlayerTeleport);
         writer.writeBoolean(this.showDisplays);
-        writer.writeShort(this.maxPlayers);
+        writer.writeInt16(this.maxPlayers);
         writer.writeInt32(this.gameOpenedTime);
         writer.writeString(this.exaltVersion);
         writer.writeInt32(this.var14);

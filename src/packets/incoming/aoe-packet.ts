@@ -62,10 +62,10 @@ export class AoePacket implements Packet {
     read(reader: Reader): void {
         this.pos.read(reader);
         this.radius = reader.readFloat();
-        this.damage = reader.readUnsignedShort();
+        this.damage = reader.readUInt16();
         this.effect = reader.readUnsignedByte();
         this.duration = reader.readFloat();
-        this.origType = reader.readUnsignedShort();
+        this.origType = reader.readUInt16();
         this.color = reader.readInt32();
         this.armorPiercing = reader.readBoolean();
     }
@@ -73,10 +73,10 @@ export class AoePacket implements Packet {
     write(writer: Writer): void {
         this.pos.write(writer);
         writer.writeFloat(this.radius);
-        writer.writeUnsignedShort(this.damage);
+        writer.writeUInt16(this.damage);
         writer.writeUnsignedByte(this.effect);
         writer.writeFloat(this.duration);
-        writer.writeUnsignedShort(this.origType);
+        writer.writeUInt16(this.origType);
         writer.writeInt32(this.color);
         writer.writeBoolean(this.armorPiercing);
     }

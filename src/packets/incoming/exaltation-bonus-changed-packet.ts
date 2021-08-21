@@ -33,7 +33,7 @@ export class ExaltationBonusChangedPacket implements Packet {
     }
 
     read(reader: Reader): void {
-        this.objType = reader.readShort();
+        this.objType = reader.readInt16();
         this.dexterityProgress = reader.readByte();
         this.speedProgress = reader.readByte();
         this.vitalityProgress = reader.readByte();
@@ -45,7 +45,7 @@ export class ExaltationBonusChangedPacket implements Packet {
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.objType);
+        writer.writeInt16(this.objType);
         writer.writeByte(this.dexterityProgress);
         writer.writeByte(this.speedProgress);
         writer.writeByte(this.vitalityProgress);

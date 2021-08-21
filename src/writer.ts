@@ -62,7 +62,7 @@ export class Writer {
      * Writes a 2 byte integer to the buffer.
      * @param value The value to write.
      */
-    writeShort(value: number): void {
+    writeInt16(value: number): void {
         if (isNaN(value)) {
             value = 0;
         }
@@ -74,7 +74,7 @@ export class Writer {
      * Writes a 2 byte unsigned integer to the buffer.
      * @param value The value to write.
      */
-    writeUnsignedShort(value: number): void {
+    writeUInt16(value: number): void {
         if (isNaN(value)) {
             value = 0;
         }
@@ -136,10 +136,10 @@ export class Writer {
      */
     writeByteArray(value: number[]): void {
         if (!Array.isArray(value)) {
-            this.writeShort(0);
+            this.writeInt16(0);
             return;
         }
-        this.writeShort(value.length);
+        this.writeInt16(value.length);
         this.checkCapacity(value.length);
         for (const byte of value) {
             this.buffer[this.index++] = byte;
@@ -152,10 +152,10 @@ export class Writer {
      */
     writeString(value: string): void {
         if (typeof value !== "string") {
-            this.writeShort(0);
+            this.writeInt16(0);
             return;
         }
-        this.writeShort(value.length);
+        this.writeInt16(value.length);
         this.checkCapacity(value.length);
         this.index += this.buffer.write(value, this.index, value.length, "utf8");
     }

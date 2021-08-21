@@ -51,7 +51,7 @@ export class MovePacket implements Packet {
         writer.writeInt32(this.time);
         writer.writeUInt32(this.serverRealTimeMS);
         this.newPosition.write(writer);
-        writer.writeShort(this.records.length);
+        writer.writeInt16(this.records.length);
         for (const record of this.records) {
             record.write(writer);
         }
@@ -61,7 +61,7 @@ export class MovePacket implements Packet {
         this.tickId = reader.readInt32();
         this.time = reader.readInt32();
         this.newPosition.read(reader);
-        this.records = new Array(reader.readShort());
+        this.records = new Array(reader.readInt16());
         for (let i = 0; i < this.records.length; i++) {
             this.records[i] = new MoveRecord();
             this.records[i].read(reader);

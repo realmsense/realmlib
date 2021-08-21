@@ -60,24 +60,24 @@ export class PlayerShootPacket implements Packet {
     write(writer: Writer): void {
         writer.writeInt32(this.time);
         writer.writeByte(this.bulletId);
-        writer.writeShort(this.containerType);
+        writer.writeInt16(this.containerType);
         this.startingPos.write(writer);
         writer.writeFloat(this.angle);
         // NB(thomas-crane): the client uses AS3"s `int` function which is
         // equivalent to `Math.floor` in JS.
-        writer.writeShort(Math.floor(this.speedMult * 1000));
-        writer.writeShort(Math.floor(this.lifeMult * 1000));
+        writer.writeInt16(Math.floor(this.speedMult * 1000));
+        writer.writeInt16(Math.floor(this.lifeMult * 1000));
         writer.writeBoolean(this.isBurst);
     }
 
     read(reader: Reader): void {
         this.time = reader.readInt32();
         this.bulletId = reader.readByte();
-        this.containerType = reader.readShort();
+        this.containerType = reader.readInt16();
         this.startingPos.read(reader);
         this.angle = reader.readFloat();
-        this.speedMult = Math.floor(reader.readShort() / 1000);
-        this.lifeMult = Math.floor(reader.readShort() / 1000);
+        this.speedMult = Math.floor(reader.readInt16() / 1000);
+        this.lifeMult = Math.floor(reader.readInt16() / 1000);
         this.isBurst = reader.readBoolean();
     }
 }

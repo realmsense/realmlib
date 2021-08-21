@@ -53,7 +53,7 @@ export class ServerPlayerShootPacket implements Packet {
         this.containerType = reader.readInt32();
         this.startingPos.read(reader);
         this.angle = reader.readFloat();
-        this.damage = reader.readShort();
+        this.damage = reader.readInt16();
     }
 
     write(writer: Writer): void {
@@ -62,6 +62,6 @@ export class ServerPlayerShootPacket implements Packet {
         writer.writeInt32(this.containerType);
         this.startingPos.write(writer);
         writer.writeFloat(this.angle);
-        writer.writeShort(this.damage);
+        writer.writeInt16(this.damage);
     }
 }

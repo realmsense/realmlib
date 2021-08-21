@@ -35,7 +35,7 @@ export class TradeStartPacket implements Packet {
     }
 
     read(reader: Reader): void {
-        const clientItemsLen = reader.readShort();
+        const clientItemsLen = reader.readInt16();
         this.clientItems = new Array(clientItemsLen);
         for (let i = 0; i < clientItemsLen; i++) {
             const item = new TradeItem();
@@ -43,7 +43,7 @@ export class TradeStartPacket implements Packet {
             this.clientItems[i] = item;
         }
         this.partnerName = reader.readString();
-        const partnerItemsLen = reader.readShort();
+        const partnerItemsLen = reader.readInt16();
         this.partnerItems = new Array(partnerItemsLen);
         for (let i = 0; i < partnerItemsLen; i++) {
             const item = new TradeItem();
@@ -53,12 +53,12 @@ export class TradeStartPacket implements Packet {
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.clientItems.length);
+        writer.writeInt16(this.clientItems.length);
         for (const item of this.clientItems) {
             item.write(writer);
         }
         writer.writeString(this.partnerName);
-        writer.writeShort(this.partnerItems.length);
+        writer.writeInt16(this.partnerItems.length);
         for (const item of this.partnerItems) {
             item.write(writer);
         }

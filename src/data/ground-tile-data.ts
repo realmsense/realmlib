@@ -31,14 +31,14 @@ export class GroundTileData implements DataPacket {
     }
 
     read(reader: Reader): void {
-        this.x = reader.readShort();
-        this.y = reader.readShort();
-        this.type = reader.readUnsignedShort();
+        this.x = reader.readInt16();
+        this.y = reader.readInt16();
+        this.type = reader.readUInt16();
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.x);
-        writer.writeShort(this.y);
-        writer.writeUnsignedShort(this.type);
+        writer.writeInt16(this.x);
+        writer.writeInt16(this.y);
+        writer.writeUInt16(this.type);
     }
 }

@@ -50,7 +50,7 @@ export class PetUpgradeRequestPacket implements Packet {
         writer.writeInt32(this.pIdTwo);
         writer.writeInt32(this.objectId);
         writer.writeByte(this.paymentType);
-        writer.writeShort(this.slotObjects.length);
+        writer.writeInt16(this.slotObjects.length);
         for (const slotObject of this.slotObjects) {
             slotObject.write(writer);
         }
@@ -62,7 +62,7 @@ export class PetUpgradeRequestPacket implements Packet {
         this.pIdTwo = reader.readInt32();
         this.objectId = reader.readInt32();
         this.paymentType = reader.readByte();
-        const slotObjectLen = reader.readShort();
+        const slotObjectLen = reader.readInt16();
         this.slotObjects = new Array<SlotObjectData>(slotObjectLen);
         for (let i = 0; i < slotObjectLen; i++) {
             this.slotObjects[i] = new SlotObjectData();

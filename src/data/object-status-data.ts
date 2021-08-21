@@ -48,7 +48,7 @@ export class ObjectStatusData implements DataPacket {
     write(writer: Writer): void {
         writer.writeInt32(this.objectId);
         this.pos.write(writer);
-        writer.writeShort(this.stats.length);
+        writer.writeInt16(this.stats.length);
         for (const stat of this.stats) {
             stat.write(writer);
         }

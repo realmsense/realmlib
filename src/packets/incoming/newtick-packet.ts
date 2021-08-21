@@ -52,8 +52,8 @@ export class NewTickPacket implements Packet {
         this.tickId = reader.readInt32();
         this.tickTime = reader.readInt32();
         this.serverRealTimeMS = reader.readUInt32();
-        this.serverLastTimeRTTMS = reader.readUnsignedShort();
-        const statusesLen = reader.readShort();
+        this.serverLastTimeRTTMS = reader.readUInt16();
+        const statusesLen = reader.readInt16();
         this.statuses = new Array<ObjectStatusData>(statusesLen);
         for (let i = 0; i < statusesLen; i++) {
             const osd = new ObjectStatusData();
@@ -65,7 +65,7 @@ export class NewTickPacket implements Packet {
     write(writer: Writer): void {
         writer.writeInt32(this.tickId);
         writer.writeInt32(this.tickTime);
-        writer.writeShort(this.statuses.length);
+        writer.writeInt16(this.statuses.length);
         for (const status of this.statuses) {
             status.write(writer);
         }

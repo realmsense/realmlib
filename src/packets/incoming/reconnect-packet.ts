@@ -63,7 +63,7 @@ export class ReconnectPacket implements Packet {
     read(reader: Reader): void {
         this.name = reader.readString();
         this.host = reader.readString();
-        this.port = reader.readUnsignedShort();
+        this.port = reader.readUInt16();
         this.gameId = reader.readInt32();
         this.keyTime = reader.readInt32();
         this.fromArena = reader.readBoolean();
@@ -73,7 +73,7 @@ export class ReconnectPacket implements Packet {
     write(writer: Writer): void {
         writer.writeString(this.name);
         writer.writeString(this.host);
-        writer.writeUnsignedShort(this.port);
+        writer.writeUInt16(this.port);
         writer.writeInt32(this.gameId);
         writer.writeInt32(this.keyTime);
         writer.writeBoolean(this.fromArena);

@@ -64,7 +64,7 @@ export class EnemyShootPacket implements Packet {
         this.bulletType = reader.readUnsignedByte();
         this.startingPos.read(reader);
         this.angle = reader.readFloat();
-        this.damage = reader.readShort();
+        this.damage = reader.readInt16();
         if (reader.index < reader.length) {
             this.numShots = reader.readUnsignedByte();
             this.angleInc = reader.readFloat();
@@ -80,7 +80,7 @@ export class EnemyShootPacket implements Packet {
         writer.writeUnsignedByte(this.bulletType);
         this.startingPos.write(writer);
         writer.writeFloat(this.angle);
-        writer.writeShort(this.damage);
+        writer.writeInt16(this.damage);
         if (this.numShots !== 1) {
             writer.writeUnsignedByte(this.numShots);
             writer.writeFloat(this.angleInc);

@@ -63,10 +63,10 @@ export class VaultContentPacket implements Packet {
             counter++;
         }
 
-        this.vaultUpgradeCost = reader.readShort();
-        this.potionUpgradeCost = reader.readShort();
-        this.currentPotionMax = reader.readShort();
-        this.nextPotionMax = reader.readShort();
+        this.vaultUpgradeCost = reader.readInt16();
+        this.potionUpgradeCost = reader.readInt16();
+        this.currentPotionMax = reader.readInt16();
+        this.nextPotionMax = reader.readInt16();
     }
 
     write(writer: Writer): void {
@@ -86,9 +86,9 @@ export class VaultContentPacket implements Packet {
         for (const item of this.potionContents) {
             writer.writeInt32(item);
         }
-        writer.writeShort(this.vaultUpgradeCost);
-        writer.writeShort(this.potionUpgradeCost);
-        writer.writeShort(this.currentPotionMax);
-        writer.writeShort(this.nextPotionMax);
+        writer.writeInt16(this.vaultUpgradeCost);
+        writer.writeInt16(this.potionUpgradeCost);
+        writer.writeInt16(this.currentPotionMax);
+        writer.writeInt16(this.nextPotionMax);
     }
 }

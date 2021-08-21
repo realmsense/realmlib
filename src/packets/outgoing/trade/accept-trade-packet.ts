@@ -33,22 +33,22 @@ export class AcceptTradePacket implements Packet {
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.clientOffer.length);
+        writer.writeInt16(this.clientOffer.length);
         for (const slot of this.clientOffer) {
             writer.writeBoolean(slot);
         }
-        writer.writeShort(this.partnerOffer.length);
+        writer.writeInt16(this.partnerOffer.length);
         for (const slot of this.partnerOffer) {
             writer.writeBoolean(slot);
         }
     }
 
     read(reader: Reader): void {
-        this.clientOffer = new Array(reader.readShort());
+        this.clientOffer = new Array(reader.readInt16());
         for (let i = 0; i < this.clientOffer.length; i++) {
             this.clientOffer[i] = reader.readBoolean();
         }
-        this.partnerOffer = new Array(reader.readShort());
+        this.partnerOffer = new Array(reader.readInt16());
         for (let i = 0; i < this.partnerOffer.length; i++) {
             this.partnerOffer[i] = reader.readBoolean();
         }

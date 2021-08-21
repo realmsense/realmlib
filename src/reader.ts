@@ -65,7 +65,7 @@ export class Reader {
     /**
      * Reads a 2 byte integer from the buffer.
      */
-    readShort(): number {
+    readInt16(): number {
         const result = this.buffer.readInt16BE(this.index);
         this.index += 2;
         return result;
@@ -74,7 +74,7 @@ export class Reader {
     /**
      * Reads a 2 byte unsigned integer from the buffer.
      */
-    readUnsignedShort(): number {
+    readUInt16(): number {
         const result = this.buffer.readUInt16BE(this.index);
         this.index += 2;
         return result;
@@ -119,7 +119,7 @@ export class Reader {
      * Reads 2 bytes to get the length, then reads `length` bytes from the buffer.
      */
     readByteArray(): number[] {
-        const arraylen = this.readShort();
+        const arraylen = this.readInt16();
         const result = new Array<number>(arraylen);
         for (let i = 0; i < arraylen; i++ , this.index++) {
             result[i] = this.buffer[this.index];
@@ -144,7 +144,7 @@ export class Reader {
      * the result to a utf8 string.
      */
     readString(): string {
-        const strlen = this.readShort();
+        const strlen = this.readInt16();
         this.index += strlen;
         return this.buffer.slice(this.index - strlen, this.index).toString("utf8");
     }

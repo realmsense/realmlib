@@ -28,20 +28,20 @@ export class QuestFetchResponsePacket implements Packet {
     }
 
     read(reader: Reader): void {
-        const questsLen = reader.readShort();
+        const questsLen = reader.readInt16();
         this.quests = new Array<QuestData>(questsLen);
         for (let i = 0; i < questsLen; i++) {
             this.quests[i] = new QuestData();
             this.quests[i].read(reader);
         }
-        this.nextRefreshPrice = reader.readShort();
+        this.nextRefreshPrice = reader.readInt16();
     }
 
     write(writer: Writer): void {
-        writer.writeShort(this.quests.length);
+        writer.writeInt16(this.quests.length);
         for (const quest of this.quests) {
             quest.write(writer);
         }
-        writer.writeShort(this.nextRefreshPrice);
+        writer.writeInt16(this.nextRefreshPrice);
     }
 }

@@ -53,7 +53,7 @@ export class DamagePacket implements Packet {
         for (let i = 0; i < effectsLen; i++) {
             this.effects[i] = reader.readUnsignedByte();
         }
-        this.damageAmount = reader.readUnsignedShort();
+        this.damageAmount = reader.readUInt16();
         this.armorPierce = reader.readBoolean();
         this.bulletId = reader.readUnsignedByte();
         this.objectId = reader.readInt32();
@@ -65,7 +65,7 @@ export class DamagePacket implements Packet {
         for (const effect of this.effects) {
             writer.writeUnsignedByte(effect);
         }
-        writer.writeUnsignedShort(this.damageAmount);
+        writer.writeUInt16(this.damageAmount);
         writer.writeBoolean(this.armorPierce);
         writer.writeUnsignedByte(this.bulletId);
         writer.writeInt32(this.objectId);

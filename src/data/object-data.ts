@@ -25,12 +25,12 @@ export class ObjectData implements DataPacket {
     }
 
     read(reader: Reader): void {
-        this.objectType = reader.readUnsignedShort();
+        this.objectType = reader.readUInt16();
         this.status.read(reader);
     }
 
     write(writer: Writer): void {
-        writer.writeUnsignedShort(this.objectType);
+        writer.writeUInt16(this.objectType);
         this.status.write(writer);
     }
 }
