@@ -1,6 +1,7 @@
 import { EventEmitter } from "events";
 import { Socket } from "net";
-import { INCOMING_KEY, OUTGOING_KEY, RC4, Writer, Reader, PacketType, Packet } from ".";
+import { RC4, Writer, Reader, PacketType, Packet } from ".";
+import { INCOMING_KEY, OUTGOING_KEY, } from "./crypto";
 
 /**
  * The configuration for the RC4 ciphers used by this PacketIO.
@@ -58,11 +59,9 @@ export class PacketIO extends EventEmitter {
      * Creates a new `PacketIO` instance.
      * @param opts The options to use for this instance.
      */
-    constructor(opts: { socket?: Socket, rc4?: RC4Config } = { rc4: DEFAULT_RC4 }) {
+    constructor(opts: { socket?: Socket, rc4?: RC4Config } = {}) {
         super();
-        if (!opts.rc4) {
-            opts.rc4 = DEFAULT_RC4;
-        }
+        opts.rc4 ??= DEFAULT_RC4;
         this.writer = new Writer();
         this.reader = new Reader();
         this.outgoingQueue = [];
