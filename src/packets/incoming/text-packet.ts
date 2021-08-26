@@ -2,51 +2,68 @@ import { Packet, PacketType, Reader, Writer } from "../..";
 
 /**
  * Received when a chat message is sent by another player or NPC.
+ * Il2Cpp: `ICNNNAEMONK`
  */
 export class TextPacket implements Packet {
 
     readonly type = PacketType.TEXT;
 
     /**
-     * The sender of the message.
+     * The name of the sender
+     * Il2Cpp: `NCADAPAJGCH`
      */
-    name: string;
+    author: string;
+
     /**
-     * The object id of the sender.
+     * The object id of the sender
+     * Il2Cpp: `LADFHJEFKEC`
      */
     objectId: number;
+
     /**
-     * The number of stars of the sender.
+     * The number of stars of the sender
+     * Il2Cpp: `MAIGGIHDDFN`
      */
     numStars: number;
+
     /**
-     * The length of time to display the chat bubble for.
+     * The length of time (seconds) to display the chat bubble for
+     * Il2Cpp: `JJPKLOAEEKF`
      */
     bubbleTime: number;
+
     /**
-     * The recipient of the message. This is only used if the
-     * message is a private message.
+     * The recipient of the message. (for private messages, this is the name of the client receiving the message)
+     * Il2Cpp: `LMICPNFEPPM`
      */
     recipient: string;
+
     /**
-     * The content of the message.
+     * The content of the message
+     * Il2Cpp: `OBEFKMANGCK`
      */
     text: string;
+
     /**
-     * > Unknown.
+     * Unknown, seems to always be the same as `text`
+     * Il2Cpp: `CPFDLKNEMGM`
      */
     cleanText: string;
+
     /**
-     * Whether or not the sender of the message is a supporter.
+     * Whether the sender of the message is a supporter
+     * Il2Cpp: `PPHDCKCMDAJ`
      */
     isSupporter: boolean;
+
     /**
      * The star background of the player
+     * Il2Cpp: `NAMFPEBLBNI`
      */
     starBackground: number;
-    
+
     constructor() {
-        this.name = "";
+        this.author = "";
         this.objectId = 0;
         this.numStars = 0;
         this.bubbleTime = 0;
@@ -58,9 +75,9 @@ export class TextPacket implements Packet {
     }
 
     read(reader: Reader): void {
-        this.name = reader.readString();
+        this.author = reader.readString();
         this.objectId = reader.readInt32();
-        this.numStars = reader.readInt32();
+        this.numStars = reader.readInt16();
         this.bubbleTime = reader.readUnsignedByte();
         this.recipient = reader.readString();
         this.text = reader.readString();
@@ -70,9 +87,9 @@ export class TextPacket implements Packet {
     }
 
     write(writer: Writer): void {
-        writer.writeString(this.name);
+        writer.writeString(this.author);
         writer.writeInt32(this.objectId);
-        writer.writeInt32(this.numStars);
+        writer.writeInt16(this.numStars);
         writer.writeUnsignedByte(this.bubbleTime);
         writer.writeString(this.recipient);
         writer.writeString(this.text);
