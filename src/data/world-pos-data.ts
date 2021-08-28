@@ -6,17 +6,17 @@ import { Point } from "../models/point";
 /**
  * Class: `OHPIBKLOFIN`
  */
-export class WorldPosData implements DataPacket, Point {
+export class WorldPosData extends Point implements DataPacket {
 
     /**
      * Property: `FEKAOEJOMJJ`
      */
-    x: number;
+    declare x: number;
     
     /**
      * Property: `CPDPNHKICLK`
      */
-    y: number;
+    declare y: number;
 
     /**
      * Creates a new point at the origin or at the provided, x, y.
@@ -24,8 +24,7 @@ export class WorldPosData implements DataPacket, Point {
      * @param y A y value for this point. Defaults to 0.
      */
     constructor(x?: number, y?: number) {
-        this.x = x || 0;
-        this.y = y || 0;
+        super(x ?? 0, y ?? 0);
     }
 
     read(reader: Reader): void {
@@ -39,25 +38,7 @@ export class WorldPosData implements DataPacket, Point {
     }
 
     /**
-     * Returns the square distance between this point and the other point.
-     * @param point The other point.
-     */
-    squareDistanceTo(point: Point): number {
-        const a = point.x - this.x;
-        const b = point.y - this.y;
-        return a ** 2 + b ** 2;
-    }
-
-    /**
-     * Returns the distance between this point and the other point.
-     * @param point The other point.
-     */
-    distanceTo<T extends Point>(point: T): number {
-        return Math.sqrt(this.squareDistanceTo(point));
-    }
-
-    /**
-     * Returns a new `Point` which has the same x and y values.
+     * Returns a new `WorldPosData` object which has the same coordinates.
      */
     clone(): WorldPosData {
         return new WorldPosData(this.x, this.y);
