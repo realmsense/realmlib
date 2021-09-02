@@ -162,10 +162,7 @@ export class PacketIO extends EventEmitter {
      */
     emitPacket(packet: Packet): void {
         this._lastIncomingPacket = packet;
-        const packetType = PacketType.get(packet.type.id);
-        if (packetType) {
-            this.emit(packetType.name, packet);
-        }
+        this.emit(packet.type.name, packet);
     }
 
     /**

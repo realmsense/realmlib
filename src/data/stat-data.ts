@@ -12,7 +12,7 @@ export class StatData implements DataPacket {
      * The type of stat.
      * Property: `OCBDAMHCCMJ` 
      */
-    type: number;
+    type: StatType;
 
     /**
      * The number value of this stat, if this is not a string stat.
@@ -46,7 +46,7 @@ export class StatData implements DataPacket {
         } else {
             this.value = reader.readCompressedInt();
         }
-        this.unknownByte = reader.readByte();
+        this.unknownByte = reader.readCompressedInt();
     }
 
     write(writer: Writer): void {
@@ -61,12 +61,15 @@ export class StatData implements DataPacket {
 
     isStringStat(): boolean {
         switch (this.type) {
-            case StatType.NAME_STAT:
-            case StatType.GUILD_NAME_STAT:
-            case StatType.PET_NAME_STAT:
-            case StatType.ACCOUNT_ID_STAT:
-            case StatType.OWNER_ACCOUNT_ID_STAT:
-            case StatType.GRAVE_ACCOUNT_ID:
+            case StatType.NAME_STAT:                // 31
+            case StatType.GUILD_NAME_STAT:          // 62
+            case StatType.PET_NAME_STAT:            // 82
+            case StatType.ACCOUNT_ID_STAT:          // 38
+            case StatType.OWNER_ACCOUNT_ID_STAT:    // 54
+            case StatType.GRAVE_ACCOUNT_ID:         // 115
+            case StatType.UNKNOWN_80:              // 80
+            case StatType.UNKNOWN_121:              // 121
+            case StatType.UNKNOWN_123:              // 123
                 return true;
             default:
                 return false;
