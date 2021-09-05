@@ -35,6 +35,10 @@ export class Point {
         return Math.atan2(y, x);
     }
 
+    public equalTo(point: Point): boolean {
+        return this.x == point.x && this.y == point.y;
+    }
+
     /**
      * Returns a new `Point` object which has the same coordinates.
      */
