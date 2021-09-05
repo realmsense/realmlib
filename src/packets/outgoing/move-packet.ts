@@ -3,6 +3,7 @@ import { Packet, PacketType, WorldPosData, MoveRecord, Writer, Reader } from "..
 /**
  * Sent to acknowledge a `NewTickPacket`, and to notify the
  * server of the client"s current position and time.
+ * Il2Cpp: `DKIEOGEHOME`
  */
 export class MovePacket implements Packet {
 
@@ -10,24 +11,31 @@ export class MovePacket implements Packet {
 
     /**
      * The tick id of the `NewTickPacket` which this is acknowledging.
+     * Il2Cpp: `LLJOAMBNMFJ`
      */
     tickId: number;
+
     /**
      * The current client time.
+     * Il2Cpp: `_AEDMPFBHALL_k__BackingField`
      */
     time: number;
+
     /**
      * The current serer time in ms.
+     * Il2Cpp: `KDLGKDDHJAE`
      */
     serverRealTimeMS: number;
+
     /**
      * The current client position.
+     * Il2Cpp: `OFHDLBNMKEG + KPBGPNOKJMB`
      */
     newPosition: WorldPosData;
+
     /**
      * The move records of the client.
-     *
-     * This property can be an empty array.
+     * Il2Cpp: `NKBOKDNEEHI`
      */
     records: MoveRecord[];
     
@@ -53,6 +61,7 @@ export class MovePacket implements Packet {
     read(reader: Reader): void {
         this.tickId = reader.readInt32();
         this.time = reader.readInt32();
+        this.serverRealTimeMS = reader.readUInt32();
         this.newPosition.read(reader);
         this.records = new Array(reader.readInt16());
         for (let i = 0; i < this.records.length; i++) {
