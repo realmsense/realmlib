@@ -1,4 +1,4 @@
-# realmlib
+# realmlib ![Build](https://github.com/Extacy/realmlib/actions/workflows/main.yml/badge.svg)
 
 A networking library for Realm of the Mad God Exalt.
 
