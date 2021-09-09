@@ -10,6 +10,10 @@ export class Point {
         this.y = y;
     }
 
+    public static fromArray([x, y]: number[]): Point {
+        return new Point(x, y);
+    }
+    
     /**
      * @returns The square distance between this point and another point.
      */
