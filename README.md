@@ -1,4 +1,7 @@
-# realmlib ![Build](https://github.com/Extacy/realmlib/actions/workflows/main.yml/badge.svg)
+# realmlib
+
+<!-- ![Build](https://github.com/Extacy/realmlib/actions/workflows/main.yml/badge.svg) -->
+[![Build Status](https://drone.extacy.cc/api/badges/realmsense/realmlib/status.svg)](https://drone.extacy.cc/realmsense/realmlib)
 
 A networking library for Realm of the Mad God Exalt.
 
@@ -9,10 +12,13 @@ Projects using realmlib:
 * [rotmg-proxy](https://github.com/Extacy/rotmg-proxy)
 
 ## Contents
-+ [Install](#install)
-+ [Docs](#docs)
-+ [Usage](#usage)
-+ [Acknowledgements](#acknowledgements)
+- [realmlib](#realmlib)
+  - [Contents](#contents)
+  - [Install](#install)
+  - [Docs](#docs)
+  - [Usage](#usage)
+    - [Using the `PacketIO` class](#using-the-packetio-class)
+  - [Acknowledgements](#acknowledgements)
 
 ## Install
 
