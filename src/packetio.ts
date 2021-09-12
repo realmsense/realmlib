@@ -132,7 +132,7 @@ export class PacketIO extends EventEmitter {
      * Takes packets from the outgoing queue and writes
      * them to the socket.
      */
-    private async drainQueue() {
+    private async drainQueue(): Promise<void> {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const packet = this.outgoingQueue.shift()!;
         this._lastOutgoingPacket = packet;
