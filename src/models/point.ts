@@ -56,4 +56,8 @@ export class Point {
     public floor(): Point {
         return new Point(Math.floor(this.x), Math.floor(this.y));
     }
+
+    public toString(): string {
+        return `${this.x}, ${this.y}`;
+    }
 }
