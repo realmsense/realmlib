@@ -2,7 +2,7 @@
     "name": "realmlib",
     "version": "1.0.0",
     "description": "A networking library for Realm of the Mad God Exalt.",
-    "main": "dist/index.js",
+    "main": "dist/src/index.js",
     "scripts": {
         "compile": "tsc --build",
         "lint": "eslint src --ext ts",
