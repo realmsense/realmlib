@@ -1,6 +1,5 @@
 export * from "./activate-type";
 export * from "./active-pet-update-type";
-export * from "./classes";
 export * from "./condition-effect";
 export * from "./failure-code";
 export * from "./game-id";
