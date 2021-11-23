@@ -4,6 +4,7 @@
     "description": "A networking library for Realm of the Mad God Exalt.",
     "main": "dist/src/index.js",
     "scripts": {
+        "preinstall": "cd shared && npm install",
         "compile": "tsc --build",
         "lint": "eslint src --ext ts",
         "docs": "typedoc --options ./typedoc.json"
