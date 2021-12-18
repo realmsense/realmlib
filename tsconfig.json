@@ -5,8 +5,7 @@
         "sourceMap": true,
         "declaration": true,
         "outDir": "./dist",
-        // "rootDir": "./src",
-        "baseUrl": "./",
+        "rootDir": "./",
         "strict": true,
         "noImplicitAny": false,
         "strictPropertyInitialization": false,
@@ -19,7 +18,9 @@
         "composite": true
     },
     "include": [
-        "src",
-        "./shared/src"
+        "src"
+    ],
+    "references": [
+        { "path": "./shared" },
     ]
 }
