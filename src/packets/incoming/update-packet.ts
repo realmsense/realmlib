@@ -1,4 +1,4 @@
-import { Packet, PacketType, GroundTileData, ObjectData, Reader, Writer } from "../..";
+import { Packet, PacketType, GroundTileData, ObjectData, Reader, Writer, WorldPosData } from "../..";
 
 /**
  * Received when an update even occurs. Some events include
@@ -10,6 +10,12 @@ import { Packet, PacketType, GroundTileData, ObjectData, Reader, Writer } from "
 export class UpdatePacket implements Packet {
 
     readonly type = PacketType.UPDATE;
+
+    /**
+     * Unknown
+     * Property: `CBLBGAHHEHF`
+     */
+    pos: WorldPosData;
 
     /**
      * The new tiles which are visible.
@@ -30,12 +36,15 @@ export class UpdatePacket implements Packet {
     drops: number[];
 
     constructor() {
+        this.pos = new WorldPosData();
         this.tiles = [];
         this.newObjects = [];
         this.drops = [];
     }
 
     read(reader: Reader): void {
+        this.pos.read(reader);
+
         const tilesLen = reader.readCompressedInt();
         this.tiles = new Array<GroundTileData>(tilesLen);
         for (let i = 0; i < tilesLen; i++) {
@@ -60,6 +69,8 @@ export class UpdatePacket implements Packet {
     }
 
     write(writer: Writer): void {
+        this.pos.write(writer);
+
         writer.writeInt16(this.tiles.length);
         for (const tile of this.tiles) {
             tile.write(writer);

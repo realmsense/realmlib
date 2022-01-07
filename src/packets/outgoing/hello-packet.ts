@@ -4,7 +4,7 @@ import { Packet, PacketType, GameId, Reader, Writer } from "../..";
 /**
  * Sent whenever the Client connects to a new map.
  * The server should reply with a `MapInfoPacket`
- * Il2Cpp: `PJMBFLNIANG_HHOIFDMKBBE`
+ * Il2Cpp: `PJMBFLNIANG`
  */
 export class HelloPacket implements Packet {
 
@@ -46,22 +46,10 @@ export class HelloPacket implements Packet {
     key: number[];
 
     /**
-     * Unknown. Seems to always be blank
-     * Il2Cpp: `CELBPAJCPDF`
-     */
-    var6: string;
-
-    /**
      * Either `rotmg` or `steam`
      * Il2Cpp: `KMKKAMPFFHH`
      */
     gameNet: string;
-
-    /**
-     * Unknown. Seems to always be blank
-     * Il2Cpp: `ONGAMPFEICJ`
-     */
-    var8: string;
 
     /**
      * Either `rotmg` or `steam`
@@ -96,9 +84,7 @@ export class HelloPacket implements Packet {
         this.accessToken = "";
         this.keyTime = 0;
         this.key = [];
-        this.var6 = "";
         this.gameNet = "";
-        this.var8 = "";
         this.playPlatform = "";
         this.var11 = "";
         this.clientToken = "";
@@ -111,9 +97,7 @@ export class HelloPacket implements Packet {
         this.accessToken = reader.readString();
         this.keyTime = reader.readInt32();
         this.key = reader.readByteArray();
-        this.var6 = reader.readString();
         this.gameNet = reader.readString();
-        this.var8 = reader.readString();
         this.playPlatform = reader.readString();
         this.var11 = reader.readString();
         this.clientToken = reader.readString();
@@ -126,9 +110,7 @@ export class HelloPacket implements Packet {
         writer.writeString(this.accessToken);
         writer.writeInt32(this.keyTime);
         writer.writeByteArray(this.key);
-        writer.writeString(this.var6);
         writer.writeString(this.gameNet);
-        writer.writeString(this.var8);
         writer.writeString(this.playPlatform);
         writer.writeString(this.var11);
         writer.writeString(this.clientToken);
