@@ -43,6 +43,10 @@ export class Point {
         return this.x == point.x && this.y == point.y;
     }
 
+    public isDiagonal(point: Point): boolean {
+        return this.x - point.x == 0 || this.y - point.y == 0;
+    }
+
     /**
      * Returns a new `Point` object which has the same coordinates.
      */
