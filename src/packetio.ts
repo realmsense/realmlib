@@ -122,10 +122,10 @@ export class PacketIO extends EventEmitter {
 
         if (this.outgoingQueue.length === 0) {
             this.outgoingQueue.push(packet);
-            this.drainQueue();
-        } else {
-            this.outgoingQueue.push(packet);
+            return void this.drainQueue();
         }
+
+        this.outgoingQueue.push(packet);
     }
 
     /**
@@ -143,13 +143,13 @@ export class PacketIO extends EventEmitter {
         if (this.socket && !this.socket.write(this.writer.buffer.slice(0, this.writer.index))) {
             this.socket.once("drain", () => {
                 if (this.outgoingQueue.length > 0) {
-                    this.drainQueue();
+                    return this.drainQueue();
                 }
             });
         } else {
             process.nextTick(() => {
                 if (this.outgoingQueue.length > 0) {
-                    this.drainQueue();
+                    return this.drainQueue();
                 }
             });
         }
