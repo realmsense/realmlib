@@ -1,3 +1,5 @@
+// auto generated with tsai
+// https://github.com/thomas-crane/tsai
 export * from "./account-list-packet";
 export * from "./active-pet-packet";
 export * from "./ally-shoot-packet";

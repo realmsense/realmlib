@@ -1,3 +1,5 @@
+// auto generated with tsai
+// https://github.com/thomas-crane/tsai
 export * from "./activate-type";
 export * from "./active-pet-update-type";
 export * from "./condition-effect";

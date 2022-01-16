@@ -1,3 +1,5 @@
+// auto generated with tsai
+// https://github.com/thomas-crane/tsai
 export * from "./accept-arena-death-packet";
 export * from "./active-pet-update-request-packet";
 export * from "./aoe-ack-packet";
