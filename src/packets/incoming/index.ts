@@ -46,4 +46,5 @@ export * from "./show-effect-packet";
 export * from "./text-packet";
 export * from "./update-packet";
 export * from "./vault-content-packet";
+export * from "./verify-email-packet";
 export * from "./trade/index";
