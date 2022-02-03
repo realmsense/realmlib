@@ -11,30 +11,32 @@ export class SquareHitPacket implements Packet {
      * The current client time.
      */
     time: number;
+    
     /**
      * > Unknown.
      */
     bulletId: number;
+    
     /**
      * > Unknown.
      */
-    objectId: number;
+    objectID: number;
     
     constructor() {
         this.time = 0;
         this.bulletId = 0;
-        this.objectId = 0;
+        this.objectID = 0;
     }
 
     write(writer: Writer): void {
         writer.writeInt32(this.time);
         writer.writeByte(this.bulletId);
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
     }
 
     read(reader: Reader): void {
         this.time = reader.readInt32();
         this.bulletId = reader.readByte();
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
     }
 }

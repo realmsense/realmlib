@@ -13,7 +13,7 @@ export class ObjectStatusData implements DataPacket {
      * The object id of the object which this status is for.
      * Property: `LADFHJEFKEC`
      */
-    objectId: number;
+    objectID: number;
 
     /**
      * The position of the object which this status is for.
@@ -28,13 +28,13 @@ export class ObjectStatusData implements DataPacket {
     stats: StatData[];
 
     constructor() {
-        this.objectId = 0;
+        this.objectID = 0;
         this.pos = new WorldPosData();
         this.stats = [];
     }
 
     read(reader: Reader): void {
-        this.objectId = reader.readCompressedInt();
+        this.objectID = reader.readCompressedInt();
         this.pos.read(reader);
         const statLen = reader.readCompressedInt();
         this.stats = new Array(statLen);
@@ -46,7 +46,7 @@ export class ObjectStatusData implements DataPacket {
     }
 
     write(writer: Writer): void {
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
         this.pos.write(writer);
         writer.writeInt16(this.stats.length);
         for (const stat of this.stats) {

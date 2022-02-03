@@ -18,23 +18,23 @@ export class EditAccountListPacket implements Packet {
     /**
      * The object id of the player to add to the list.
      */
-    objectId: number;
+    objectID: number;
     
     constructor() {
         this.accountListId = 0;
         this.add = false;
-        this.objectId = 0;
+        this.objectID = 0;
     }
 
     write(writer: Writer): void {
         writer.writeInt32(this.accountListId);
         writer.writeBoolean(this.add);
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
     }
 
     read(reader: Reader): void {
         this.accountListId = reader.readInt32();
         this.add = reader.readBoolean();
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
     }
 }

@@ -10,24 +10,24 @@ export class CreateSuccessPacket implements Packet {
     /**
      * The object id of the player"s character.
      */
-    objectId: number;
+    objectID: number;
     /**
      * The character id of the player"s character.
      */
     charId: number;
     
     constructor() {
-        this.objectId = 0;
+        this.objectID = 0;
         this.charId = 0;
     }
 
     read(reader: Reader): void {
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
         this.charId = reader.readInt32();
     }
 
     write(writer: Writer): void {
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
         writer.writeInt32(this.charId);
     }
 }

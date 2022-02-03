@@ -14,7 +14,7 @@ export class ShowEffectPacket implements Packet {
     /**
      * > Unknown. Probably the start position of the effect.
      */
-    targetObjectId: number;
+    targetobjectID: number;
     /**
      * > Unknown. Probably the end position of the effect.
      */
@@ -34,7 +34,7 @@ export class ShowEffectPacket implements Packet {
     
     constructor() {
         this.effectType = 0;
-        this.targetObjectId = 0;
+        this.targetobjectID = 0;
         this.pos1 = new WorldPosData();
         this.pos2 = new WorldPosData();
         this.color = 0;
@@ -45,9 +45,9 @@ export class ShowEffectPacket implements Packet {
         this.effectType = reader.readUnsignedByte();
         const loc2 = reader.readUnsignedByte();
         if (loc2 & 64) {
-            this.targetObjectId = reader.readCompressedInt();
+            this.targetobjectID = reader.readCompressedInt();
         } else {
-            this.targetObjectId = 0;
+            this.targetobjectID = 0;
         }
         if (loc2 & 2) {
             this.pos1.x = reader.readFloat();
@@ -83,7 +83,7 @@ export class ShowEffectPacket implements Packet {
 
     write(writer: Writer): void {
         writer.writeUnsignedByte(this.effectType);
-        writer.writeInt32(this.targetObjectId);
+        writer.writeInt32(this.targetobjectID);
         this.pos1.write(writer);
         this.pos2.write(writer);
         writer.writeInt32(this.color);

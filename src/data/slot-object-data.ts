@@ -7,7 +7,7 @@ export class SlotObjectData implements DataPacket {
     /**
      * The object id of the entity which owns the slot.
      */
-    objectId: number;
+    objectID: number;
     /**
      * The index of the slot. E.g. The 4th inventory slot has the slot id `3`.
      */
@@ -18,19 +18,19 @@ export class SlotObjectData implements DataPacket {
     objectType: number;
 
     constructor() {
-        this.objectId = 0;
+        this.objectID = 0;
         this.slotId = 0;
         this.objectType = 0;
     }
 
     read(reader: Reader): void {
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
         this.slotId = reader.readInt32();
         this.objectType = reader.readUInt32();
     }
 
     write(writer: Writer): void {
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
         writer.writeInt32(this.slotId);
         writer.writeInt32(this.objectType);
     }

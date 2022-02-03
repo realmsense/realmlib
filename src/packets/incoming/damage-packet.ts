@@ -30,7 +30,7 @@ export class DamagePacket implements Packet {
     /**
      * The object id of the entity which owned the bullet that caused the damage.
      */
-    objectId: number;
+    objectID: number;
     
     constructor() {
         this.targetId = 0;
@@ -38,7 +38,7 @@ export class DamagePacket implements Packet {
         this.damageAmount = 0;
         this.armorPierce = false;
         this.bulletId = 0;
-        this.objectId = 0;
+        this.objectID = 0;
     }
 
     read(reader: Reader): void {
@@ -51,7 +51,7 @@ export class DamagePacket implements Packet {
         this.damageAmount = reader.readUInt16();
         this.armorPierce = reader.readBoolean();
         this.bulletId = reader.readUnsignedByte();
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
     }
 
     write(writer: Writer): void {
@@ -63,6 +63,6 @@ export class DamagePacket implements Packet {
         writer.writeUInt16(this.damageAmount);
         writer.writeBoolean(this.armorPierce);
         writer.writeUnsignedByte(this.bulletId);
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
     }
 }

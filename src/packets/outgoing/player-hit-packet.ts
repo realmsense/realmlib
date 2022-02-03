@@ -11,23 +11,24 @@ export class PlayerHitPacket implements Packet {
      * The id of the bullet which hit the player.
      */
     bulletId: number;
+    
     /**
      * The object id of the enemy that hit the player.
      */
-    objectId: number;
+    objectID: number;
     
     constructor() {
         this.bulletId = 0;
-        this.objectId = 0;
+        this.objectID = 0;
     }
 
     write(writer: Writer): void {
         writer.writeUnsignedByte(this.bulletId);
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
     }
 
     read(reader: Reader): void {
         this.bulletId = reader.readUnsignedByte();
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
     }
 }

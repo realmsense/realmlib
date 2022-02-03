@@ -10,24 +10,24 @@ export class GotoPacket implements Packet {
     /**
      * The object id of the entity which moved.
      */
-    objectId: number;
+    objectID: number;
     /**
      * The new position of the entity.
      */
     position: WorldPosData;
     
     constructor() {
-        this.objectId = 0;
+        this.objectID = 0;
         this.position = new WorldPosData();
     }
 
     read(reader: Reader): void {
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
         this.position.read(reader);
     }
 
     write(writer: Writer): void {
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
         this.position.write(writer);
     }
 }

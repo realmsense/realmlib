@@ -10,17 +10,17 @@ export class QuestObjectIdPacket implements Packet {
     /**
      * The object id of the current quest.
      */
-    objectId: number;
+    objectID: number;
     
     constructor() {
-        this.objectId = 0;
+        this.objectID = 0;
     }
 
     read(reader: Reader): void {
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
     }
 
     write(writer: Writer): void {
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
     }
 }

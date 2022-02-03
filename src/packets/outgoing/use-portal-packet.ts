@@ -11,17 +11,17 @@ export class UsePortalPacket implements Packet {
     /**
      * The object id of the portal to enter.
      */
-    objectId: number;
+    objectID: number;
     
     constructor() {
-        this.objectId = 0;
+        this.objectID = 0;
     }
 
     write(writer: Writer): void {
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
     }
 
     read(reader: Reader): void {
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
     }
 }

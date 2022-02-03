@@ -22,7 +22,7 @@ export class PetUpgradeRequestPacket implements Packet {
     /**
      * > Unknown.
      */
-    objectId: number;
+    objectID: number;
     /**
      * The items which will be used to upgrade the pet.
      */
@@ -36,7 +36,7 @@ export class PetUpgradeRequestPacket implements Packet {
         this.petTransType = 0;
         this.pIdOne = 0;
         this.pIdTwo = 0;
-        this.objectId = 0;
+        this.objectID = 0;
         this.slotObjects = [];
         this.paymentType = 0;
     }
@@ -45,7 +45,7 @@ export class PetUpgradeRequestPacket implements Packet {
         writer.writeByte(this.petTransType);
         writer.writeInt32(this.pIdOne);
         writer.writeInt32(this.pIdTwo);
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
         writer.writeByte(this.paymentType);
         writer.writeInt16(this.slotObjects.length);
         for (const slotObject of this.slotObjects) {
@@ -57,7 +57,7 @@ export class PetUpgradeRequestPacket implements Packet {
         this.petTransType = reader.readByte();
         this.pIdOne = reader.readInt32();
         this.pIdTwo = reader.readInt32();
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
         this.paymentType = reader.readByte();
         const slotObjectLen = reader.readInt16();
         this.slotObjects = new Array<SlotObjectData>(slotObjectLen);

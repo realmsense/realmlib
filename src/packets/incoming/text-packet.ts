@@ -18,7 +18,7 @@ export class TextPacket implements Packet {
      * The object id of the sender
      * Il2Cpp: `LADFHJEFKEC`
      */
-    objectId: number;
+    objectID: number;
 
     /**
      * The number of stars of the sender
@@ -64,7 +64,7 @@ export class TextPacket implements Packet {
 
     constructor() {
         this.author = "";
-        this.objectId = 0;
+        this.objectID = 0;
         this.numStars = 0;
         this.bubbleTime = 0;
         this.recipient = "";
@@ -76,7 +76,7 @@ export class TextPacket implements Packet {
 
     read(reader: Reader): void {
         this.author = reader.readString();
-        this.objectId = reader.readInt32();
+        this.objectID = reader.readInt32();
         this.numStars = reader.readInt16();
         this.bubbleTime = reader.readUnsignedByte();
         this.recipient = reader.readString();
@@ -88,7 +88,7 @@ export class TextPacket implements Packet {
 
     write(writer: Writer): void {
         writer.writeString(this.author);
-        writer.writeInt32(this.objectId);
+        writer.writeInt32(this.objectID);
         writer.writeInt16(this.numStars);
         writer.writeUnsignedByte(this.bubbleTime);
         writer.writeString(this.recipient);
