@@ -28,6 +28,9 @@ export namespace Appspot {
 
         "/account/servers": {
             accessToken: string
+        } | {
+            guid    : string;
+            password: string;
         },
 
         "/account/verify": {
@@ -88,7 +91,6 @@ export namespace Appspot {
         "/supportCampaign/status": {
             accessToken: string;
         },
-
 
         "/unityNews/getNews": {
             accessToken: string
