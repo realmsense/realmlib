@@ -3,6 +3,7 @@ import { Packet, PacketType, FailureCode, Reader, Writer } from "../..";
 /**
  * Received when an error has occured.
  * Il2Cpp: `PGFHFIAAKOI`
+ * OnFailurePacket: `DKMLMKFGPCC_PFPBCEBGNOA`
  */
 export class FailurePacket implements Packet {
 

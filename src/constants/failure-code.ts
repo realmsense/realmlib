@@ -35,4 +35,10 @@ export enum FailureCode {
 
     /** Unknown, Il2Cpp: `NIIDIIFCBKL` */
     Unknown16 = 16,
+
+    /** Unknown */
+    Unknown20 = 20,
+
+    /** Unknown */
+    Unknown22 = 22,
 }
